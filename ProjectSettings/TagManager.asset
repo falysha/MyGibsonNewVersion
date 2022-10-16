@@ -4,17 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NormalCloseEnemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
+  - Enemy
   - 
-  - Floor
-  - player
+  - 
   - 
   - 
   - 
@@ -42,12 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
-    uniqueID: 3281154939
-    locked: 0
-  - name: player
-    uniqueID: 3408630233
-    locked: 0
-  - name: ui
-    uniqueID: 2008120231
+  - name: New Layer 1
+    uniqueID: 1549892347
     locked: 0
