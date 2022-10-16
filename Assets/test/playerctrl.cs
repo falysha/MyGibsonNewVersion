@@ -16,7 +16,7 @@ public class playerctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DialogManager.GetInstance().DialogueIsPlaying)
+        if (DialogManager.GetInstance().DialogueIsPlaying || ShowManager.GetInstance().ShowIsPlaying)
         {
             return;
         }
