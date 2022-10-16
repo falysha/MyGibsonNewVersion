@@ -15,6 +15,7 @@ public class Attack0 : StateMachineBehaviour
         Vector2 Direction = new Vector2(Player.transform.localScale.x, 0);
         Player.GetComponent<Rigidbody2D>().AddForce(Direction*5,ForceMode2D.Impulse);
         FindObjectOfType<Gunshot>().gunShotOnce();
+        Player.GetComponent<PlayerController>().gunFire[5].GetComponent<Gunfire>().gunFire();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -25,6 +26,7 @@ public class Attack0 : StateMachineBehaviour
         {
             shot=true;
             FindObjectOfType<Gunshot>().gunShotOnce();
+            Player.GetComponent<PlayerController>().gunFire[4].GetComponent<Gunfire>().gunFire();
         }
         
     }

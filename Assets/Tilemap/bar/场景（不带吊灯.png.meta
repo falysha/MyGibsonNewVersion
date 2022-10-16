@@ -100,6 +100,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2287,13 +2299,13 @@ TextureImporter:
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_26": 1970814626
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_4": 650145212
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_0": -1086900270
-      "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_76": -1850114255
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_62": 1679423331
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_49": 230981290
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_25": -2062851486
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_27": -230291577
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_41": 1621521250
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_21": -173202206
+      "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_76": -1850114255
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_68": -391701196
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_78": -1075070392
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_50": -1998313959
@@ -2339,8 +2351,8 @@ TextureImporter:
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_66": -1468437851
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_95": 1230603462
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_8": 788040529
-      "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_46": 972449408
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_84": -1463506855
+      "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_46": 972449408
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_51": 1925637266
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_16": 1090824794
       "\u573A\u666F\uFF08\u4E0D\u5E26\u540A\u706F_57": 2096048583

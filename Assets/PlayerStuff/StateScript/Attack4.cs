@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Unity.VisualScripting;
 public class Attack4 : StateMachineBehaviour
 {
     private GameObject Player;
@@ -21,6 +21,8 @@ public class Attack4 : StateMachineBehaviour
             FindObjectOfType<Gunshot>().gunShotOnce();
             Vector2 Direction = new Vector2(-Player.transform.localScale.x, 0);
             Player.GetComponent<Rigidbody2D>().AddForce(Direction*7,ForceMode2D.Impulse);
+            Player.GetComponent<PlayerController>().gunFire[1].GetComponent<Gunfire>().gunFire();
+            Player.GetComponent<PlayerController>().gunFire[0].GetComponent<Gunfire>().gunFire();
         }
     }
     

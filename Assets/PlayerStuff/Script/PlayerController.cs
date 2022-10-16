@@ -24,6 +24,7 @@ using static Platformer.Core.Simulation;
         public bool flashing = false;
         private Rocket _rocket;
         private SkillController _skillController;
+        public Object[] gunFire;
         void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -33,6 +34,7 @@ using static Platformer.Core.Simulation;
             _animator.SetLayerWeight(left, 0);
             _rocket = FindObjectOfType<Rocket>();
             _skillController = GetComponent<SkillController>();
+            gunFire = FindObjectsOfType(typeof(Gunfire));
         }
 
         // Update is called once per frame
@@ -101,7 +103,7 @@ using static Platformer.Core.Simulation;
         }
         void verticalSpeedCheck()
         {
-            if (_rigidbody2D.velocity.y<0)
+            if (_rigidbody2D.velocity.y<-0.01)
             {
                 _animator.SetBool("falling",true);
             }
