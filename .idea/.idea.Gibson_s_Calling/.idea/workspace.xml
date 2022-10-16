@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/Script/Rocket.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/StateScript/KnifeAttackRefresh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/SpriteEditor/SpriteEditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/Editor/ShaderGenerator/ShaderGeneratorMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@12.1.7/Runtime/2D/Light2DManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/learning/Assets/Scripts/Gameplay/PlayerJumped.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/learning/Assets/Scripts/Mechanics/AnimationController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -100,6 +101,7 @@
       <workItem from="1665841904380" duration="733000" />
       <workItem from="1665897994215" duration="600000" />
       <workItem from="1665905528237" duration="1000" />
+      <workItem from="1665914607052" duration="4070000" />
     </task>
     <servers />
   </component>

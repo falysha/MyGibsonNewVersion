@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Attack1 : StateMachineBehaviour
 {
@@ -22,11 +23,13 @@ public class Attack1 : StateMachineBehaviour
         {
             shot++;
             FindObjectOfType<Gunshot>().gunShotOnce();
+            Player.GetComponent<PlayerController>().gunFire[3].GetComponent<Gunfire>().gunFire();
         }
         if (timer>=60&&shot==1)
         {
             shot++;
             FindObjectOfType<Gunshot>().gunShotOnce();
+            Player.GetComponent<PlayerController>().gunFire[2].GetComponent<Gunfire>().gunFire();
         }
         
     }
