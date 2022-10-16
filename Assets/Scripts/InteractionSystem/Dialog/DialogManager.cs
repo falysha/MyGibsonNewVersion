@@ -32,9 +32,9 @@ public class DialogManager : MonoBehaviour
     private bool canContinueToNextLine = false;//是否进入下一行
 
     [Header("选项UI")]
-    [SerializeField]private VerticalLayoutGroup _choiceButtonContainer;//纵向垂直布局
+    public VerticalLayoutGroup _choiceButtonContainer;//纵向垂直布局
 
-    [SerializeField]private Button _choiceButtonPrefab;//按钮预制体
+    public Button _choiceButtonPrefab;//按钮预制体
 
 
     private void Awake()
@@ -54,7 +54,7 @@ public class DialogManager : MonoBehaviour
     {
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-
+        continueIcon.SetActive(false);
         leftImage.SetActive(false);
         RightImage.SetActive(false);
 
@@ -115,7 +115,7 @@ public class DialogManager : MonoBehaviour
         canContinueToNextLine = false;
         continueIcon.SetActive(false);
 
-        foreach (char letter in line.ToCharArray())
+        foreach (char letter in line.ToCharArray())//打字机特效
         {
             Textdia.text += letter;
             yield return new WaitForSeconds(typingSpeed);
