@@ -45,6 +45,15 @@ TagManager:
   - name: background
     uniqueID: 1549892347
     locked: 0
-  - name: Player
+  - name: Floor
     uniqueID: 2092247517
+    locked: 0
+  - name: shadow
+    uniqueID: 196269471
+    locked: 0
+  - name: Player
+    uniqueID: 1958023915
+    locked: 0
+  - name: handrail
+    uniqueID: 2249022499
     locked: 0
