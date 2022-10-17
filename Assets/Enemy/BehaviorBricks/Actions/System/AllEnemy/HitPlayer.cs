@@ -17,31 +17,35 @@ namespace BBUnity.Actions
         [Help("The time enemy needed to prepare the hit.")]
         public float hitBefore;
 
-        private float attackTime;
+        private EnemyData enemyData;
+        private float attackAniTime;
 
         /// <summary>Initialization Method of HitPlayer.</summary>
         public override void OnStart()
         {
             //Debug.Log("HitPlayer");
-            attackTime = gameObject.GetComponent<EnemyData>().attackTime;
+            enemyData = gameObject.GetComponent<EnemyData>();
+            attackAniTime = enemyData.attackAniTime;
+            enemyData.state = EnemyState.Attack;
         }
 
         /// <summary>Method of Update of HitPlayer </summary>
         /// <remarks>Enemy will hit player at once.</remarks>
         public override TaskStatus OnUpdate()
         {
-            attackTime -= Time.deltaTime;
+            attackAniTime -= Time.deltaTime;
+            Debug.Log(attackAniTime);
             // a Timer that record when to fire attack event
             if (hitBefore != -1)
                 hitBefore -= Time.deltaTime;
-            if(hitBefore<0)
+            if (hitBefore <= 0) 
             {
                 // Fire attack event
                 Debug.Log("hit player");
 
                 hitBefore = -1;
             }
-            if(attackTime<0)
+            if (attackAniTime <= 0) 
                 return TaskStatus.COMPLETED;
             return TaskStatus.RUNNING;
         }

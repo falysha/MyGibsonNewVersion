@@ -9,17 +9,13 @@ namespace BBUnity.Actions
     /// <summary>
     /// It is an action to move the GameObject to a random position in an area using a NavMeshAgent.
     /// </summary>
-    [Action("Navigation/KeepStillUntilMove")]
-    [Help("Keep still in specific place until next move.")]
-    public partial class KeepStillUntilMove : GOAction
+    [Action("Navigation/KeepStillUntilAttack")]
+    [Help("Keep still in specific place until next attack.")]
+    public partial class KeepStillUntilAttack : GOAction
     {
-        [InParam("duration")]
-        [Help("How long the enemy keep still.")]
-        public float stillDuration;
-
         private EnemyData enemyData;
 
-        /// <summary>Initialization Method of KeepStillUntilMove.</summary>
+        /// <summary>Initialization Method of KeepStillUntilAttack.</summary>
         public override void OnStart()
         {
             //Debug.Log("KeepStill");
@@ -27,12 +23,11 @@ namespace BBUnity.Actions
             enemyData.state = EnemyState.Idle;
         }
 
-        /// <summary>Method of Update of KeepStillUntilMove </summary>
-        /// <remarks>Enemy will keep still until time ended or player in field.</remarks>
+        /// <summary>Method of Update of KeepStillUntilAttack </summary>
+        /// <remarks>Enemy will keep still until attack player or player run away.</remarks>
         public override TaskStatus OnUpdate()
         {
-            stillDuration -= Time.deltaTime;
-            if (enemyData.isPlayerInAttackField || stillDuration <= 0)
+            if (enemyData.ifCanAttack || !enemyData.ifPlayerCanBeAttacked) 
                 return TaskStatus.COMPLETED;
             return TaskStatus.RUNNING;
         }

@@ -26,6 +26,7 @@ namespace BBUnity.Actions
             transform = gameObject.GetComponent<Transform>();
             moveSpeed = enemyData.moveSpeed;
             targetTransform = enemyData.player.transform;
+            enemyData.state = EnemyState.Walk;
         }
 
         /// <summary>Method of Update of MoveToPlayer.</summary>
@@ -35,7 +36,9 @@ namespace BBUnity.Actions
             if (!enemyData.isPlayerInAttackField || enemyData.ifPlayerCanBeAttacked) 
                 return TaskStatus.COMPLETED;
             enemyData.ifFaceRight = targetTransform.position.x - transform.position.x > 0 ? true : false;
-            transform.position = Vector2.MoveTowards(transform.position, targetTransform.position, moveSpeed * Time.deltaTime);
+            // Move to Player
+            var direction = new Vector2(targetTransform.position.x, transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, direction, moveSpeed * Time.deltaTime);
             return TaskStatus.RUNNING;
         }
     }

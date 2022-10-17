@@ -3,9 +3,9 @@ using Platformer.Enemy;
 
 namespace BBUnity.Conditions
 {
-    [Condition("Perception/IsTargetInAttackField")]
-    [Help("Checks whether a target is in the attack field")]
-    public class IsTargetInAttackField : GOCondition
+    [Condition("Perception/IsHitted")]
+    [Help("Checks if the enemy is hitted by player")]
+    public class IsHitted : GOCondition
     {
         /// <summary>
         /// Checks whether the player is in enemy's attack field,
@@ -14,7 +14,7 @@ namespace BBUnity.Conditions
         public override bool Check()
         {
             //Debug.Log("IsTargetInAttackField");
-            return gameObject.GetComponent<EnemyData>().isPlayerInAttackField;
+            return gameObject.GetComponent<EnemyData>().isHitted;
         }
     }
 }
