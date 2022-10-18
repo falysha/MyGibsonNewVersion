@@ -5,7 +5,6 @@ namespace Platformer.Enemy
 {
     public class EnemyData:MonoBehaviour
     {
-        [Header("base property")]
         /// <summary>
         /// Type of enemy
         /// </summary>
@@ -14,6 +13,7 @@ namespace Platformer.Enemy
         /// <summary>
         /// Health of enemy
         /// </summary>
+        [Header("base property")]
         public int HP;
 
         /// <summary>
@@ -40,6 +40,7 @@ namespace Platformer.Enemy
         /// <summary>
         /// The speed of enemy move
         /// </summary>
+        [Header("Set property")]
         public float moveSpeed;
 
         /// <summary>
@@ -50,27 +51,31 @@ namespace Platformer.Enemy
         /// <summary>
         /// Interval between attacks
         /// </summary>
+        [Tooltip("Interval between two attacks")]
         public float attackCD;
 
         /// <summary>
         /// The length of hitted animation
         /// </summary>
+        [Tooltip("The length of hitted animation")]
         public float hittedTime;
 
         /// <summary>
         /// The length of died animation
         /// </summary>
+        [Tooltip("The length of died animation")]
         public float diedTime;
 
         /// <summary>
         /// The max distance enemy can hit player.
         /// </summary>
+        [Tooltip("The max distance enemy can hit player")]
         public float maxHitDistance;
 
         /// <summary>
         /// If the enemy can move
         /// </summary>
-        public bool isStatic;
+        /// public bool isStatic;
 
         /// <summary>
         /// If enemy's direction is right, this value is true
@@ -82,6 +87,7 @@ namespace Platformer.Enemy
         /// If enemy is hitted by player, the value should be true.
         /// </summary>
         /// [NonSerialized]
+        [Header("State property")]
         public bool isHitted = false;
 
         /// <summary>

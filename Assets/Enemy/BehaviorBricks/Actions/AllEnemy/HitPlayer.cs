@@ -34,7 +34,6 @@ namespace BBUnity.Actions
         public override TaskStatus OnUpdate()
         {
             attackAniTime -= Time.deltaTime;
-            Debug.Log(attackAniTime);
             // a Timer that record when to fire attack event
             if (hitBefore != -1)
                 hitBefore -= Time.deltaTime;
@@ -45,8 +44,11 @@ namespace BBUnity.Actions
 
                 hitBefore = -1;
             }
-            if (attackAniTime <= 0) 
+            if (attackAniTime <= 0)
+            {
+                enemyData.ifCanAttack = false;
                 return TaskStatus.COMPLETED;
+            }
             return TaskStatus.RUNNING;
         }
     }

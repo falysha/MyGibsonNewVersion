@@ -20,7 +20,7 @@ namespace Platformer.Enemy
         {
             data = GetComponent<EnemyData>();
             behaviorExecutor = GetComponent<BehaviorExecutor>();
-            attackCD = 0;
+            attackCD = data.attackCD;
         }
 
         private void FixedUpdate()
@@ -28,6 +28,7 @@ namespace Platformer.Enemy
             //CheckAttack();
             CheckAlive();
             RefreshState();
+            CheckAttack();
         }
 
         public virtual void RefreshState() { }
@@ -35,10 +36,11 @@ namespace Platformer.Enemy
         // Check if enemy still alive
         private void CheckAlive()
         {
-            if (data.HP <= 0)
+            if (data.HP <= 0 && data.state != EnemyState.Die) 
             {
                 behaviorExecutor.enabled = false;
                 data.state = EnemyState.Die;
+                Destroy(gameObject, data.diedTime);
             }
         }
 
@@ -50,7 +52,7 @@ namespace Platformer.Enemy
                 attackCD -= Time.deltaTime;
                 if (attackCD <= 0)
                 {
-                    attackCD = 0;
+                    attackCD = data.attackCD;
                     data.ifCanAttack = true;
                 }
             }
