@@ -51,12 +51,12 @@ TagManager:
   - name: shadow
     uniqueID: 196269471
     locked: 0
-  - name: floor_front
-    uniqueID: 3445786079
-    locked: 0
-  - name: Player
+  - name: Enemy
     uniqueID: 1958023915
     locked: 0
-  - name: handrail
+  - name: Player
     uniqueID: 2249022499
+    locked: 0
+  - name: handrail
+    uniqueID: 1256270857
     locked: 0
