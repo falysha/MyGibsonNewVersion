@@ -13,6 +13,7 @@ namespace Platformer.Gameplay
         public GameObject player=GameObject.Find("Player");
         public Transform enemyTransform;
         public int damage = 0;
+        
         public override void Execute()
         {
             if (!player.GetComponent<PlayerHealth>().locked)

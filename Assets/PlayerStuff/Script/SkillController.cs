@@ -23,7 +23,7 @@ public class SkillController : MonoBehaviour
     private float countedShotGunCD = 10f;
 
     private float countedRocketCD = 15f;
-    
+
     public float Fury = 0;
 
     private PlayerController _playerController;
@@ -33,7 +33,8 @@ public class SkillController : MonoBehaviour
     private SpeedState _speedState = SpeedState.Empty;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         countedHackCD = 20f;
         countedShotGunCD = 10f;
@@ -41,12 +42,7 @@ public class SkillController : MonoBehaviour
         _playerController = FindObjectOfType<PlayerController>();
         _playerHealth = FindObjectOfType<PlayerHealth>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    
     private void FixedUpdate()
     {
         //Hack
@@ -102,11 +98,11 @@ public class SkillController : MonoBehaviour
 
     public void speedUpStart()
     {
-        if (_speedState==SpeedState.Empty)
+        if (_speedState == SpeedState.Empty)
         {
-            if (Fury<20)
+            if (Fury < 20)
             {
-                if (_playerHealth.realHealth>20)
+                if (_playerHealth.realHealth > 20)
                 {
                     _playerHealth.realHealth = _playerHealth.realHealth - (20 - Fury);
                     Fury = 0;
@@ -123,11 +119,11 @@ public class SkillController : MonoBehaviour
 
     public void speedDownStart()
     {
-        if (_speedState==SpeedState.Empty)
+        if (_speedState == SpeedState.Empty)
         {
-            if (Fury<20)
+            if (Fury < 20)
             {
-                if (_playerHealth.realHealth>20)
+                if (_playerHealth.realHealth > 20)
                 {
                     _playerHealth.realHealth = _playerHealth.realHealth - (20 - Fury);
                     Fury = 0;
@@ -166,6 +162,7 @@ public class SkillController : MonoBehaviour
         shotGunCD = 10f;
         rocketCD = 15f;
     }
+
     public enum SpeedState
     {
         Empty,

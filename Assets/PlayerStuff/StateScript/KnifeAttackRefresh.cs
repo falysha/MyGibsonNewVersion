@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,16 @@ using UnityEngine;
 public class KnifeAttackRefresh : StateMachineBehaviour
 {
     private PlayerController Player;
-    
+
+    private void Awake()
+    {
+        Player=FindObjectOfType<PlayerController>();
+    }
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Player=FindObjectOfType<PlayerController>();
+        
         Player.canControl = true;
         Player._knifeState = PlayerController.KnifeState.Knife0;
     }

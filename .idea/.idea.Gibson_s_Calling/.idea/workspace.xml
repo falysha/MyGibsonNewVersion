@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/Script/Rocket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/Script/TimeCounter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/StateScript/KnifeAttackRefresh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/SpriteEditor/SpriteEditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/Editor/ShaderGenerator/ShaderGeneratorMenu.cs" root0="SKIP_HIGHLIGHTING" />
@@ -105,7 +106,7 @@
       <workItem from="1666007913168" duration="5352000" />
       <workItem from="1666081802251" duration="4778000" />
       <workItem from="1666091258255" duration="3688000" />
-      <workItem from="1666102589055" duration="13006000" />
+      <workItem from="1666102589055" duration="15410000" />
     </task>
     <servers />
   </component>

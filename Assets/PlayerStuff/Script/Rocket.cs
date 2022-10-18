@@ -9,9 +9,11 @@ public class Rocket : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private GameObject Player;
     private GameObject startPosition;
+
     private Vector2 Direction;
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         Player = GameObject.Find("Player");
         startPosition = GameObject.Find("RocketLaunchStart");
@@ -21,24 +23,26 @@ public class Rocket : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
     }
+    
 
     // Update is called once per frame
     void Update()
     {
         if (fired)
         {
-            _rigidbody2D.velocity = Direction*10;
+            _rigidbody2D.velocity = Direction * 10;
         }
         else
         {
             _rigidbody2D.velocity = Vector2.zero;
         }
+
         distanceCheck();
     }
 
     void distanceCheck()
     {
-        if (Vector2.Distance(gameObject.transform.position,Player.transform.position)>30)
+        if (Vector2.Distance(gameObject.transform.position, Player.transform.position) > 30)
         {
             fired = false;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -58,7 +62,7 @@ public class Rocket : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag=="Enemy"&&fired)
+        if (col.tag == "Enemy" && fired)
         {
             fired = false;
             //爆炸动画
