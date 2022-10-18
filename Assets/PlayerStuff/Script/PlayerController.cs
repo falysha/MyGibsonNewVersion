@@ -22,7 +22,6 @@ using static Platformer.Core.Simulation;
         public bool isGrounded = true;
         public KnifeState _knifeState = KnifeState.Knife0;
         public bool flashing = false;
-        private Rocket _rocket;
         private SkillController _skillController;
         public Object[] gunFire;
         void Start()
@@ -32,7 +31,6 @@ using static Platformer.Core.Simulation;
             _collider2D = GetComponent<Collider2D>();
             _animator.SetLayerWeight(right, 1);
             _animator.SetLayerWeight(left, 0);
-            _rocket = FindObjectOfType<Rocket>();
             _skillController = GetComponent<SkillController>();
             gunFire = FindObjectsOfType(typeof(Gunfire));
         }
@@ -57,19 +55,19 @@ using static Platformer.Core.Simulation;
                     _animator.SetTrigger("flash");
                 }
 
-                if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.U)&&!_rocket.fired&&_skillController.isRocketReady)//火箭
+                if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.U)/*&&_skillController.isRocketReady*/)//火箭
                 {
                     _animator.SetTrigger("rocket");
                     _skillController.startCountingRocket();
                 }
 
-                if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.I)&&_skillController.isShotGunReady)//霰弹枪
+                if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.I)/*&&_skillController.isShotGunReady*/)//霰弹枪
                 {
                     _animator.SetTrigger("shotgun");
                     _skillController.startCountingShotGun();
                 }
                 
-                if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.O)&&_skillController.isHackReady)//大招
+                if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.O)/*&&_skillController.isHackReady*/)//大招
                 {
                     _animator.SetTrigger("hack");
                     _skillController.startCountingHack();
@@ -86,10 +84,6 @@ using static Platformer.Core.Simulation;
                 }
                 
             }
-            /*else if(!canControl&&!flashing)
-            {
-                move.x = 0;
-            }*/
             verticalSpeedCheck();
         }
 
@@ -103,7 +97,7 @@ using static Platformer.Core.Simulation;
         }
         void verticalSpeedCheck()
         {
-            if (_rigidbody2D.velocity.y<-0.01)
+            if (_rigidbody2D.velocity.y<-0.01&&isGrounded)
             {
                 _animator.SetBool("falling",true);
             }

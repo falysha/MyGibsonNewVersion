@@ -8,16 +8,14 @@ using UnityEngine.Rendering.Universal;
 public class Gunfire : MonoBehaviour
 {
     private bool Shot = false;
+    
 
-    private Light2D Head;
-
-    private Light2D[] Back;
+    private Light2D[] Fire;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        Head = gameObject.GetComponent<Light2D>();
-        Back = gameObject.GetComponentsInChildren<Light2D>();
+        Fire = gameObject.GetComponentsInChildren<Light2D>();
     }
 
     // Update is called once per frame
@@ -29,15 +27,15 @@ public class Gunfire : MonoBehaviour
     {
         if (Shot)
         {
-            if (Head.pointLightOuterRadius > 0f)
+            if (Fire[0].pointLightOuterRadius > 0f)
             {
-                Head.pointLightOuterRadius = Head.pointLightOuterRadius - Time.fixedDeltaTime * 20;
-                Back[1].pointLightOuterRadius = Back[1].pointLightOuterRadius - Time.fixedDeltaTime * 20;
+                Fire[0].pointLightOuterRadius = Fire[0].pointLightOuterRadius - Time.fixedDeltaTime * 20;
+                Fire[1].pointLightOuterRadius = Fire[1].pointLightOuterRadius - Time.fixedDeltaTime * 20;
             }
             else
             {
-                Head.pointLightOuterRadius = 0;
-                Back[1].pointLightOuterRadius =0;
+                Fire[0].pointLightOuterRadius = 0;
+                Fire[1].pointLightOuterRadius =0;
                 Shot = false;
             }
         }
@@ -45,8 +43,8 @@ public class Gunfire : MonoBehaviour
 
     public void gunFire()
     {
-        Head.pointLightOuterRadius = 1;
-        Back[1].pointLightOuterRadius = 1;
+        Fire[0].pointLightOuterRadius = 1;
+        Fire[1].pointLightOuterRadius = 1;
         Shot = true;
     }
 }
