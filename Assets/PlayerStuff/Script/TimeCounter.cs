@@ -127,7 +127,7 @@ public class TimeCounter : MonoBehaviour
 
     IEnumerator attack1()
     {
-        yield return new WaitForSeconds(atc0 * 0.6f);
+        yield return new WaitForSeconds(atc1 * 0.6f);
         if (atcing1)
         {
             gunShot.gunShotOnce();
@@ -184,6 +184,7 @@ public class TimeCounter : MonoBehaviour
     {
         yield return new WaitForSeconds(smash * 0.5f);
         _rigidbody2D.AddForce(Direction*12,ForceMode2D.Impulse);
+        gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.5f);
         _smash.GetComponent<SmashFire>().smashFire();
         _smash.GetComponent<PlayerDamageJudge>().startAttack();
     }
