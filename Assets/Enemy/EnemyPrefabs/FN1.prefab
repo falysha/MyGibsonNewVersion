@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 2809201867667726983}
   - component: {fileID: 2809201867667726977}
   - component: {fileID: 8816805334410906015}
-  - component: {fileID: 7814698995762667027}
+  - component: {fileID: 176526100209938188}
   m_Layer: 0
-  m_Name: CN1
+  m_Name: FN1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1297442198, guid: 188cfc3589fbda943b91ab81f977ca03, type: 3}
+  m_Sprite: {fileID: -1175187703, guid: f3f5ad6c9ad5b9f42baa6115f8f37d46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -248,7 +248,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7814698995762667027
+--- !u!114 &176526100209938188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

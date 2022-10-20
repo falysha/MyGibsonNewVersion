@@ -55,6 +55,12 @@ namespace Platformer.Enemy
         public float attackCD;
 
         /// <summary>
+        /// Interval between doges
+        /// </summary>
+        [Tooltip("Interval between two attacks")]
+        public float dogeCD;
+
+        /// <summary>
         /// The length of hitted animation
         /// </summary>
         [Tooltip("The length of hitted animation")]
@@ -71,6 +77,12 @@ namespace Platformer.Enemy
         /// </summary>
         [Tooltip("The max distance enemy can hit player")]
         public float maxHitDistance;
+
+        /// <summary>
+        /// The max unsafe distance that enemy feel threaten by player.
+        /// </summary>
+        [Tooltip("The max distance enemy begin dodge")]
+        public float maxUnsafeDistance;
 
         /// <summary>
         /// If the enemy can move
@@ -95,6 +107,12 @@ namespace Platformer.Enemy
         /// </summary>
         /// [NonSerialized]
         public bool ifCanAttack = true;
+
+        /// <summary>
+        /// If enemy can attack player, the value should be true.
+        /// </summary>
+        /// [NonSerialized]
+        public bool ifCanDoge = true;
 
         /// <summary>
         /// The debuff stack in the enemy
@@ -123,6 +141,14 @@ namespace Platformer.Enemy
         public bool ifPlayerCanBeAttacked
         {
             get { return (transform.position - player.transform.position).sqrMagnitude <= maxHitDistance; }
+        }
+
+        /// <summary>
+        /// When player is too close to far enemy, enemy will doge.
+        /// </summary>
+        public bool ifPlayerTooClose
+        {
+            get { return (transform.position - player.transform.position).sqrMagnitude <= maxUnsafeDistance; }
         }
     }
 
