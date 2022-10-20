@@ -83,7 +83,7 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()//退出对话模式
     {
-        yield return new WaitForSeconds(0.2f);//等待0.2s后触发
+        yield return new WaitForSeconds(10f);//等待0.2s后触发
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         leftImage.SetActive(false);
