@@ -165,10 +165,11 @@ public class TimeCounter : MonoBehaviour
     IEnumerator attack4()
     {
         yield return new WaitForSeconds(atc4 * 0.833f);
-        FindObjectOfType<Gunshot>().gunShotOnce();
-        FindObjectOfType<Gunshot>().gunShotOnce();
+        FindObjectOfType<Gunshot>().gunShotlast();
+        FindObjectOfType<Gunshot>().gunShotlast();
         gunFires[1].gunFire();
         gunFires[0].gunFire();
+        gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         _rigidbody2D.AddForce(-Direction * 7, ForceMode2D.Impulse);
     }
 
@@ -176,6 +177,7 @@ public class TimeCounter : MonoBehaviour
     {
         _rocket.GetComponent<RocketFire>().rocketFire();
         yield return new WaitForSeconds(rocket * 0.666f);
+        gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         _rigidbody2D.AddForce(-Direction*7,ForceMode2D.Impulse);
         _rocket.GetComponent<PlayerDamageJudge>().startAttack();
     }
@@ -184,7 +186,7 @@ public class TimeCounter : MonoBehaviour
     {
         yield return new WaitForSeconds(smash * 0.5f);
         _rigidbody2D.AddForce(Direction*12,ForceMode2D.Impulse);
-        gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.5f);
+        gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         _smash.GetComponent<SmashFire>().smashFire();
         _smash.GetComponent<PlayerDamageJudge>().startAttack();
     }
@@ -194,6 +196,7 @@ public class TimeCounter : MonoBehaviour
         yield return new WaitForSeconds(shotGun * 0.857f);
         _PlayerController.canControl = false;
         _rigidbody2D.AddForce(-Direction*9,ForceMode2D.Impulse);
+        gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         shotgun.GetComponent<ShotGunFire>().shotGunFire();
         shotgun.GetComponent<PlayerDamageJudge>().startAttack();
     }

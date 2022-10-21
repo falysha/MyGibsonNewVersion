@@ -14,18 +14,17 @@ public class PlayerController : MonoBehaviour
     public float Strength = 10;
     public JumpState jumpState = JumpState.Grounded;
     public bool canControl = true;
-    public Rigidbody2D _rigidbody2D;
+    private Rigidbody2D _rigidbody2D;
     public Animator _animator;
     private Collider2D _collider2D;
-    public Vector2 move;
+    private Vector2 move;
     private int right = 2; //人物朝向
     private int left = 1;
-    public bool isGrounded = true;
+    private bool isGrounded = true;
     public KnifeState _knifeState = KnifeState.Knife0;
     public bool flashing = false;
     private SkillController _skillController;
-    public Object[] gunFire;
-
+    private Hack _hack;
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetLayerWeight(right, 1);
         _animator.SetLayerWeight(left, 0);
         _skillController = GetComponent<SkillController>();
-        gunFire = FindObjectsOfType(typeof(Gunfire));
+        _hack = GetComponent<Hack>();
     }
 
     // Update is called once per frame
@@ -73,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
             if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.O) /*&&_skillController.isHackReady*/) //大招
             {
+                _hack.startAttack();
                 _animator.SetTrigger("hack");
                 _skillController.startCountingHack();
             }

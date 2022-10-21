@@ -1,37 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.VirtualTexturing;
+using Platformer.Gameplay;
 public class SkillController : MonoBehaviour
 {
     public bool isHackReady = true;
-
     public bool isShotGunReady = true;
-
     public bool isRocketReady = true;
-
     public float hackCD = 20f;
-
     public float shotGunCD = 10f;
-
     public float rocketCD = 15f;
-
     private float countedHackCD = 20f;
-
     private float countedShotGunCD = 10f;
-
     private float countedRocketCD = 15f;
-
     public float Fury = 0;
-
     private PlayerController _playerController;
-
     private PlayerHealth _playerHealth;
-
     private SpeedState _speedState = SpeedState.Empty;
-
+    private Volume _volume;
+    private VolumeProfile speedUpVolume;
+    private VolumeProfile speedDownVolume;
+    private VolumeProfile hackVolume;
+    private Shadow _shadow;
     // Start is called before the first frame update
 
     private void Awake()
@@ -41,6 +36,11 @@ public class SkillController : MonoBehaviour
         countedRocketCD = 15f;
         _playerController = FindObjectOfType<PlayerController>();
         _playerHealth = FindObjectOfType<PlayerHealth>();
+        _volume = GameObject.Find("Global Volume").GetComponent<Volume>();
+        speedUpVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedUp");
+        speedDownVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedDown");
+        hackVolume = Resources.Load<VolumeProfile>("CameraStuff/Hack");
+        _shadow = FindObjectOfType<Shadow>();
     }
     
     private void FixedUpdate()
@@ -140,11 +140,17 @@ public class SkillController : MonoBehaviour
 
     IEnumerator speedUp()
     {
+        _shadow.startShadow();
+        _volume.profile = speedUpVolume;
         _speedState = SpeedState.SpeedUp;
         _playerController.horizontalMoveSpeed = 20f;
         _playerController.Strength = 15f;
+        
         //攻击提升代码
         yield return new WaitForSeconds(10f);
+        
+        _shadow.closeShadow();
+        _volume.profile = null;
         _speedState = SpeedState.Empty;
         _playerController.Strength = 10f;
         _playerController.horizontalMoveSpeed = 10f;
@@ -152,11 +158,15 @@ public class SkillController : MonoBehaviour
 
     IEnumerator speedDown()
     {
+        _volume.profile = speedDownVolume;
         _speedState = SpeedState.SpeedDown;
         hackCD = 15f;
         shotGunCD = 5f;
         rocketCD = 10f;
+        _playerHealth.locked = true;
         yield return new WaitForSeconds(10f);
+        _playerHealth.locked = false;
+        _volume.profile = null;
         _speedState = SpeedState.Empty;
         hackCD = 20f;
         shotGunCD = 10f;

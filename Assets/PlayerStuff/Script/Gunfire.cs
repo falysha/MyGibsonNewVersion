@@ -8,8 +8,6 @@ using UnityEngine.Rendering.Universal;
 public class Gunfire : MonoBehaviour
 {
     private bool Shot = false;
-    
-
     private Light2D[] Fire;
 
     // Start is called before the first frame update
@@ -43,8 +41,8 @@ public class Gunfire : MonoBehaviour
 
     public void gunFire()
     {
-        Fire[0].pointLightOuterRadius = 1;
-        Fire[1].pointLightOuterRadius = 1;
+        Fire[0].pointLightOuterRadius = 3;
+        Fire[1].pointLightOuterRadius = 3;
         Shot = true;
     }
 }

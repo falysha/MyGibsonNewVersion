@@ -48,4 +48,23 @@ public class Shadow : MonoBehaviour
             }
         }
     }
+
+    public void closeShadow()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            Shadows[i].enabled = false;
+        }
+
+        shadowStart = false;
+    }
+
+    public void startShadow()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            Shadows[i].enabled = true;
+        }
+        shadowStart = true;
+    }
 }

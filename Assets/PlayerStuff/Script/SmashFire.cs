@@ -27,13 +27,13 @@ public class SmashFire : MonoBehaviour
         {
             if (_fireState == FireState.Up)
             {
-                Fire.intensity = Fire.intensity + 0.05f;
+                Fire.intensity = Fire.intensity + 0.4f;
             }
             else
             {
                 if (Fire.intensity > 0)
                 {
-                    Fire.intensity = Fire.intensity - 0.3f;
+                    Fire.intensity = Fire.intensity - 0.5f;
                 }
                 else
                 {
@@ -54,7 +54,7 @@ public class SmashFire : MonoBehaviour
 
     IEnumerator Up()
     {
-        Fire.intensity = 1f;
+        Fire.intensity = 2f;
         Shot = true;
         _fireState = FireState.Up;
         yield return new WaitForSeconds(0.666f * 0.25f);

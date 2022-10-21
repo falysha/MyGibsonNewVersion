@@ -24,7 +24,7 @@ namespace Platformer.Gameplay
             player.GetComponent<Animator>().SetTrigger("hitted");
             if (enemyTransform.position.x>=player.GetComponent<Transform>().position.x)
             {
-                player.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.left);
+                player.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
                 player.GetComponent<Rigidbody2D>().AddForce(Vector2.left*2,ForceMode2D.Impulse);
                 player.GetComponent<Animator>().SetLayerWeight(2, 1); //right
                 player.GetComponent<Animator>().SetLayerWeight(1, 0); //left
@@ -32,7 +32,7 @@ namespace Platformer.Gameplay
             }
             else
             {
-                player.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.right);
+                player.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
                 player.GetComponent<Rigidbody2D>().AddForce(Vector2.right*2,ForceMode2D.Impulse);
                 player.GetComponent<Animator>().SetLayerWeight(1, 1);
                 player.GetComponent<Animator>().SetLayerWeight(2, 0);

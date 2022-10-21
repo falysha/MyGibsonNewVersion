@@ -9,10 +9,11 @@ public class Flash : StateMachineBehaviour
     private Rigidbody2D _rigidbody2D;
     private PlayerController _playerController;
     private Vector2 Direction;
-
+    private PlayerHealth _playerHealth;
     private void Awake()
     {
         Player = GameObject.Find("Player");
+        _playerHealth = Player.GetComponent<PlayerHealth>();
         _playerController = Player.GetComponent<PlayerController>();
         _rigidbody2D = Player.GetComponent<Rigidbody2D>();
     }
@@ -21,6 +22,7 @@ public class Flash : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _playerController.canControl = false;
+        _playerHealth.locked = true;
         Direction.x = Player.transform.localScale.x;
         Direction.y = 0;
         _playerController.flashing = true;
@@ -28,19 +30,9 @@ public class Flash : StateMachineBehaviour
     }
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _playerHealth.locked = false;
         _playerController.flashing = false;
         _playerController.canControl = true;
     }
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

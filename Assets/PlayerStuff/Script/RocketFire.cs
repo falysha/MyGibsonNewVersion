@@ -27,7 +27,7 @@ public class RocketFire : MonoBehaviour
         {
             if (_fireState==FireState.Up)
             {
-                Fire[0].intensity = Fire[0].intensity + 0.03f;
+                Fire[0].intensity = Fire[0].intensity + 0.1f;
             }
             else if(_fireState==FireState.Hold)
             {

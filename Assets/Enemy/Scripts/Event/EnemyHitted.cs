@@ -9,13 +9,13 @@ namespace Platformer.Gameplay
     /// <typeparam name="EnemyDeath"></typeparam>
     public class EnemyHitted : Simulation.Event<EnemyHitted>
     {
-        public PlayerDamageJudge playerDamage;
+        public int playerDamage;
         public EnemyData enemyData;
-
+        public static float ratio=1;
         public override void Execute()
         {
             enemyData.isHitted = true;
-            var injury = playerDamage.damage;
+            var injury = (int)(playerDamage*ratio);
             enemyData.HP -= injury * (1 - enemyData.injuryFreeRatio);
         }
     }
