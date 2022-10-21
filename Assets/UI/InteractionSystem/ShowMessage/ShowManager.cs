@@ -26,6 +26,7 @@ public class ShowManager : MonoBehaviour
             Debug.LogWarning("在场景中找到多个对话管理器");
         }
         instance = this;
+        
     }
 
     public static ShowManager GetInstance()//获取组件

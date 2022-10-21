@@ -42,6 +42,7 @@ public class Pick : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         ShowManager.GetInstance().EnterDialogueMode(inkJson);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

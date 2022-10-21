@@ -27,6 +27,7 @@ public class ShowTrigger : MonoBehaviour
             if (Input.GetButtonDown("interaction"))//»¥¶¯¼ü
             {
                 ShowManager.GetInstance().EnterDialogueMode(inkJson);
+                
             }
         }
         else

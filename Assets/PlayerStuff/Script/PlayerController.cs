@@ -55,32 +55,32 @@ public class PlayerController : MonoBehaviour
                 _animator.SetTrigger("flash");
             }
 
-            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.U) /*&&_skillController.isRocketReady*/
+            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.U) && GameManager.instance.haveskill /*&&_skillController.isRocketReady*/
                ) //火箭
             {
                 _animator.SetTrigger("rocket");
                 _skillController.startCountingRocket();
             }
 
-            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.I) /*&&_skillController.isShotGunReady*/
+            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.I) && GameManager.instance.haveskill/*&&_skillController.isShotGunReady*/
                ) //霰弹枪
             {
                 _animator.SetTrigger("shotgun");
                 _skillController.startCountingShotGun();
             }
 
-            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.O) /*&&_skillController.isHackReady*/) //大招
+            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.O) && GameManager.instance.haveskill/*&&_skillController.isHackReady*/) //大招
             {
                 _hack.startAttack();
                 _skillController.startCountingHack();
             }
 
-            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.Q))
+            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.Q) && GameManager.instance.havespeed)
             {
                 _skillController.speedUpStart();
             }
 
-            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.E))
+            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.E) && GameManager.instance.havespeed)
             {
                 _skillController.speedDownStart();
             }
