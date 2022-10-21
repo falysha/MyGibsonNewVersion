@@ -1,6 +1,5 @@
 ﻿using Pada1.BBCore;
 using Platformer.Enemy;
-using UnityEngine;
 
 namespace BBUnity.Conditions
 {

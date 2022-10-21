@@ -45,17 +45,7 @@ public class ShowManager : MonoBehaviour
         {
             return;
         }
-
-        if (Input.GetButtonDown("Continue"))//互动键
-        {
-            if (ShowIsPlaying)//如果没有进入对话框返回正常
-            {
-                return;
-            }
-            ContinueStory();//开始对话
-        }
     }
-
     public void EnterDialogueMode(TextAsset inkJson)//进入对话模式
     {
         currentStory = new Story(inkJson.text);//读取text的json文件
