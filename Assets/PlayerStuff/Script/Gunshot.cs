@@ -13,12 +13,14 @@ public class Gunshot : MonoBehaviour
     private PlayerDamageJudge _playerDamageJudge;
     public int damage0 = 10;
     public int damage1 = 20;
+    
     private void Awake()
     {
         player = GameObject.Find("Player");
         startPoint = gameObject.transform.position;
         Direction.x = player.transform.localScale.x;
         Direction.y = 0;
+        
     }
     public void gunShotOnce()
     {

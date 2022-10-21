@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetLayerWeight(right, 1);
         _animator.SetLayerWeight(left, 0);
         _skillController = GetComponent<SkillController>();
-        _hack = GetComponent<Hack>();
+        _hack = GameObject.Find("Hack").GetComponent<Hack>();
     }
 
     // Update is called once per frame
@@ -41,12 +41,11 @@ public class PlayerController : MonoBehaviour
     {
         if (canControl && !flashing)
         {
-            jumpStateCheck();
             horizontalMove();
             knifeAttackStateIn();
             if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.W)) //跳跃
             {
-                jumpState = JumpState.PrepareToJump;
+                jumpState = JumpState.Jumping;
                 startJump();
                 _animator.SetTrigger("jump");
             }
@@ -73,7 +72,6 @@ public class PlayerController : MonoBehaviour
             if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.O) /*&&_skillController.isHackReady*/) //大招
             {
                 _hack.startAttack();
-                _animator.SetTrigger("hack");
                 _skillController.startCountingHack();
             }
 
@@ -87,8 +85,6 @@ public class PlayerController : MonoBehaviour
                 _skillController.speedDownStart();
             }
         }
-
-        verticalSpeedCheck();
     }
 
     void knifeAttackStateIn()
@@ -102,9 +98,10 @@ public class PlayerController : MonoBehaviour
 
     void verticalSpeedCheck()
     {
-        if (_rigidbody2D.velocity.y < -0.01&&!isGrounded)
+        if (_rigidbody2D.velocity.y < -0.001&&!isGrounded)
         {
             _animator.SetBool("falling", true);
+            jumpState = JumpState.Jumping;
         }
         else
         {
@@ -139,37 +136,7 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.localScale = Vector3.one + Vector3.left * 2;
         }
     }
-
-    void jumpStateCheck()
-    {
-        switch (jumpState)
-        {
-            case JumpState.PrepareToJump:
-                jumpState = JumpState.Jumping;
-                break;
-            case JumpState.Jumping:
-                if (!isGrounded)
-                {
-                    //该事件需要播放跳跃音效
-                    //Schedule<PlayerJumped>().player = this;
-                    jumpState = JumpState.InFlight;
-                }
-
-                break;
-            case JumpState.InFlight:
-                if (isGrounded)
-                {
-                    //需要加上下落攻击的音效播放
-                    //Schedule<PlayerLanded>().player = this;
-                    jumpState = JumpState.Landed;
-                }
-
-                break;
-            case JumpState.Landed:
-                jumpState = JumpState.Grounded;
-                break;
-        }
-    }
+    
 
     void startJump()
     {
@@ -178,9 +145,10 @@ public class PlayerController : MonoBehaviour
 
     void groundCheck()
     {
-        if (_collider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (_rigidbody2D.velocity.y==0&&_collider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             isGrounded = true;
+            jumpState = JumpState.Grounded;
         }
         else
         {
@@ -191,15 +159,13 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         groundCheck();
+        verticalSpeedCheck();
     }
 
     public enum JumpState
     {
         Grounded,
-        PrepareToJump,
-        Jumping,
-        InFlight,
-        Landed
+        Jumping
     }
 
 

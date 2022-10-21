@@ -20,6 +20,7 @@ public class TimeCounter : MonoBehaviour
     private Vector2 Direction;
     private Rigidbody2D _rigidbody2D;
     public PlayerController _PlayerController;
+    private AudioSource _audioSource;
     
     private Gunfire[] gunFires;
     private Gunshot gunShot;
@@ -33,6 +34,15 @@ public class TimeCounter : MonoBehaviour
     public bool atcing1 = false;
     public bool atcing2 = false;
     public bool atcing3 = false;
+
+    private AudioClip gunSound;
+    private AudioClip leg0;
+    private AudioClip leg1;
+    private AudioClip rocketSound;
+    private AudioClip smashSound;
+    private AudioClip shotGunSound;
+    
+    
 
     private void Awake()
     {
@@ -55,24 +65,26 @@ public class TimeCounter : MonoBehaviour
         shotgun = GameObject.Find("Shotgun");
         
         Direction.y = 0;
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //StartCoroutine(attack0());
-    }
+        _audioSource=gameObject.GetComponent<AudioSource>();
 
-    // Update is called once per frame
+        gunSound = Resources.Load<AudioClip>("Sounds/gun");
+
+        rocketSound = Resources.Load<AudioClip>("Sounds/rocket");
+
+        smashSound = Resources.Load<AudioClip>("Sounds/smash");
+
+        shotGunSound = Resources.Load<AudioClip>("Sounds/shotgun");
+        
+        leg0 = Resources.Load<AudioClip>("Sounds/leg0");
+        
+        leg1 = Resources.Load<AudioClip>("Sounds/leg1");
+    }
+    
     void Update()
     {
         Direction.x = gameObject.transform.localScale.x;
     }
-
-    private void FixedUpdate()
-    {
-    }
-
     public void startAttack0()
     {
         StartCoroutine(attack0());
@@ -114,12 +126,14 @@ public class TimeCounter : MonoBehaviour
     } 
     IEnumerator attack0()
     {
+        _audioSource.PlayOneShot(gunSound);
         gunShot.gunShotOnce();
         gunFires[5].gunFire();
         _rigidbody2D.AddForce(Direction * 4, ForceMode2D.Impulse);
         yield return new WaitForSeconds(atc0 * 0.75f);
         if (atcing0)
         {
+            _audioSource.PlayOneShot(gunSound);
             gunShot.gunShotOnce();
             gunFires[4].gunFire();
         }
@@ -130,6 +144,7 @@ public class TimeCounter : MonoBehaviour
         yield return new WaitForSeconds(atc1 * 0.6f);
         if (atcing1)
         {
+            _audioSource.PlayOneShot(gunSound);
             gunShot.gunShotOnce();
             gunFires[3].gunFire();
         }
@@ -137,6 +152,7 @@ public class TimeCounter : MonoBehaviour
         yield return new WaitForSeconds(atc0 * 0.2f);
         if (atcing1)
         {
+            _audioSource.PlayOneShot(gunSound);
             gunShot.gunShotOnce();
             gunFires[2].gunFire();
         }
@@ -148,6 +164,7 @@ public class TimeCounter : MonoBehaviour
         if (atcing2)
         {
             _rigidbody2D.AddForce(Direction * 2, ForceMode2D.Impulse);
+            _audioSource.PlayOneShot(leg0);
             Leg0.GetComponent<PlayerDamageJudge>().startAttack();
         }
     }
@@ -157,6 +174,7 @@ public class TimeCounter : MonoBehaviour
         yield return new WaitForSeconds(atc3 * 0.333f);
         if (atcing3)
         {
+            _audioSource.PlayOneShot(leg1);
             _rigidbody2D.AddForce(Direction * 2, ForceMode2D.Impulse);
             Leg1.GetComponent<PlayerDamageJudge>().startAttack();
         }
@@ -165,6 +183,8 @@ public class TimeCounter : MonoBehaviour
     IEnumerator attack4()
     {
         yield return new WaitForSeconds(atc4 * 0.833f);
+        _audioSource.PlayOneShot(gunSound);
+        _audioSource.PlayOneShot(gunSound);
         FindObjectOfType<Gunshot>().gunShotlast();
         FindObjectOfType<Gunshot>().gunShotlast();
         gunFires[1].gunFire();
@@ -177,6 +197,7 @@ public class TimeCounter : MonoBehaviour
     {
         _rocket.GetComponent<RocketFire>().rocketFire();
         yield return new WaitForSeconds(rocket * 0.666f);
+        _audioSource.PlayOneShot(rocketSound);
         gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         _rigidbody2D.AddForce(-Direction*7,ForceMode2D.Impulse);
         _rocket.GetComponent<PlayerDamageJudge>().startAttack();
@@ -185,6 +206,7 @@ public class TimeCounter : MonoBehaviour
     IEnumerator Smash()
     {
         yield return new WaitForSeconds(smash * 0.5f);
+        _audioSource.PlayOneShot(smashSound);
         _rigidbody2D.AddForce(Direction*12,ForceMode2D.Impulse);
         gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         _smash.GetComponent<SmashFire>().smashFire();
@@ -194,6 +216,7 @@ public class TimeCounter : MonoBehaviour
     IEnumerator ShotGun()
     {
         yield return new WaitForSeconds(shotGun * 0.857f);
+        _audioSource.PlayOneShot(shotGunSound);
         _PlayerController.canControl = false;
         _rigidbody2D.AddForce(-Direction*9,ForceMode2D.Impulse);
         gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);

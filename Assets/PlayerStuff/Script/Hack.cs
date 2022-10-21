@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Platformer.Buff;
 using UnityEngine;
 using Platformer.Enemy;
 using Platformer.Gameplay;
@@ -14,7 +15,8 @@ public class Hack : MonoBehaviour
             var Hit = Schedule<EnemyHitted>();
             Hit.enemyData = col.GetComponent<EnemyData>();
             Hit.playerDamage = 180;
-            StartCoroutine(hackLast());
+            BuffControl enemyBuffControl = col.GetComponent<BuffControl>();
+            enemyBuffControl.AddBuff(new CodeChaosBuff(enemyBuffControl, BuffKind.CodeChaos, 5f));
         }
     }
 
@@ -30,10 +32,5 @@ public class Hack : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
-    IEnumerator hackLast()
-    {
-        
-        yield return new WaitForSeconds(10f);
-        //return
-    }
+    
 }
