@@ -6,7 +6,10 @@ public class GetSpeed : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        GameManager.instance.havespeed = true;
-        Destroy(gameObject);
+        if (collider.gameObject.tag == "Player")
+        {
+            GameManager.instance.havespeed = true;
+            Destroy(gameObject);
+        }
     }
 }

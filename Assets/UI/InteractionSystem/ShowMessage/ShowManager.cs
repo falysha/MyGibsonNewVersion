@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
+using TMPro;
 public class ShowManager : MonoBehaviour
 {
     private static ShowManager instance;//静态控制以便外部访问
@@ -11,9 +12,9 @@ public class ShowManager : MonoBehaviour
     [Header("对话框UI")]
     public GameObject ShowPanel;//总框
 
-    public Text Textdia;//文本框内容
+    public TextMeshProUGUI Textdia;//文本框内容
 
-    public Text NameTag;//名字框内容
+    public TextMeshProUGUI NameTag;//名字框内容
 
     public Image Image;//物品图像
 
@@ -40,8 +41,8 @@ public class ShowManager : MonoBehaviour
         return instance;
     }
     private void Start()//开始时重置
-    {
-        Close = GetComponent<Button>();
+    { 
+        Close.onClick.AddListener(ClosePanel);
         ShowIsPlaying = false;
         ShowPanel.SetActive(false);
     }
@@ -71,15 +72,8 @@ public class ShowManager : MonoBehaviour
 
     private void ContinueStory()//继续播放
     {
-        if (currentStory.canContinue)
-        {
-            Textdia.text = currentStory.Continue();
-            DisplayName();//展示姓名
-        }
-        else
-        {
-            StartCoroutine(ExitDialogueMode());
-        }
+        Textdia.text = "  " + currentStory.Continue();
+        DisplayName();//展示姓名
     }
     public void ClosePanel()
     {

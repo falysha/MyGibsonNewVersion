@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class DialogManager : MonoBehaviour
@@ -15,13 +16,15 @@ public class DialogManager : MonoBehaviour
 
     public GameObject continueIcon;//继续对话图像
 
-    public Text Textdia;//文本框内容
+    public TextMeshProUGUI Textdia;//文本框内容
 
-    public Text NameTag;//名字框内容
+    public TextMeshProUGUI NameTag;//名字框内容
 
-    public GameObject leftImage;//左边立绘
+    public GameObject PlayerImage;//主角立绘
 
-    public GameObject RightImage;//右边立绘
+    public GameObject KImage;//K立绘
+
+    public GameObject doctorImage;//博士立绘
 
     [SerializeField] private float typingSpeed = 0.04f;//打字速度
 
@@ -60,9 +63,9 @@ public class DialogManager : MonoBehaviour
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         continueIcon.SetActive(false);
-        leftImage.SetActive(false);
-        RightImage.SetActive(false);
-
+        PlayerImage.SetActive(false);
+        KImage.SetActive(false);
+        doctorImage.SetActive(false);
     }   
 
     private void Update()
@@ -88,11 +91,13 @@ public class DialogManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()//退出对话模式
     {
-        yield return new WaitForSeconds(10f);//等待0.2s后触发
+        yield return new WaitForSeconds(0.2f);//等待0.2s后触发
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-        leftImage.SetActive(false);
-        RightImage.SetActive(false);
+        PlayerImage.SetActive(false);
+        KImage.SetActive(false);
+        doctorImage.SetActive(false);
+
         Textdia.text = "";//清空对话框
     }
 
@@ -115,7 +120,7 @@ public class DialogManager : MonoBehaviour
     }
     private IEnumerator DisplayLine(string line)
     {
-        Textdia.text = "";//清空对话框
+        Textdia.text = "\t";//清空对话框
 
         canContinueToNextLine = false;
         continueIcon.SetActive(false);
@@ -177,20 +182,29 @@ public class DialogManager : MonoBehaviour
         if (tags.Count > 0)
         {
             NameTag.text =tags[0];
-            if(NameTag.text == "Lucy")
+            if(NameTag.text == "c")
             {
-                leftImage.SetActive(true);
-                RightImage.SetActive(false);
+                PlayerImage.SetActive(true);
+                KImage.SetActive(false);
+                doctorImage.SetActive(false);
             }
-            else if (NameTag.text == "Davin")
+            else if (NameTag.text == "k")
             {
-                RightImage.SetActive(true);
-                leftImage.SetActive(false);
+                KImage.SetActive(true);
+                PlayerImage.SetActive(false);
+                doctorImage.SetActive(false);
+            }
+            else if (NameTag.text == "Doctor")
+            {
+                KImage.SetActive(false);
+                PlayerImage.SetActive(false);
+                doctorImage.SetActive(true);
             }
             else
             {
-                leftImage.SetActive(false);
-                RightImage.SetActive(false);
+                PlayerImage.SetActive(false);
+                KImage.SetActive(false);
+                doctorImage.SetActive(false);
             }
         }
         else

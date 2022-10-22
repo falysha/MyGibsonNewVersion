@@ -7,7 +7,7 @@ using TMPro;
 public class SceneLoad : MonoBehaviour
 {
     public static SceneLoad instance;
-    public Animator animator;
+    public Animator animator;//动画绑定
     public GameObject BlackPanel;//总框
     public TextMeshProUGUI Textdia;//文本框内容
     public Story blackStory;//墨迹文件
@@ -16,7 +16,7 @@ public class SceneLoad : MonoBehaviour
     public void Awake()
     {
         BlackPanel.SetActive(false);
-        blackStory = new Story(inkJson.text);
+        blackStory = new Story(inkJson.text);//获取字体
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -29,18 +29,44 @@ public class SceneLoad : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public IEnumerator LoadScene(int index)
+    public IEnumerator LoadScene(int index)//加载下一场景
     {
-        
         BlackPanel.SetActive(true);
         animator.SetBool("FadeIn", true);
         animator.SetBool("FadeOut", false);
+        StartCoroutine(SoundManager.instance.FadeOut());
+        PlayerPrefs.DeleteAll();
         yield return new WaitForSeconds(2f);
         AsyncOperation async =  SceneManager.LoadSceneAsync(index);
         async.completed += OnloadedScene;
     }
+    public IEnumerator RELoadScene(int index)//重新加载当前场景
+    {
+        instance.Textdia.text = " ";
+        BlackPanel.SetActive(true);
+        animator.SetBool("FadeIn", true);
+        animator.SetBool("FadeOut", false);
+        yield return new WaitForSeconds(2f);
+        AsyncOperation async = SceneManager.LoadSceneAsync(index);
+        async.completed += OnREloadedScene;
+    }
 
-    public void OnloadedScene(AsyncOperation obj)
+    public void OnREloadedScene(AsyncOperation obj)//回调当前场景
+    {
+        GameManager.instance.m_player = GameObject.Find("Player");
+        if (GameManager.instance.m_player != null)
+        {
+            Vector3 vec = Vector3.zero;
+            vec.x = PlayerPrefs.GetFloat("PlayerPosX", GameManager.instance.m_player.transform.position.x);
+            vec.y = PlayerPrefs.GetFloat("PlayerPosY", GameManager.instance.m_player.transform.position.y);
+            vec.z = PlayerPrefs.GetFloat("PlayerPosZ", GameManager.instance.m_player.transform.position.z);
+            GameManager.instance.m_player.transform.position = vec;
+        }
+        animator.SetBool("FadeIn", false);
+        animator.SetBool("FadeOut", true);
+
+    }
+    public void OnloadedScene(AsyncOperation obj)//回调下一场景并更改音乐
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {

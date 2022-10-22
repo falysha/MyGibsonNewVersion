@@ -43,6 +43,5 @@ public class NextScene : MonoBehaviour
     {
         SceneLoad.instance.ContinueStory();
         StartCoroutine(SceneLoad.instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
-        
     }
 }

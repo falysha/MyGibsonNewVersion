@@ -6,7 +6,10 @@ public class GetSkill : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        GameManager.instance.haveskill = true;
-        Destroy(gameObject);
+        if (collider.gameObject.tag == "Player")
+        {
+            GameManager.instance.haveskill = true;
+            Destroy(gameObject);
+        }
     }
 }
