@@ -26,8 +26,9 @@ public class DialogTrigger : MonoBehaviour
             visualCue.SetActive(true);
             if(Input.GetButtonDown("interaction"))//»¥¶¯¼ü
             {
-                
                 DialogManager.GetInstance().EnterDialogueMode(inkJson);
+                visualCue.SetActive(false);
+                Destroy(gameObject);
             }
         }
         else
