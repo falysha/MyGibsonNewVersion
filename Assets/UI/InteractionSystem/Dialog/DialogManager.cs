@@ -39,11 +39,16 @@ public class DialogManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
+        if (instance != null && instance != this)
         {
-            Debug.LogWarning("在场景中找到多个对话管理器");
+            Destroy(this.gameObject);
+            return;
         }
-        instance = this;
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
     public static DialogManager GetInstance()//获取组件

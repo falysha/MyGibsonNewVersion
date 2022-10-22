@@ -15,18 +15,24 @@ public class ShowManager : MonoBehaviour
 
     public Text NameTag;//名字框内容
 
+    public Image Image;//物品图像
+
     public Button Close;//名字框内容
     public bool ShowIsPlaying { get; private set; }//判断是否出现
 
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
-            Debug.LogWarning("在场景中找到多个对话管理器");
+            Destroy(this.gameObject);
+            return;
         }
-        instance = this;
-        
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
     public static ShowManager GetInstance()//获取组件
