@@ -1,12 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.VirtualTexturing;
-using Platformer.Gameplay;
+
 public class SkillController : MonoBehaviour
 {
     public bool isHackReady = true;
@@ -25,7 +21,7 @@ public class SkillController : MonoBehaviour
     private Volume _volume;
     private VolumeProfile speedUpVolume;
     private VolumeProfile speedDownVolume;
-    private VolumeProfile hackVolume;
+    private VolumeProfile defaultVolumeProfile;
     private Shadow _shadow;
     // Start is called before the first frame update
 
@@ -39,8 +35,8 @@ public class SkillController : MonoBehaviour
         _volume = GameObject.Find("Global Volume").GetComponent<Volume>();
         speedUpVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedUp");
         speedDownVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedDown");
-        hackVolume = Resources.Load<VolumeProfile>("CameraStuff/Hack");
         _shadow = FindObjectOfType<Shadow>();
+        defaultVolumeProfile = _volume.profile;
     }
     
     private void FixedUpdate()
@@ -150,7 +146,7 @@ public class SkillController : MonoBehaviour
         yield return new WaitForSeconds(10f);
         
         _shadow.closeShadow();
-        _volume.profile = null;
+        _volume.profile = defaultVolumeProfile;
         _speedState = SpeedState.Empty;
         _playerController.Strength = 10f;
         _playerController.horizontalMoveSpeed = 10f;
@@ -166,7 +162,7 @@ public class SkillController : MonoBehaviour
         _playerHealth.locked = true;
         yield return new WaitForSeconds(10f);
         _playerHealth.locked = false;
-        _volume.profile = null;
+        _volume.profile = defaultVolumeProfile;
         _speedState = SpeedState.Empty;
         hackCD = 20f;
         shotGunCD = 10f;

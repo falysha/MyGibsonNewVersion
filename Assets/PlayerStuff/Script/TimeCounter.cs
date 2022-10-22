@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using Object = UnityEngine.Object;
+using UnityEngine.Rendering;
+
 
 public class TimeCounter : MonoBehaviour
 {
@@ -42,7 +42,9 @@ public class TimeCounter : MonoBehaviour
     private AudioClip smashSound;
     private AudioClip shotGunSound;
     
-    
+    private VolumeProfile hackVolume;
+    private VolumeProfile defaultVolumeProfile;
+    private Volume _volume;
 
     private void Awake()
     {
@@ -79,6 +81,7 @@ public class TimeCounter : MonoBehaviour
         leg0 = Resources.Load<AudioClip>("Sounds/leg0");
         
         leg1 = Resources.Load<AudioClip>("Sounds/leg1");
+
     }
     
     void Update()

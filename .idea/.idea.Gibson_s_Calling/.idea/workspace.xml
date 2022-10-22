@@ -11,11 +11,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/Script/TimeCounter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/StateScript/KnifeAttackRefresh.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/run.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.sprite@1.0.0/Editor/SpriteEditor/SpriteEditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.7/Editor/ShaderGenerator/ShaderGeneratorMenu.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@12.1.7/Runtime/2D/Light2DManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,6 +109,7 @@
       <workItem from="1666164084737" duration="8056000" />
       <workItem from="1666245962930" duration="14996000" />
       <workItem from="1666344861928" duration="8551000" />
+      <workItem from="1666427408395" duration="1751000" />
     </task>
     <servers />
   </component>
