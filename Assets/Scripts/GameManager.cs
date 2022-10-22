@@ -30,16 +30,15 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         m_player = GameObject.Find("Player");
-        /*if(m_player != null)
+        if (m_player!=null)
         {
             Vector3 vec = Vector3.zero;
-            vec.x = PlayerPrefs.GetFloat("PlayerPosX", wherePlayer.transform.position.x);
-            vec.y = PlayerPrefs.GetFloat("PlayerPosY", wherePlayer.transform.position.y);
-            vec.z = PlayerPrefs.GetFloat("PlayerPosX", wherePlayer.transform.position.z);
+            vec.x = PlayerPrefs.GetFloat("PlayerPosX", m_player.transform.position.x);
+            vec.y = PlayerPrefs.GetFloat("PlayerPosY", m_player.transform.position.y);
+            vec.z = PlayerPrefs.GetFloat("PlayerPosZ", m_player.transform.position.z);
             m_player.transform.position = vec;
-        }*/
+        }
     }
-
     public void LoadScenenext()
     {
         SceneLoad.instance.ContinueStory();

@@ -35,12 +35,14 @@ public class SceneLoad : MonoBehaviour
         animator.SetBool("FadeIn", true);
         animator.SetBool("FadeOut", false);
         StartCoroutine(SoundManager.instance.FadeOut());
+        PlayerPrefs.DeleteAll();
         yield return new WaitForSeconds(2f);
         AsyncOperation async =  SceneManager.LoadSceneAsync(index);
         async.completed += OnloadedScene;
     }
     public IEnumerator RELoadScene(int index)//重新加载当前场景
     {
+        instance.Textdia.text = " ";
         BlackPanel.SetActive(true);
         animator.SetBool("FadeIn", true);
         animator.SetBool("FadeOut", false);
@@ -51,6 +53,15 @@ public class SceneLoad : MonoBehaviour
 
     public void OnREloadedScene(AsyncOperation obj)//回调当前场景
     {
+        GameManager.instance.m_player = GameObject.Find("Player");
+        if (GameManager.instance.m_player != null)
+        {
+            Vector3 vec = Vector3.zero;
+            vec.x = PlayerPrefs.GetFloat("PlayerPosX", GameManager.instance.m_player.transform.position.x);
+            vec.y = PlayerPrefs.GetFloat("PlayerPosY", GameManager.instance.m_player.transform.position.y);
+            vec.z = PlayerPrefs.GetFloat("PlayerPosZ", GameManager.instance.m_player.transform.position.z);
+            GameManager.instance.m_player.transform.position = vec;
+        }
         animator.SetBool("FadeIn", false);
         animator.SetBool("FadeOut", true);
 
