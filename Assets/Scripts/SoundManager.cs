@@ -33,15 +33,15 @@ public class SoundManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            SkyMusic();
+            Undermusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-             BarMusic();
+            SkyMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
-             Undermusic();
+            BarMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 4)
         {

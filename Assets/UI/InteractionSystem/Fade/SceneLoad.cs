@@ -74,15 +74,15 @@ public class SceneLoad : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            SoundManager.instance.SkyMusic();
+            SoundManager.instance.Undermusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            SoundManager.instance.BarMusic();
+            SoundManager.instance.SkyMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
-            SoundManager.instance.Undermusic();
+            SoundManager.instance.BarMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
