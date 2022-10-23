@@ -7,10 +7,12 @@ public class DialogTrigger : MonoBehaviour
     [Header("弹出UI")]
     [SerializeField] public GameObject visualCue;//互动图标
 
-    private bool playerInRange;//玩家是否处于对话中
+    private bool playerInRange;//玩家是否可互动
 
     [Header("墨水文件")]
     [SerializeField] public TextAsset inkJson;//json文件
+
+    public int dialogueobj = 0;//对话对象
 
 
     private void Awake()
@@ -26,6 +28,7 @@ public class DialogTrigger : MonoBehaviour
             visualCue.SetActive(true);
             if(Input.GetButtonDown("interaction"))//互动键
             {
+                DialogManager.instance.diagoueobj = dialogueobj;
                 DialogManager.GetInstance().EnterDialogueMode(inkJson);
                 visualCue.SetActive(false);
                 Destroy(gameObject);

@@ -17,6 +17,6 @@ namespace Platformer.Gameplay
         {
             _playerHealth.realHealth = 100;
             _skillController.Fury = 100;
-        }
+        } 
     }
 }

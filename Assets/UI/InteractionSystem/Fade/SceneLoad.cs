@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Ink.Runtime;
-using TMPro;
+using UnityEngine.UI;
 public class SceneLoad : MonoBehaviour
 {
     public static SceneLoad instance;
     public Animator animator;//动画绑定
     public GameObject BlackPanel;//总框
-    public TextMeshProUGUI Textdia;//文本框内容
+    public Text Textdia;//文本框内容
     public Story blackStory;//墨迹文件
     public TextAsset inkJson;//文本
 

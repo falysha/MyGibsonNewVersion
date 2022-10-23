@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualCue: {fileID: 1891679881075495638}
   inkJson: {fileID: 4900000, guid: 3a2355afb2a70004dad4e12e708a20db, type: 3}
+  sprite: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &1891679881075495638
 GameObject:
@@ -221,7 +222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1891679881075495636
 Transform:
   m_ObjectHideFlags: 0
@@ -230,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891679881075495638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.58, y: 0.44, z: 0}
+  m_LocalPosition: {x: -0.548, y: -0.066, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -278,7 +279,7 @@ SpriteRenderer:
   m_SortingLayerID: -2045944797
   m_SortingLayer: 5
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1777009998, guid: d5c54c551f28dfa4ba14fec6cc49e97f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfbd973aaf9385d4fb40af6002274775, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -12,9 +12,9 @@ public class ShowManager : MonoBehaviour
     [Header("对话框UI")]
     public GameObject ShowPanel;//总框
 
-    public TextMeshProUGUI Textdia;//文本框内容
+    public Text Textdia;//文本框内容
 
-    public TextMeshProUGUI NameTag;//名字框内容
+    public Text NameTag;//名字框内容
 
     public Image Image;//物品图像
 
@@ -56,6 +56,7 @@ public class ShowManager : MonoBehaviour
     }
     public void EnterDialogueMode(TextAsset inkJson)//进入对话模式
     {
+        GameManager.instance.isTalking();
         currentStory = new Story(inkJson.text);//读取text的json文件
         ShowIsPlaying = true;
         ShowPanel.SetActive(true);
@@ -68,11 +69,12 @@ public class ShowManager : MonoBehaviour
         ShowIsPlaying = false;
         ShowPanel.SetActive(false);
         Textdia.text = "";//清空对话框
+        GameManager.instance.isPlaying();
     }
 
     private void ContinueStory()//继续播放
     {
-        Textdia.text = "  " + currentStory.Continue();
+        Textdia.text = "<color=#FFFFFF00>jayw</color>" + currentStory.Continue();
         DisplayName();//展示姓名
     }
     public void ClosePanel()

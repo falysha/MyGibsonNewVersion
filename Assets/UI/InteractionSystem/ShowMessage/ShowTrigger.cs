@@ -12,6 +12,7 @@ public class ShowTrigger : MonoBehaviour
     [Header("墨水文件")]
     public TextAsset inkJson;//json文件
 
+    public SpriteRenderer sprite;//读取图像
 
     private void Awake()
     {
@@ -26,8 +27,8 @@ public class ShowTrigger : MonoBehaviour
             visualCue.SetActive(true);
             if (Input.GetButtonDown("interaction"))//互动键
             {
+                ShowManager.GetInstance().Image.sprite = sprite.sprite;
                 ShowManager.GetInstance().EnterDialogueMode(inkJson);
-                
             }
         }
         else

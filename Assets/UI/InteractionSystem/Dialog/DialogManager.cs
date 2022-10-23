@@ -3,28 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
-using TMPro;
 
 
 public class DialogManager : MonoBehaviour
 {
-    private static DialogManager instance;//静态控制以便外部访问
+    public static DialogManager instance;//静态控制以便外部访问
     public Story currentStory;//墨迹文件
+    public int diagoueobj;//对话对象
 
     [Header("对话框UI")]
     public GameObject dialoguePanel;//总框
 
     public GameObject continueIcon;//继续对话图像
 
-    public TextMeshProUGUI Textdia;//文本框内容
+    public Text Textdia;//文本框内容
 
-    public TextMeshProUGUI NameTag;//名字框内容
+    public Text NameTag;//名字框内容
 
     public GameObject PlayerImage;//主角立绘
+    public Sprite[] PlayerPic;//主角立绘状态
 
     public GameObject KImage;//K立绘
+    public Sprite[] KPic;//K立绘状态
 
     public GameObject doctorImage;//博士立绘
+    public Sprite[] doctorPic;//博士立绘状态
 
     [SerializeField] private float typingSpeed = 0.04f;//打字速度
 
@@ -66,6 +69,7 @@ public class DialogManager : MonoBehaviour
         PlayerImage.SetActive(false);
         KImage.SetActive(false);
         doctorImage.SetActive(false);
+        diagoueobj = 0;
     }   
 
     private void Update()
@@ -83,9 +87,24 @@ public class DialogManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJson)//进入对话模式
     {
+        if(diagoueobj == 0)//跟普通npc对话
+        {
+            PlayerImage.SetActive(true);
+        }
+        else if(diagoueobj == 1)//跟K对话
+        {
+            PlayerImage.SetActive(true);
+            KImage.SetActive(true);
+        }
+        else if(diagoueobj == 2)//跟博士对话
+        {
+            PlayerImage.SetActive(true);
+            doctorImage.SetActive(true);
+        }
         currentStory = new Story(inkJson.text);//读取text的json文件
         DialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        GameManager.instance.isTalking();
         ContinueStory();
     }
 
@@ -97,7 +116,7 @@ public class DialogManager : MonoBehaviour
         PlayerImage.SetActive(false);
         KImage.SetActive(false);
         doctorImage.SetActive(false);
-
+        GameManager.instance.isPlaying();
         Textdia.text = "";//清空对话框
     }
 
@@ -120,7 +139,7 @@ public class DialogManager : MonoBehaviour
     }
     private IEnumerator DisplayLine(string line)
     {
-        Textdia.text = "\t";//清空对话框
+        Textdia.text = "<color=#FFFFFF00>jayw</color>";//首行缩进
 
         canContinueToNextLine = false;
         continueIcon.SetActive(false);
@@ -182,29 +201,72 @@ public class DialogManager : MonoBehaviour
         if (tags.Count > 0)
         {
             NameTag.text =tags[0];
-            if(NameTag.text == "c")
+            if (NameTag.text == "Mayer")
             {
-                PlayerImage.SetActive(true);
-                KImage.SetActive(false);
-                doctorImage.SetActive(false);
+                PlayerImage.GetComponent<Image>().sprite = PlayerPic[1];
+                if (KImage != null)
+                {
+                    KImage.GetComponent<Image>().sprite = KPic[0];
+                }
+                if (doctorImage != null)
+                {
+                    doctorImage.GetComponent<Image>().sprite = doctorPic[0];
+                }
             }
-            else if (NameTag.text == "k")
+            else if (NameTag.text == "K")
             {
-                KImage.SetActive(true);
-                PlayerImage.SetActive(false);
-                doctorImage.SetActive(false);
+                KImage.GetComponent<Image>().sprite = KPic[1];
+                if (PlayerImage != null)
+                {
+                    PlayerImage.GetComponent<Image>().sprite = PlayerPic[0];
+                }
+                if (doctorImage != null)
+                {
+                    doctorImage.GetComponent<Image>().sprite = doctorPic[0];
+                }
             }
-            else if (NameTag.text == "Doctor")
+            else if (NameTag.text == "Tyrell")
             {
-                KImage.SetActive(false);
-                PlayerImage.SetActive(false);
-                doctorImage.SetActive(true);
+                doctorImage.GetComponent<Image>().sprite = doctorPic[1];
+
+                if (PlayerImage != null)
+                {
+                    PlayerImage.GetComponent<Image>().sprite = PlayerPic[0];
+                }
+                if (KImage != null)
+                {
+                    KImage.GetComponent<Image>().sprite = KPic[0];
+                }
+            }
+            else if (NameTag.text == "")
+            {
+                if (PlayerImage != null)
+                {
+                    PlayerImage.GetComponent<Image>().sprite = PlayerPic[0];
+                }
+                if (KImage != null)
+                {
+                    KImage.GetComponent<Image>().sprite = KPic[0];
+                }
+                if (doctorImage != null)
+                {
+                    doctorImage.GetComponent<Image>().sprite = doctorPic[0];
+                }
             }
             else
             {
-                PlayerImage.SetActive(false);
-                KImage.SetActive(false);
-                doctorImage.SetActive(false);
+                if (PlayerImage != null)
+                {
+                    PlayerImage.GetComponent<Image>().sprite = PlayerPic[0];
+                }
+                if (KImage != null)
+                {
+                    KImage.GetComponent<Image>().sprite = KPic[0];
+                }
+                if (doctorImage != null)
+                {
+                    doctorImage.GetComponent<Image>().sprite = doctorPic[0];
+                }
             }
         }
         else
