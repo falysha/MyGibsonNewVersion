@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/MainLevel.unity
     guid: dbbe46e0549229745876169c74c0145a
+  - enabled: 1
+    path: Assets/Scene/TopDialogue.unity
+    guid: 2a58fd84270f96a43af2b41cd22bb9ff
+  - enabled: 1
+    path: Assets/Scene/BarOff.unity
+    guid: 63adb26b3b491c54b9ecd49a582524bf
   m_configObjects: {}

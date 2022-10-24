@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
-
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
     public static DialogManager instance;//静态控制以便外部访问
     public Story currentStory;//墨迹文件
     public int diagoueobj;//对话对象
+    public GameObject timeline;
+    public GameObject player;
 
     [Header("对话框UI")]
     public GameObject dialoguePanel;//总框
+
 
     public GameObject continueIcon;//继续对话图像
 
@@ -63,6 +67,7 @@ public class DialogManager : MonoBehaviour
     }
     private void Start()//开始时重置
     {
+        player = GameObject.Find("Player");
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         continueIcon.SetActive(false);
@@ -101,15 +106,21 @@ public class DialogManager : MonoBehaviour
             PlayerImage.SetActive(true);
             doctorImage.SetActive(true);
         }
+        if (player!=null)
+        {
+            player.GetComponent<Animator>().SetBool("run", false);
+        }
         currentStory = new Story(inkJson.text);//读取text的json文件
         DialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         GameManager.instance.isTalking();
+
         ContinueStory();
     }
 
     private IEnumerator ExitDialogueMode()//退出对话模式
     {
+        timeline = GameObject.Find("Timeline");
         yield return new WaitForSeconds(0.2f);//等待0.2s后触发
         DialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -118,6 +129,14 @@ public class DialogManager : MonoBehaviour
         doctorImage.SetActive(false);
         GameManager.instance.isPlaying();
         Textdia.text = "";//清空对话框
+        if(timeline != null)
+        {
+            timeline.GetComponent<PlayableDirector>().Play();
+        }
+        if(SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            GameManager.instance.LoadScenenext();
+        }
     }
 
     private void ContinueStory()//继续播放

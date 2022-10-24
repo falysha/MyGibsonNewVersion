@@ -13,6 +13,9 @@ public class SceneLoad : MonoBehaviour
     public Story blackStory;//墨迹文件
     public TextAsset inkJson;//文本
 
+    public TextAsset bar;//json文件
+    public int dialogueobj = 0;//对话对象
+
     public void Awake()
     {
         BlackPanel.SetActive(false);
@@ -36,9 +39,19 @@ public class SceneLoad : MonoBehaviour
         animator.SetBool("FadeOut", false);
         StartCoroutine(SoundManager.instance.FadeOut());
         PlayerPrefs.DeleteAll();
-        yield return new WaitForSeconds(2f);
-        AsyncOperation async =  SceneManager.LoadSceneAsync(index);
-        async.completed += OnloadedScene;
+        if(SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            yield return new WaitForSeconds(2f);
+            AsyncOperation asyncy = SceneManager.LoadSceneAsync(0);
+            asyncy.completed += OnloadedScene;
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+            AsyncOperation async = SceneManager.LoadSceneAsync(index);
+            async.completed += OnloadedScene;
+        }
+
     }
     public IEnumerator RELoadScene(int index)//重新加载当前场景
     {
@@ -87,6 +100,15 @@ public class SceneLoad : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
             SoundManager.instance.CompanyMusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            SoundManager.instance.TopMusic();
+        }
+        else if(SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            DialogManager.instance.diagoueobj = dialogueobj;
+            DialogManager.GetInstance().EnterDialogueMode(bar);
         }
         animator.SetBool("FadeIn", false);
         animator.SetBool("FadeOut", true);

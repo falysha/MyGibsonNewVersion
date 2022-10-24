@@ -15,7 +15,6 @@ public class ScroolContent : MonoBehaviour
     public void Start()
     {
         myGorectTransform = gameObject.GetComponent<RectTransform>();
-        AutoS();
     }
     public IEnumerator autoScroll()
     {

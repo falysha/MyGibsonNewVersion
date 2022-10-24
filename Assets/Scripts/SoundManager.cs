@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource backaudio;//±≥æ∞“Ù¿÷
     public static bool KeepFadeIn = false, KeepFadeOut = false;
 
-    public AudioClip MenuAudio,BarAudio, underAudio, skyAudio, CompanyAudio;//±≥æ∞“Ù¿÷
+    public AudioClip MenuAudio,BarAudio, underAudio, skyAudio, CompanyAudio,topAudio;//±≥æ∞“Ù¿÷
 
     public void Awake()
     {
@@ -39,7 +39,7 @@ public class SoundManager : MonoBehaviour
         {
             SkyMusic();
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        else if (SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 6)
         {
             BarMusic();
         }
@@ -47,8 +47,18 @@ public class SoundManager : MonoBehaviour
         {
             CompanyMusic();
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            TopMusic();
+        }
     }
-    public void SkyMusic()//ÃÏÃ®≥°æ∞“Ù¿÷
+    public void SkyMusic()//–¬ ÷ÃÏø’≥°æ∞“Ù¿÷
+    {
+        instance.backaudio.Stop();
+        backaudio.clip = skyAudio;
+        StartCoroutine(FadeIn());
+    }
+    public void TopMusic()//ÃÏÃ®≥°æ∞“Ù¿÷
     {
         instance.backaudio.Stop();
         backaudio.clip = skyAudio;

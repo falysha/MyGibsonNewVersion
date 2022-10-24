@@ -13,56 +13,19 @@ namespace BBUnity.Actions
     [Help("Doge when player walk too close.")]
     public partial class Doge : GOAction
     {
-        [InParam("Left Position")]
-        public float leftPos;
-        [InParam("Right Position")]
-        public float rightPos;
-
         private EnemyData enemyData;
         /// <summary>Initialization Method of Doge.</summary>
         public override void OnStart()
         {
-            Debug.Log("Doge");
+            //Debug.Log("KeepStill");
             enemyData = gameObject.GetComponent<EnemyData>();
-            //Get doge destination
-            var playerPos = enemyData.player.transform.position.x;
-            var rightSafePos = playerPos + enemyData.maxUnsafeDistance;
-            var leftSafePos = playerPos - enemyData.maxUnsafeDistance;
-            var previousPos = gameObject.transform.position;
-            Debug.Log(Mathf.Min(rightPos, playerPos + enemyData.maxHitDistance));
-            if (leftPos > leftSafePos) 
-            {
-                gameObject.transform.position = new Vector3(UnityEngine.Random.Range(rightSafePos, Mathf.Min(rightPos,playerPos+enemyData.maxHitDistance)), previousPos.y, previousPos.z);
-                enemyData.ifFaceRight = false;
-            }
-            else if(rightPos < rightSafePos)
-            {
-                gameObject.transform.position = new Vector3(UnityEngine.Random.Range(Mathf.Max(leftPos, playerPos - enemyData.maxHitDistance), leftSafePos), previousPos.y, previousPos.z);
-                enemyData.ifFaceRight = true;
-            }
-            else
-            {
-                var randomNum = UnityEngine.Random.Range(0, 100);
-                if (randomNum < 50)
-                {
-                    gameObject.transform.position = new Vector3(UnityEngine.Random.Range(rightSafePos, Mathf.Min(rightPos, playerPos + enemyData.maxHitDistance)), previousPos.y, previousPos.z);
-                    enemyData.ifFaceRight = false;
-                }
-                else
-                {
-                    gameObject.transform.position = new Vector3(UnityEngine.Random.Range(Mathf.Max(leftPos, playerPos - enemyData.maxHitDistance), leftSafePos), previousPos.y, previousPos.z);
-                    enemyData.ifFaceRight = true;
-                }
-            }
-
-            enemyData.ifCanDoge = false;
         }
 
         /// <summary>Method of Update of Doge </summary>
         /// <remarks>Enemy will doge when player walk too close.</remarks>
         public override TaskStatus OnUpdate()
         {
-            if (!enemyData.ifCanDoge)
+            if (enemyData.ifPlayerCanBeAttacked)
                 return TaskStatus.COMPLETED;
             return TaskStatus.RUNNING;
         }

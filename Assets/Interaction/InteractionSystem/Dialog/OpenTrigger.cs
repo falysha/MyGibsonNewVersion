@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class OpenTrigger : MonoBehaviour
 {
     [Header("Ä«Ë®ÎÄ¼þ")]

@@ -49,6 +49,8 @@ MonoBehaviour:
   BlackPanel: {fileID: 2240995337364520723}
   Textdia: {fileID: 2499387246152610531}
   inkJson: {fileID: 4900000, guid: 6922b3f6a915aed45ad913278a7b41d0, type: 3}
+  bar: {fileID: 4900000, guid: 3fafa384339c041478e01f4618c6c461, type: 3}
+  dialogueobj: 0
 --- !u!1 &2240995337364520723
 GameObject:
   m_ObjectHideFlags: 0

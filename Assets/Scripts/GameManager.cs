@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
     public bool havespeed = false;
@@ -30,7 +31,20 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         m_player = GameObject.Find("Player");
+        PlayerPrefs.DeleteAll();
         if (m_player!=null)
+        {
+            Vector3 vec = Vector3.zero;
+            vec.x = PlayerPrefs.GetFloat("PlayerPosX", m_player.transform.position.x);
+            vec.y = PlayerPrefs.GetFloat("PlayerPosY", m_player.transform.position.y);
+            vec.z = PlayerPrefs.GetFloat("PlayerPosZ", m_player.transform.position.z);
+            m_player.transform.position = vec;
+        }
+    }
+
+    public void UpdatePosition()
+    {
+        if (m_player != null)
         {
             Vector3 vec = Vector3.zero;
             vec.x = PlayerPrefs.GetFloat("PlayerPosX", m_player.transform.position.x);
@@ -70,6 +84,10 @@ public class GameManager : MonoBehaviour
     }
     public void isTalking()//正在说话
     {
+        if (m_player != null)
+        {
+            m_player.GetComponent<Animator>().SetBool("run",false);
+        }
         instance.State = GameState.IsTalking;
     }
 }

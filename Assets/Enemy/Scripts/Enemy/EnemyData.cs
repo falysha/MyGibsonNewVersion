@@ -61,12 +61,6 @@ namespace Platformer.Enemy
         public float dogeCD;
 
         /// <summary>
-        /// Interval between skills
-        /// </summary>
-        [Tooltip("Interval between two skills")]
-        public float skillCD;
-
-        /// <summary>
         /// The length of hitted animation
         /// </summary>
         [Tooltip("The length of hitted animation")]
@@ -77,12 +71,6 @@ namespace Platformer.Enemy
         /// </summary>
         [Tooltip("The length of died animation")]
         public float diedTime;
-
-        /// <summary>
-        /// The length of skill animation
-        /// </summary>
-        [Tooltip("The length of skill animation")]
-        public float skillTime;
 
         /// <summary>
         /// The max distance enemy can hit player.
@@ -121,22 +109,10 @@ namespace Platformer.Enemy
         public bool ifCanAttack = true;
 
         /// <summary>
-        /// If enemy can doge, the value should be true.
+        /// If enemy can attack player, the value should be true.
         /// </summary>
         /// [NonSerialized]
         public bool ifCanDoge = true;
-
-        /// <summary>
-        /// If enemy can release skill, the value should be true.
-        /// </summary>
-        /// [NonSerialized]
-        public bool SkillAllowed = false;
-
-        /// <summary>
-        /// If enemy's skill is prepared, the value should be true.
-        /// </summary>
-        /// [NonSerialized]
-        public bool ifSkillPrepared = true;
 
         /// <summary>
         /// The debuff stack in the enemy
@@ -164,7 +140,7 @@ namespace Platformer.Enemy
         /// </summary>
         public bool ifPlayerCanBeAttacked
         {
-            get { return (Mathf.Abs(transform.position.x - player.transform.position.x)) <= maxHitDistance; }
+            get { return (transform.position - player.transform.position).sqrMagnitude <= maxHitDistance; }
         }
 
         /// <summary>
@@ -172,7 +148,7 @@ namespace Platformer.Enemy
         /// </summary>
         public bool ifPlayerTooClose
         {
-            get { return (Mathf.Abs(transform.position.x - player.transform.position.x)) <= maxUnsafeDistance; }
+            get { return (transform.position - player.transform.position).sqrMagnitude <= maxUnsafeDistance; }
         }
     }
 
@@ -182,9 +158,6 @@ namespace Platformer.Enemy
         Walk,
         Hitted,
         Attack,
-        Die,
-        Skill_1,
-        Skill_2,
-        Skill_3
+        Die
     }
 }

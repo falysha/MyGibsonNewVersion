@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Recompile Ink.meta
 guid: 1506a2a93457ff64996ff90ef1107fc8
-========
-guid: 4f2e153120865604a93152413b4e4fda
->>>>>>>> e382c50d46a388deba9e21a991532e626622b1ca:Assets/Enemy/BehaviorBricks/Actions/EliteEnemy.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

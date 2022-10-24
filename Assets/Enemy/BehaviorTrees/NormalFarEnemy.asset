@@ -50,34 +50,34 @@ MonoBehaviour:
     id=\"9\" />\r\n          <ActionNode id=\"10\" />\r\n          <ConditionEvalNode
     id=\"11\" />\r\n        </nodes>\r\n      </_nodes>\r\n    </BehaviorTree>\r\n   
     <RepeatDecorator id=\"1\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"481.9638 -75.57131\" name=\"Repeat\" description=\"Repeats
+    selected=\"False\" position=\"530.9996 179.0834\" name=\"Repeat\" description=\"Repeats
     the execution of its child node\" cardinality=\"1\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <RepeatDecorator id=\"1\" />\r\n       
     </data>\r\n      </_data>\r\n    </RepeatDecorator>\r\n    <PrioritySelectorNode
     id=\"7\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"423.7421 124.7897\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
+    position=\"472.7779 379.4443\" name=\"Priority Selector\" description=\"\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <PrioritySelectorNode
     id=\"7\" />\r\n          <RepeatDecorator id=\"1\" />\r\n        </data>\r\n     
     </_data>\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode id=\"9\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"367.2608
-    773.3082\" name=\"Perception/IsTargetCanBeAttacked\" description=\"Eval\" cardinality=\"1\"
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"416.2966
+    1027.963\" name=\"Perception/IsTargetCanBeAttacked\" description=\"Eval\" cardinality=\"1\"
     hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ConditionEvalNode
     id=\"9\" />\r\n          <PrioritySelectorNode id=\"7\" />\r\n        </data>\r\n     
     </_data>\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"8\">\r\n      <_data>\r\n       
-    <data breakpoint=\"0\" selected=\"False\" position=\"158.7422 358.1235\" name=\"Navigation/HitPlayer\"
+    <data breakpoint=\"0\" selected=\"False\" position=\"207.7779 612.7778\" name=\"Navigation/HitPlayer\"
     description=\"Hit Player and make some damage to player.\" cardinality=\"0\"
     hasParent=\"False\">\r\n          <BehaviorTree id=\"0\" />\r\n          <ActionNode
     id=\"8\" />\r\n        </data>\r\n      </_data>\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"11\">\r\n      <_data>\r\n        <data breakpoint=\"0\"
-    selected=\"False\" position=\"1102.815 779.9741\" name=\"AlwaysTrue\" description=\"Eval\"
+    selected=\"False\" position=\"1151.851 1034.629\" name=\"AlwaysTrue\" description=\"Eval\"
     cardinality=\"1\" hasParent=\"True\">\r\n          <BehaviorTree id=\"0\" />\r\n         
     <ConditionEvalNode id=\"11\" />\r\n          <PrioritySelectorNode id=\"7\" />\r\n       
     </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"10\">\r\n     
-    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"658.7424
-    351.4567\" name=\"Navigation/AlwaysStill\" description=\"Always keep still except
+    <_data>\r\n        <data breakpoint=\"0\" selected=\"False\" position=\"707.778
+    606.1111\" name=\"Navigation/AlwaysStill\" description=\"Always keep still except
     attacking player.\" cardinality=\"0\" hasParent=\"False\">\r\n          <BehaviorTree
     id=\"0\" />\r\n          <ActionNode id=\"10\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n  </editorInfo>\r\n</BehaviorBricks>"
-  zoom: 0.7
+  zoom: 0.6
   subslist: []
   _guid: 07e1633e0edf1d440997e8f43dea8304

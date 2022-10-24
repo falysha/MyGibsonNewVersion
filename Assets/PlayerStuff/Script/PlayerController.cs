@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canControl && !flashing)
+        if (canControl && !flashing && GameManager.instance.State == GameState.IsPlaying)
         {
             horizontalMove();
             knifeAttackStateIn();

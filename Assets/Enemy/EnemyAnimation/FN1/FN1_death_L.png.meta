@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FN1_death_L_3
+      name: FN1_death_L_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,7 +125,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FN1_death_L_2
+      name: FN1_death_L_1
       rect:
         serializedVersion: 2
         x: 94
@@ -146,7 +146,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FN1_death_L_1
+      name: FN1_death_L_2
       rect:
         serializedVersion: 2
         x: 188
@@ -167,7 +167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FN1_death_L_0
+      name: FN1_death_L_3
       rect:
         serializedVersion: 2
         x: 282
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FN1_death_L_0: 2125395997
-      FN1_death_L_3: -787761168
-      FN1_death_L_2: -2112401977
-      FN1_death_L_1: -171342446
+      FN1_death_L_0: -787761168
+      FN1_death_L_3: 2125395997
+      FN1_death_L_2: -171342446
+      FN1_death_L_1: -2112401977
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

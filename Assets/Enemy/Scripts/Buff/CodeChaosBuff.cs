@@ -50,6 +50,7 @@ namespace Platformer.Buff
             m_buffControl.EnemyData.moveSpeed = moveSpeed;
             m_buffControl.EnemyData.attackCD = attackCD;
             m_buffControl.EnemyData.dogeCD = dogeCD;
+            
             m_buffControl.EnemyData.damage = damage;
         }
     }

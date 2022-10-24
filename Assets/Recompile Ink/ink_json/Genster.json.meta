@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b5435bbaf4e66d242b8f947bdaa6f79c
 PrefabImporter:
+=======
+guid: 331c59600b38da84c83ff119765eda93
+TextScriptImporter:
+>>>>>>> parent of bc5ed9b (Merge branch 'main' of https://github.com/PunkerFu/Gibson_s_Calling)
   externalObjects: {}
   userData: 
   assetBundleName: 

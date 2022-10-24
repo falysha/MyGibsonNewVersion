@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backaudio: {fileID: 0}
   MenuAudio: {fileID: 8300000, guid: f190c91537fde8540b8a5bc2d3c58315, type: 3}
-  BarAudio: {fileID: 8300000, guid: a4a9f28ff28fb0d4281047efc686072a, type: 3}
+  BarAudio: {fileID: 8300000, guid: 56046c6ad0fe5f642a684231d2f69a05, type: 3}
   underAudio: {fileID: 8300000, guid: b18e52eee16c5d74da8e6ea576bae77b, type: 3}
   skyAudio: {fileID: 8300000, guid: de8a545f8bae996469682a8ef964bbd7, type: 3}
-  CompanyAudio: {fileID: 0}
+  CompanyAudio: {fileID: 8300000, guid: d35d766813ee71b41bf61f23e242dc35, type: 3}
+  topAudio: {fileID: 0}

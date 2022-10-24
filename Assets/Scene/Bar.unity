@@ -1454,14 +1454,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237293936}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.119, y: 0.164, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.181, y: 0.201, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807343202}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &237293938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3001,7 +3001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualCue: {fileID: 1128226747}
-  inkJson: {fileID: 4900000, guid: 7422262ff761ee84bbf42442d37c5bbd, type: 3}
+  inkJson: {fileID: 4900000, guid: 3682892c00cc55f49a1875e1c38b483f, type: 3}
   dialogueobj: 0
 --- !u!1 &951074388
 GameObject:
@@ -4939,6 +4939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2240995337364520723, guid: 35b5e1288c361954a97d81d1ceaa0110, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b5e1288c361954a97d81d1ceaa0110, type: 3}
 --- !u!1 &1128226747
@@ -5877,7 +5881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visualCue: {fileID: 237293936}
-  inkJson: {fileID: 4900000, guid: 7422262ff761ee84bbf42442d37c5bbd, type: 3}
+  inkJson: {fileID: 4900000, guid: 1e7938fc32954024dba87601c2ef45f9, type: 3}
   dialogueobj: 0
 --- !u!1001 &1336487308
 PrefabInstance:
