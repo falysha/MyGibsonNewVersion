@@ -98,5 +98,8 @@ public class SceneLoad : MonoBehaviour
         {
             Textdia.text = blackStory.Continue();
         }
+        {
+            Textdia.text = "";
+        }
     }
 }
