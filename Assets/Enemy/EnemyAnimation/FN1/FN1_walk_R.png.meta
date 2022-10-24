@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FN1_walk_R_0
+      name: FN1_walk_R_3
       rect:
         serializedVersion: 2
         x: 0
@@ -125,7 +125,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FN1_walk_R_1
+      name: FN1_walk_R_2
       rect:
         serializedVersion: 2
         x: 94
@@ -146,7 +146,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FN1_walk_R_2
+      name: FN1_walk_R_1
       rect:
         serializedVersion: 2
         x: 188
@@ -167,7 +167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FN1_walk_R_3
+      name: FN1_walk_R_0
       rect:
         serializedVersion: 2
         x: 282
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FN1_walk_R_1: -767381989
-      FN1_walk_R_0: -790616584
-      FN1_walk_R_2: 1528404917
-      FN1_walk_R_3: -1144342893
+      FN1_walk_R_1: 1528404917
+      FN1_walk_R_0: -1144342893
+      FN1_walk_R_2: -767381989
+      FN1_walk_R_3: -790616584
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

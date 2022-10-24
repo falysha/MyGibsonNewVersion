@@ -49,7 +49,7 @@ public class Menu : MonoBehaviour
         {
             if (selectStart==0)
             {
-                StartGame();
+                _gameManager.LoadScenenext();
             }
             else
             {
@@ -57,11 +57,11 @@ public class Menu : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (selectStart==0)
             {
-                StartGame();
+                _gameManager.LoadScenenext();
             }
             else
             {
@@ -95,8 +95,7 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneLoad.instance.ContinueStory();
-        StartCoroutine(SceneLoad.instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame()
