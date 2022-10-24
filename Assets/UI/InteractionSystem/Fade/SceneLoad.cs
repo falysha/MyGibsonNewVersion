@@ -94,6 +94,9 @@ public class SceneLoad : MonoBehaviour
     }
     public void ContinueStory()//¼ÌÐø²¥·Å
     {
-         Textdia.text = blackStory.Continue();
+        if (blackStory.canContinue)
+        {
+            Textdia.text = blackStory.Continue();
+        }
     }
 }

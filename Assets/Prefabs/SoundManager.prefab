@@ -49,4 +49,4 @@ MonoBehaviour:
   BarAudio: {fileID: 8300000, guid: a4a9f28ff28fb0d4281047efc686072a, type: 3}
   underAudio: {fileID: 8300000, guid: b18e52eee16c5d74da8e6ea576bae77b, type: 3}
   skyAudio: {fileID: 8300000, guid: de8a545f8bae996469682a8ef964bbd7, type: 3}
-  CompanyAudio: {fileID: 0}
+  CompanyAudio: {fileID: 8300000, guid: d35d766813ee71b41bf61f23e242dc35, type: 3}

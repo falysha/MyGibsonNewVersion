@@ -74,7 +74,7 @@ public class ShowManager : MonoBehaviour
 
     private void ContinueStory()//继续播放
     {
-        Textdia.text = "<color=#FFFFFF00>jayw</color>" + currentStory.Continue();
+        Textdia.text = currentStory.Continue();
         DisplayName();//展示姓名
     }
     public void ClosePanel()
