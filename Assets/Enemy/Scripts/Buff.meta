@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Resources.meta
-guid: 3d918463162e15344a34b908943236eb
-========
 guid: e6dfe267396f8cc4295145d1161abbbd
->>>>>>>> 1b2fa0810708c77b53cfd2cdc21e48f424afecc8:Assets/Enemy/Scripts/Buff.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

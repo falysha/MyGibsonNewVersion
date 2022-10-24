@@ -22,34 +22,16 @@ namespace Platformer.Enemy
         /// </summary>
         public int recoverValue;
 
-        /// <summary>
-        /// The interval between twice recover.
-        /// </summary>
-        public int recoverTime;
-
-        /// <summary>
-        /// Invincible interval when dodging
-        /// </summary>
-        public float invincibleTime;
-
-        /// <summary>
-        /// The time between two dodges
-        /// </summary>
-        public float dodgeInterval;
-
-        private void Awake()
+        public override void RefreshState()
         {
-            StartCoroutine("Recover");
+            beginRecover = data.HP < minRecoverHP ? true : false;
+            data.SkillAllowed = beginRecover; 
         }
 
-        IEnumerator Recover()
+        public override void ExecuteSkill()
         {
-            while (true)
-            {
-                if (data.HP < minRecoverHP)
-                    data.HP += recoverValue;
-                yield return new WaitForSeconds(recoverTime);
-            }
+            Debug.Log("回血");
+            data.HP += recoverValue;
         }
     } 
 }

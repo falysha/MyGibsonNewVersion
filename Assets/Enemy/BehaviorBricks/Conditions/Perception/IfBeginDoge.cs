@@ -6,9 +6,9 @@ namespace BBUnity.Conditions
     /// <summary>
     /// It is a perception condition to check if the doge is prepared.
     /// </summary>
-    [Condition("Perception/IsDogePrepared")]
+    [Condition("Perception/IfBeginDoge")]
     [Help("Checks whether an attack prepared")]
-    public class IsDogePrepared : GOCondition
+    public class IfBeginDoge : GOCondition
     {
         // Get enemy Data
         private EnemyData enemyData;
@@ -19,9 +19,13 @@ namespace BBUnity.Conditions
         /// <returns>True if the doge prepared.</returns>
         public override bool Check()
         {
-            //Debug.Log("IsDogePrepared");
+            //Debug.Log("IfBeginDoge");
             enemyData = gameObject.GetComponent<EnemyData>();
-            return enemyData.ifCanDoge;
+            if (enemyData.state != EnemyState.Idle)
+            {
+                return false;
+            }
+            return enemyData.ifCanDoge && enemyData.ifPlayerTooClose;
         }
     }
 }
