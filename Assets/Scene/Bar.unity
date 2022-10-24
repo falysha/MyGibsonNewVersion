@@ -4939,10 +4939,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadScene
       objectReference: {fileID: 0}
-    - target: {fileID: 2240995337364520723, guid: 35b5e1288c361954a97d81d1ceaa0110, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b5e1288c361954a97d81d1ceaa0110, type: 3}
 --- !u!1 &1128226747
@@ -7376,6 +7372,42 @@ PrefabInstance:
     - target: {fileID: 2514520262134136313, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_ChildScaleWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_ChildScaleHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670730257884304530, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5222226088682674014, guid: f36ab08273fb9d34cadeb43995e0a326, type: 3}
       propertyPath: m_IsActive

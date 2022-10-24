@@ -26,6 +26,7 @@ namespace BBUnity.Actions
             //Debug.Log("HitPlayer");
             enemyData = gameObject.GetComponent<EnemyData>();
             attackAniTime = enemyData.attackAniTime;
+            enemyData.ifFaceRight = enemyData.player.transform.position.x - gameObject.transform.position.x > 0 ? true : false;
             enemyData.state = EnemyState.Attack;
         }
 
@@ -40,7 +41,6 @@ namespace BBUnity.Actions
             if (hitBefore <= 0) 
             {
                 // Fire attack event
-                Debug.Log("hit player");
 
                 hitBefore = -1;
             }

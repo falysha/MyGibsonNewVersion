@@ -57,7 +57,6 @@ namespace BBUnity.Actions
                 // Calculate The end position of enemy
                 var endPoint = enemyData.ifFaceRight ? rightPos : leftPos;
                 var direction = new Vector2(endPoint, transform.position.y);
-                Debug.Log(rightPos);
                 transform.position = Vector2.MoveTowards(transform.position, direction, moveSpeed * Time.deltaTime);
             }
             return TaskStatus.RUNNING;

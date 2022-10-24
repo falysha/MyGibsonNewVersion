@@ -12,12 +12,12 @@ namespace Platformer.Enemy
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("player enter field");
+            // Debug.Log("player enter field");
             isPlayerInAttackField = true;
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
-            Debug.Log("player exit field");
+            // Debug.Log("player exit field");
             isPlayerInAttackField = false;
         }
     }

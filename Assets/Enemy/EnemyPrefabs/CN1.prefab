@@ -214,17 +214,21 @@ MonoBehaviour:
   maxHP: 100
   damage: 10
   injuryFreeRatio: 0
-  moveSpeed: 3
-  attackAniTime: 1
+  moveSpeed: 5
+  attackAniTime: 0.3
   attackCD: 3
   dogeCD: 0
-  hittedTime: 1
-  diedTime: 0.8
-  maxHitDistance: 3
+  skillCD: 0
+  hittedTime: 0.7
+  diedTime: 0.4
+  skillTime: 0
+  maxHitDistance: 1.5
   maxUnsafeDistance: 0
   isHitted: 0
   ifCanAttack: 1
   ifCanDoge: 1
+  ifCanReleaseSkill: 1
+  ifSkillPrepared: 1
   attackField: {fileID: 0}
   player: {fileID: 0}
   state: 0
