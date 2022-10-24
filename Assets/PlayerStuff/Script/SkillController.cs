@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
-
+using Platformer.Gameplay;
+using static Platformer.Core.Simulation;
 public class SkillController : MonoBehaviour
 {
     public bool isHackReady = true;
@@ -141,10 +142,10 @@ public class SkillController : MonoBehaviour
         _speedState = SpeedState.SpeedUp;
         _playerController.horizontalMoveSpeed = 20f;
         _playerController.Strength = 15f;
-        
+        EnemyHitted.ratio = 1.5f;
         //攻击提升代码
         yield return new WaitForSeconds(10f);
-        
+        EnemyHitted.ratio = 1f;
         _shadow.closeShadow();
         _volume.profile = defaultVolumeProfile;
         _speedState = SpeedState.Empty;
