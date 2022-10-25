@@ -30,5 +30,19 @@ namespace Platformer.Enemy
                 }
             }
         }
+
+        public override bool IfPlayerHitted()
+        {
+            Ray ray = new Ray(transform.position, data.ifFaceRight ? transform.right : -transform.right);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, data.maxHitDistance))
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

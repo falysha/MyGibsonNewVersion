@@ -21,6 +21,10 @@ namespace BBUnity.Conditions
         {
             //Debug.Log("IsAttackPrepared");
             enemyData = gameObject.GetComponent<EnemyData>();
+            if (enemyData.state == EnemyState.Attack)
+            {
+                return true;
+            }
             return enemyData.ifCanAttack;
         }
     }

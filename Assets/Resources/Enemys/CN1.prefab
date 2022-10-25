@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 2809201867821478683}
   - component: {fileID: 2809201867821478680}
   - component: {fileID: 2809201867821478681}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: LowerHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2809201869296709761}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 2809201869574332446}
   - component: {fileID: 2809201869574332447}
   - component: {fileID: 2809201869574332444}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: EnemyUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1958023915
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2809201869574332447
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 2809201869714781858}
   - component: {fileID: 2809201869714781859}
   - component: {fileID: 2809201869714781856}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UpperHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 4555362953748119319}
   - component: {fileID: 8466902153650122341}
   - component: {fileID: 3479604874679751403}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}

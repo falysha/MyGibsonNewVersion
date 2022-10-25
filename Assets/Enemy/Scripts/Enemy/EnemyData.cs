@@ -174,7 +174,7 @@ namespace Platformer.Enemy
         /// </summary>
         public bool ifPlayerCanBeAttacked
         {
-            get { return (Mathf.Abs(transform.position.x - player.transform.position.x)) <= maxHitDistance; }
+            get { return (transform.position - player.transform.position).magnitude <= maxHitDistance; }
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Platformer.Enemy
         /// </summary>
         public bool ifPlayerTooClose
         {
-            get { return (Mathf.Abs(transform.position.x - player.transform.position.x)) <= maxUnsafeDistance; }
+            get { return (transform.position - player.transform.position).magnitude <= maxUnsafeDistance; }
         }
 
         private void Start()

@@ -1,5 +1,8 @@
 using Platformer.Core;
 using Platformer.Enemy;
+using System.Diagnostics;
+using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Platformer.Gameplay
 {
@@ -14,7 +17,11 @@ namespace Platformer.Gameplay
         public static float ratio = 1;
         public override void Execute()
         {
-            enemyData.isHitted = true;
+            Debug.Log("enemy hitted");
+            if (enemyData.state == EnemyState.Idle || enemyData.state == EnemyState.Walk)
+            {
+                enemyData.isHitted = true;
+            }
             var injury = (int)(playerDamage * ratio);
             enemyData.HP -= injury * (1 - enemyData.injuryFreeRatio);
         }

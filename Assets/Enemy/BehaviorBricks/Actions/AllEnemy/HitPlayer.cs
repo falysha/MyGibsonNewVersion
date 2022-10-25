@@ -3,6 +3,8 @@ using Pada1.BBCore;
 using System;
 using UnityEngine;
 using Platformer.Enemy;
+using Platformer.Gameplay;
+using static Platformer.Core.Simulation;
 
 namespace BBUnity.Actions
 {
@@ -18,6 +20,7 @@ namespace BBUnity.Actions
         public float hitBefore;
 
         private EnemyData enemyData;
+        private Enemy enemy;
         private float attackAniTime;
 
         /// <summary>Initialization Method of HitPlayer.</summary>
@@ -25,6 +28,7 @@ namespace BBUnity.Actions
         {
             //Debug.Log("HitPlayer");
             enemyData = gameObject.GetComponent<EnemyData>();
+            enemy = gameObject.GetComponent<Enemy>();
             attackAniTime = enemyData.attackAniTime;
             enemyData.ifFaceRight = enemyData.player.transform.position.x - gameObject.transform.position.x > 0 ? true : false;
             enemyData.state = EnemyState.Attack;
@@ -41,7 +45,12 @@ namespace BBUnity.Actions
             if (hitBefore <= 0) 
             {
                 // Fire attack event
-
+                if (enemy.IfPlayerHitted())
+                {
+                    var ev = Schedule<PlayerHitted>();
+                    ev.enemyTransform = gameObject.transform;
+                    ev.damage = enemyData.damage;
+                }
                 hitBefore = -1;
             }
             if (attackAniTime <= 0)

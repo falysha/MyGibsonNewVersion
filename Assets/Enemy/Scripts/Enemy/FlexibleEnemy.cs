@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Platformer.Gameplay;
+using System.Collections;
 using UnityEngine;
+using static Platformer.Core.Simulation;
 
 namespace Platformer.Enemy
 {
@@ -36,6 +38,13 @@ namespace Platformer.Enemy
         IEnumerator MakeHarm()
         {
             yield return new WaitForSecondsRealtime(damageDelay);
+            var ifPlayerInAttackDistance = ((data.player.transform.position - transform.position).magnitude <= data.maxHitDistance);
+            if (ifPlayerInAttackDistance == true)
+            {
+                var ev = Schedule<PlayerHitted>();
+                ev.enemyTransform = transform;
+                ev.damage = skillDamage;
+            }
             // Debug.Log("MakeHarm");
             // fire damage event
         }

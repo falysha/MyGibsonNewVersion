@@ -20,7 +20,7 @@ namespace BBUnity.Actions
         /// <summary>Initialization Method of Doge.</summary>
         public override void OnStart()
         {
-            Debug.Log("Doge");
+            //Debug.Log("Doge");
             enemyData = gameObject.GetComponent<EnemyData>();
             leftPos = enemyData.leftPos;
             rightPos = enemyData.rightPos;
@@ -29,7 +29,6 @@ namespace BBUnity.Actions
             var rightSafePos = playerPos + enemyData.maxUnsafeDistance;
             var leftSafePos = playerPos - enemyData.maxUnsafeDistance;
             var previousPos = gameObject.transform.position;
-            Debug.Log(Mathf.Min(rightPos, playerPos + enemyData.maxHitDistance));
             if (leftPos > leftSafePos) 
             {
                 gameObject.transform.position = new Vector3(UnityEngine.Random.Range(rightSafePos, Mathf.Min(rightPos,playerPos+enemyData.maxHitDistance)), previousPos.y, previousPos.z);

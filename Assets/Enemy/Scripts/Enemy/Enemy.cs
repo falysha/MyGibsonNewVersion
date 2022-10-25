@@ -85,6 +85,14 @@ namespace Platformer.Enemy
                 }
             }
         }
+
+        public virtual bool IfPlayerHitted()
+        {
+            var ifPlayerInRight = data.player.transform.position.x - transform.position.x >= 0 ? true : false;
+            var ifPlayerInFace = (ifPlayerInRight == data.ifFaceRight);
+            var ifPlayerInAttackDistance = ((data.player.transform.position - transform.position).magnitude <= data.maxHitDistance);
+            return ifPlayerInFace && ifPlayerInAttackDistance;
+        }
     }
 
     enum Type
