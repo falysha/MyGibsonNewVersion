@@ -34,13 +34,15 @@ public class TimeCounter : MonoBehaviour
     public bool atcing1 = false;
     public bool atcing2 = false;
     public bool atcing3 = false;
-
+    
+    private AudioClip doubleGunSound;
     private AudioClip gunSound;
     private AudioClip leg0;
     private AudioClip leg1;
     private AudioClip rocketSound;
     private AudioClip smashSound;
     private AudioClip shotGunSound;
+    
     
     private VolumeProfile hackVolume;
     private VolumeProfile defaultVolumeProfile;
@@ -70,6 +72,8 @@ public class TimeCounter : MonoBehaviour
 
         _audioSource=gameObject.GetComponent<AudioSource>();
 
+        doubleGunSound= Resources.Load<AudioClip>("Sounds/doubleGun");
+        
         gunSound = Resources.Load<AudioClip>("Sounds/gun");
 
         rocketSound = Resources.Load<AudioClip>("Sounds/rocket");
@@ -186,24 +190,28 @@ public class TimeCounter : MonoBehaviour
     IEnumerator attack4()
     {
         yield return new WaitForSeconds(atc4 * 0.833f);
-        _audioSource.PlayOneShot(gunSound);
-        _audioSource.PlayOneShot(gunSound);
+        _audioSource.pitch = 1.6f;
+        _audioSource.PlayOneShot(doubleGunSound);
         FindObjectOfType<Gunshot>().gunShotlast();
         FindObjectOfType<Gunshot>().gunShotlast();
         gunFires[1].gunFire();
         gunFires[0].gunFire();
         gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         _rigidbody2D.AddForce(-Direction * 7, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.1f);
+        _audioSource.pitch = 0.8f;
     }
 
     IEnumerator Rocket()
     {
         _rocket.GetComponent<RocketFire>().rocketFire();
-        yield return new WaitForSeconds(rocket * 0.666f);
+        _audioSource.pitch = 1.2f;
         _audioSource.PlayOneShot(rocketSound);
+        yield return new WaitForSeconds(rocket * 0.666f);
         gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
         _rigidbody2D.AddForce(-Direction*7,ForceMode2D.Impulse);
         _rocket.GetComponent<PlayerDamageJudge>().startAttack();
+        _audioSource.pitch = 0.8f;
     }
 
     IEnumerator Smash()

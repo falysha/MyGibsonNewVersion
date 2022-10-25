@@ -12,6 +12,8 @@ public class Hack : MonoBehaviour
     private VolumeProfile hackVolume;
     private VolumeProfile defaultVolumeProfile;
     private Volume _volume;
+    private AudioClip hackSound;
+    private AudioSource _audioSource;
     private void Awake()
     {
         _volume = GameObject.Find("Global Volume").GetComponent<Volume>();
@@ -19,6 +21,10 @@ public class Hack : MonoBehaviour
         defaultVolumeProfile = _volume.profile;
         
         hackVolume = Resources.Load<VolumeProfile>("CameraStuff/Hack");
+        
+        hackSound  = Resources.Load<AudioClip>("Sounds/Hacker");
+        
+        _audioSource=gameObject.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -41,6 +47,7 @@ public class Hack : MonoBehaviour
 
     IEnumerator attackLast()
     {
+        _audioSource.PlayOneShot(hackSound);
         gameObject.GetComponent<Collider2D>().enabled = true;
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<Collider2D>().enabled = false;
