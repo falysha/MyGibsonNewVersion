@@ -19,7 +19,7 @@ namespace Platformer.Gameplay
             Debug.Log(damage);
             if (!player.GetComponent<PlayerHealth>().locked)
             {
-                player.GetComponent<PlayerHealth>().realHealth = player.GetComponent<PlayerHealth>().realHealth - damage;
+                PlayerHealth.realHealth = PlayerHealth.realHealth - damage;
             }
             player.GetComponent<Animator>().SetTrigger("hitted");
             if (enemyTransform.position.x>=player.GetComponent<Transform>().position.x)

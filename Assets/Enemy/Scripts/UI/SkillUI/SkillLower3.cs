@@ -1,32 +1,32 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Platformer.UI
 {
-    public class SkillLower1 : MonoBehaviour
+    public class SkillLower3 : MonoBehaviour
     {
-        // Ö÷½ÇĞÅÏ¢
+        // ä¸»è§’ä¿¡æ¯
         private SkillController _skillController;
 
-        // ¼¼ÄÜµ¹¼ÆÊ±ÊµÌå
+        // æŠ€èƒ½å€’è®¡æ—¶å®ä½“
         private Image image;
         
 
         // Start is called before the first frame update
         void Start()
         {
-            // ³õÊ¼»¯Ö÷½ÇĞÅÏ¢
+            // åˆå§‹åŒ–ä¸»è§’ä¿¡æ¯
             _skillController = GameObject.Find("Player").GetComponent<SkillController>();
-            // ³õÊ¼»¯¼¼ÄÜµ¹¼ÆÊ±ÊµÌå
+            // åˆå§‹åŒ–æŠ€èƒ½å€’è®¡æ—¶å®ä½“
             image = GetComponent<Image>();
-            // ³õÊ¼»¯×î´óCD
+            // åˆå§‹åŒ–æœ€å¤§CD
             ShowCD();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (_skillController.rocketCD <= _skillController.countedRocketCD)
+            if (_skillController.hackCD <= _skillController.countedHackCD)
             {
                 //0
             }
@@ -36,10 +36,10 @@ namespace Platformer.UI
             }
         }
 
-        // ¸üĞÂCD
+        // æ›´æ–°CD
         void ShowCD()
         {
-            var length = (_skillController.rocketCD-_skillController.countedRocketCD) / _skillController.rocketCD;
+            var length = (_skillController.hackCD-_skillController.countedHackCD) / _skillController.hackCD;
             image.fillAmount = length;
         }
     }
