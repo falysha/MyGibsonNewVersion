@@ -295,10 +295,14 @@ MonoBehaviour:
     - 3
     - 1.5
     - 0.5
+    - 0
+    - 0
     floatParamsNames:
     - Idle Time
     - StillTime
     - hitBefore
+    - Left Position
+    - Right Position
     floatParamsLostDefaultValue: 
     stringParams: []
     stringParamsNames: []
@@ -314,12 +318,8 @@ MonoBehaviour:
     layerMaskParamsLostDefaultValue: 
     enumParamsNames: []
     enumParamsLostDefaultValue: 
-    vector2Params:
-    - {x: -10, y: -4.3}
-    - {x: 20, y: -4.3}
-    vector2ParamsNames:
-    - Left Idle Area
-    - Right Idle Area
+    vector2Params: []
+    vector2ParamsNames: []
     vector2ParamsLostDefaultValue: 
     vector3Params: []
     vector3ParamsNames: []
@@ -354,7 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8526f8283c99f45b7381d3f10977b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ifFaceRight: 1
 --- !u!212 &744898232
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -481,17 +480,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c91abb9353ef717498cea06b3274784c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 1
   HP: 100
-  toughness: 100
+  maxHP: 0
   damage: 10
   injuryFreeRatio: 0
   moveSpeed: 3
-  attackTime: 1
+  leftPos: 0
+  rightPos: 0
+  attackAniTime: 0
+  attackCD: 0
+  dogeCD: 0
+  skillCD: 0
+  hittedTime: 0
+  diedTime: 0
+  skillTime: 0
   maxHitDistance: 1.5
-  isStatic: 0
+  maxUnsafeDistance: 0
+  isHitted: 0
+  ifCanAttack: 1
+  ifCanDoge: 1
+  SkillAllowed: 0
+  ifSkillPrepared: 1
   attackField: {fileID: 2052846479}
   player: {fileID: 72690810}
+  state: 0
 --- !u!1 &1622258070
 GameObject:
   m_ObjectHideFlags: 0
