@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3684880860450912587}
   - component: {fileID: 3684880860450912588}
   - component: {fileID: 3684880860450912589}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: LowerHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3684880860711737122}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 3684880860757975541}
   - component: {fileID: 3684880860757975539}
   - component: {fileID: 3684880860757975540}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,9 +221,9 @@ GameObject:
   - component: {fileID: 3684880860872127645}
   - component: {fileID: 3684880860872127646}
   - component: {fileID: 3684880860872127622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FN1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 3684880861186403157}
   - component: {fileID: 3684880861186403158}
   - component: {fileID: 3684880861186403159}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: EnemyUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 3684880861747198488}
   - component: {fileID: 3684880861747198489}
   - component: {fileID: 3684880861747198490}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: UpperHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
