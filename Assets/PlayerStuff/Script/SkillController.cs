@@ -6,15 +6,18 @@ using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 public class SkillController : MonoBehaviour
 {
+    public bool isFlashReady = true;
     public bool isHackReady = true;
     public bool isShotGunReady = true;
     public bool isRocketReady = true;
     public float hackCD = 20f;
     public float shotGunCD = 10f;
     public float rocketCD = 15f;
+    public float flashCD = 5f;
     public float countedHackCD = 20f;
     public float countedShotGunCD = 10f;
     public float countedRocketCD = 15f;
+    public float countedFlashCD = 5f;
     public static float Fury = 0;
     private PlayerController _playerController;
     private PlayerHealth _playerHealth;
@@ -28,10 +31,8 @@ public class SkillController : MonoBehaviour
 
     private void Awake()
     {
-        countedHackCD = 20f;
-        countedShotGunCD = 10f;
-        countedRocketCD = 15f;
         _playerController = FindObjectOfType<PlayerController>();
+        _playerHealth = FindObjectOfType<PlayerHealth>();
         _volume = GameObject.Find("Global Volume").GetComponent<Volume>();
         speedUpVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedUp");
         speedDownVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedDown");
@@ -72,6 +73,16 @@ public class SkillController : MonoBehaviour
         {
             countedRocketCD = countedRocketCD + Time.fixedDeltaTime;
         }
+        
+        //Flash
+        if (countedFlashCD >= flashCD)
+        {
+            isFlashReady = true;
+        }
+        else
+        {
+            countedFlashCD = countedFlashCD + Time.fixedDeltaTime;
+        }
     }
 
     public void startCountingHack()
@@ -91,7 +102,12 @@ public class SkillController : MonoBehaviour
         isRocketReady = false;
         countedRocketCD = 0;
     }
-
+    
+    public void startCountingFlash()
+    {
+        isFlashReady = false;
+        countedFlashCD = 0;
+    }
     public void speedUpStart()
     {
         if (_speedState == SpeedState.Empty)
@@ -159,6 +175,7 @@ public class SkillController : MonoBehaviour
         hackCD = 15f;
         shotGunCD = 5f;
         rocketCD = 10f;
+        flashCD = 3f;
         _playerHealth.locked = true;
         yield return new WaitForSeconds(10f);
         _playerHealth.locked = false;
@@ -167,6 +184,7 @@ public class SkillController : MonoBehaviour
         hackCD = 20f;
         shotGunCD = 10f;
         rocketCD = 15f;
+        flashCD = 5f;
     }
 
     public enum SpeedState

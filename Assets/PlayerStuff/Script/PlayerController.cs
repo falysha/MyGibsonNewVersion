@@ -50,9 +50,10 @@ public class PlayerController : MonoBehaviour
                 _animator.SetTrigger("jump");
             }
 
-            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.L)) //闪现
+            if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.L)&&_skillController.isFlashReady) //闪现
             {
                 _animator.SetTrigger("flash");
+                _skillController.startCountingFlash();
             }
 
             if (jumpState == JumpState.Grounded && Input.GetKeyDown(KeyCode.U) && GameManager.instance.haveskill &&_skillController.isRocketReady

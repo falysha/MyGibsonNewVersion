@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public static float realHealth = 100;
     public bool locked = false;
-    public float fakeHealth = 100;
+    public static float fakeHealth = 100;
     // Start is called before the first frame update
     void Start()
     {
