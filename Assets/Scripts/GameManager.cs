@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdatePosition()
     {
+        m_player = GameObject.Find("Player");
         if (m_player != null)
         {
             Vector3 vec = Vector3.zero;
@@ -85,6 +86,7 @@ public class GameManager : MonoBehaviour
     }
     public void isTalking()//正在说话
     {
+        m_player = GameObject.Find("Player");
         if (m_player != null)
         {
             m_player.GetComponent<Animator>().SetBool("run",false);
