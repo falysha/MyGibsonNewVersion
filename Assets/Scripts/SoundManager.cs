@@ -39,17 +39,27 @@ public class SoundManager : MonoBehaviour
         {
             SkyMusic();
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 6)
+        else if (SceneManager.GetActiveScene().buildIndex == 3 )
         {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
             BarMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
             CompanyMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 5)
         {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
             TopMusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            BarMusic();
         }
     }
     public void SkyMusic()//新手天空场景音乐
