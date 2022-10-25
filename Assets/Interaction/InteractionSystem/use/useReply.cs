@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Platformer.Gameplay;
+using static Platformer.Core.Simulation;
 
 public class useReply : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class useReply : MonoBehaviour
             {
                 visualCue.SetActive(false);
                 //»ØÑª
+                Schedule <PlayerHeal>();
+                //
                 Destroy(gameObject);
             }
         }

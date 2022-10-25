@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
     public void ReLoadScene()
     {
         StartCoroutine(SceneLoad.instance.RELoadScene(SceneManager.GetActiveScene().buildIndex));
+        instance.State = GameState.IsPlaying;
     }
 
     public void GameOver()//ÓÎÏ·½áÊø

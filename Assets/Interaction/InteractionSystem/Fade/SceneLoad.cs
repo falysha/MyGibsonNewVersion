@@ -120,6 +120,7 @@ public class SceneLoad : MonoBehaviour
         {
             Textdia.text = blackStory.Continue();
         }
+        else
         {
             Textdia.text = "";
         }
