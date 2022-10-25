@@ -27,6 +27,10 @@ public class SoundManager : MonoBehaviour
         instance.backaudio.volume = 0.5f;//“Ù¡ø¥Û–°
         instance.backaudio.loop = true;
         instance.backaudio.playOnAwake = true;
+        
+    }
+    public void Start()
+    {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Menumusic();
@@ -39,7 +43,7 @@ public class SoundManager : MonoBehaviour
         {
             SkyMusic();
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 3 )
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             GameManager.instance.haveskill = true;
             GameManager.instance.havespeed = true;

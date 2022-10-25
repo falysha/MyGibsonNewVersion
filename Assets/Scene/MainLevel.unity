@@ -125870,7 +125870,7 @@ GameObject:
   - component: {fileID: 1217618948535140}
   - component: {fileID: 1217618948535147}
   - component: {fileID: 1217618948535146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126103,7 +126103,7 @@ GameObject:
   - component: {fileID: 1217619174677625}
   - component: {fileID: 1217619174677624}
   - component: {fileID: 1217619174677631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attackfield1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126163,7 +126163,7 @@ GameObject:
   - component: {fileID: 1217619291019549}
   - component: {fileID: 1217619291019548}
   - component: {fileID: 1217619291019523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attackfield5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126340,7 +126340,7 @@ GameObject:
   - component: {fileID: 1217619412494932}
   - component: {fileID: 1217619412494939}
   - component: {fileID: 1217619412494938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126427,7 +126427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217620657571124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126575,7 +126575,7 @@ GameObject:
   - component: {fileID: 1217619663466162}
   - component: {fileID: 1217619663466161}
   - component: {fileID: 1217619663466160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126732,7 +126732,7 @@ GameObject:
   - component: {fileID: 1217619785069071}
   - component: {fileID: 1217619785069070}
   - component: {fileID: 1217619785069069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attackfield2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126816,7 +126816,7 @@ GameObject:
   - component: {fileID: 1217619876284617}
   - component: {fileID: 1217619876284616}
   - component: {fileID: 1217619876284623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attackfield3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126928,7 +126928,7 @@ GameObject:
   - component: {fileID: 1217620230388112}
   - component: {fileID: 1217620230388119}
   - component: {fileID: 1217620230388118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127011,7 +127011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217619040018891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127082,7 +127082,7 @@ GameObject:
   - component: {fileID: 1217620449144876}
   - component: {fileID: 1217620449145299}
   - component: {fileID: 1217620449145298}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attackfield4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127207,7 +127207,7 @@ GameObject:
   - component: {fileID: 1217620503948592}
   - component: {fileID: 1217620503948599}
   - component: {fileID: 1217620503948598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Trigger3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127290,7 +127290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217619702287516}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127323,7 +127323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217619649886790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127339,7 +127339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1217619071644501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Field3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

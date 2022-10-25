@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
             vec.z = PlayerPrefs.GetFloat("PlayerPosZ", m_player.transform.position.z);
             m_player.transform.position = vec;
         }
+
     }
 
     public void UpdatePosition()
