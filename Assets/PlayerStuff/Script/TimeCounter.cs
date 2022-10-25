@@ -217,6 +217,7 @@ public class TimeCounter : MonoBehaviour
     IEnumerator Smash()
     {
         yield return new WaitForSeconds(smash * 0.5f);
+        _audioSource.pitch = 1f;
         _audioSource.PlayOneShot(smashSound);
         _rigidbody2D.AddForce(Direction*12,ForceMode2D.Impulse);
         gameObject.GetComponent<Cinemachine.CinemachineCollisionImpulseSource>().GenerateImpulse(Vector2.up*0.2f);
@@ -227,6 +228,7 @@ public class TimeCounter : MonoBehaviour
     IEnumerator ShotGun()
     {
         yield return new WaitForSeconds(shotGun * 0.857f);
+        _audioSource.pitch = 0.8f;
         _audioSource.PlayOneShot(shotGunSound);
         _PlayerController.canControl = false;
         _rigidbody2D.AddForce(-Direction*9,ForceMode2D.Impulse);
