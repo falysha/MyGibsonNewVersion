@@ -92,7 +92,8 @@ public class DialogManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJson)//进入对话模式
     {
-        if(diagoueobj == 0)//跟普通npc对话
+        player = GameObject.Find("Player");
+        if (diagoueobj == 0)//跟普通npc对话
         {
             PlayerImage.SetActive(true);
         }
@@ -114,7 +115,6 @@ public class DialogManager : MonoBehaviour
         DialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         GameManager.instance.isTalking();
-
         ContinueStory();
     }
 

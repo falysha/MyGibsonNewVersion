@@ -54,13 +54,13 @@ public class GameManager : MonoBehaviour
             m_player.transform.position = vec;
         }
     }
-    public void LoadScenenext()
+    public void LoadScenenext()//加载下一个场景
     {
         SceneLoad.instance.ContinueStory();
         StartCoroutine(SceneLoad.instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    public void ReLoadScene()
+    public void ReLoadScene()//重载当前场景
     {
         StartCoroutine(SceneLoad.instance.RELoadScene(SceneManager.GetActiveScene().buildIndex));
         instance.State = GameState.IsPlaying;
