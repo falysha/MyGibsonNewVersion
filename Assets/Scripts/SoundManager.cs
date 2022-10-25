@@ -27,6 +27,10 @@ public class SoundManager : MonoBehaviour
         instance.backaudio.volume = 0.5f;//音量大小
         instance.backaudio.loop = true;
         instance.backaudio.playOnAwake = true;
+        
+    }
+    public void Start()
+    {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Menumusic();
@@ -39,7 +43,7 @@ public class SoundManager : MonoBehaviour
         {
             SkyMusic();
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 3 )
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             GameManager.instance.haveskill = true;
             GameManager.instance.havespeed = true;
@@ -71,7 +75,7 @@ public class SoundManager : MonoBehaviour
     public void TopMusic()//天台场景音乐
     {
         instance.backaudio.Stop();
-        backaudio.clip = skyAudio;
+        backaudio.clip = topAudio;
         StartCoroutine(FadeIn());
     }
     public void BarMusic()//酒吧场景音乐
