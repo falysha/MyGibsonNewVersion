@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3b0a7151eb48b4141a8962acb43a55a6
+guid: 13fa244f3bd7c274fa0547bff9f43004
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,55 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u98DE\u4E6620221025-061742_0"
+      name: 20221025-140820_0
       rect:
         serializedVersion: 2
-        x: 80
+        x: 0
+        y: 1500
+        width: 600
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74d720fa5b801449835b4151f209f9e
+      internalID: -109546832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20221025-140820_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 600
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9e3572078b0264bb41e83cf47b3429
+      internalID: -552528581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 20221025-140820_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 900
-        width: 260
-        height: 260
+        width: 600
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44349a2b755831248b45cdb21e6ca724
-      internalID: 103679122
+      spriteID: b97c22c1f36bb7b46ab2838e95d38cf9
+      internalID: -1453291561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u98DE\u4E6620221025-061742_1"
+      name: 20221025-140820_3
       rect:
         serializedVersion: 2
-        x: 80
+        x: 0
         y: 600
-        width: 260
-        height: 260
+        width: 600
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec77882f195b6ea49ba318cefd20b0b0
-      internalID: 1299272261
+      spriteID: 9dff2ee220290604b9f27c11859f55e2
+      internalID: -520024168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u98DE\u4E6620221025-061742_2"
+      name: 20221025-140820_4
       rect:
         serializedVersion: 2
-        x: 80
+        x: 0
         y: 300
-        width: 260
-        height: 260
+        width: 600
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed2b2730d058da43b0a708684dbc9c8
-      internalID: -421494483
+      spriteID: c4d695f8691e6ba4a9c0ad8c92ac43ce
+      internalID: -590629039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u98DE\u4E6620221025-061742_3"
+      name: 20221025-140820_5
       rect:
         serializedVersion: 2
-        x: 80
+        x: 0
         y: 0
-        width: 260
-        height: 260
+        width: 600
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d60ddb58e39ad2f4880f3fd03ba7c281
-      internalID: 1007388116
+      spriteID: 2ecc4fe98025b2d4ba8b52573202fb77
+      internalID: 2115139150
       vertices: []
       indices: 
       edges: []
@@ -198,10 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\u98DE\u4E6620221025-061742_0": 103679122
-      "\u98DE\u4E6620221025-061742_3": 1007388116
-      "\u98DE\u4E6620221025-061742_2": -421494483
-      "\u98DE\u4E6620221025-061742_1": 1299272261
+      20221025-140820_2: -1453291561
+      20221025-140820_5: 2115139150
+      20221025-140820_3: -520024168
+      20221025-140820_4: -590629039
+      20221025-140820_0: -109546832
+      20221025-140820_1: -552528581
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
