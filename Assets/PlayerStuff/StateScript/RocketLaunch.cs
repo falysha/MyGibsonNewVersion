@@ -14,11 +14,13 @@ public class RocketLaunch : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _timeCounter._PlayerController.canControl = false;
+        _timeCounter._PlayerController.Stoic = true;
         _timeCounter.startRocket();
     }
     
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _timeCounter._PlayerController.canControl = true;
+        _timeCounter._PlayerController.Stoic = false;
     }
 }

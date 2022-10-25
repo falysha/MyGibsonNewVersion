@@ -13,8 +13,13 @@ public class Smash : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        _timeCounter._PlayerController.Stoic = true;
         _timeCounter._PlayerController.canControl = false;
         _timeCounter.startSmash();
     }
-
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        // _timeCounter._PlayerController.canControl = true;
+        _timeCounter._PlayerController.Stoic = false;
+    }
 }

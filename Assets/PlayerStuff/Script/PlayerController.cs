@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public bool flashing = false;
     private SkillController _skillController;
     private Hack _hack;
+    public bool Stoic = false;
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
