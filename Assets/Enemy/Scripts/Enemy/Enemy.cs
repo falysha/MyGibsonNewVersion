@@ -13,7 +13,7 @@ namespace Platformer.Enemy
         /// </summary>
         protected EnemyData data;
         protected BehaviorExecutor behaviorExecutor;
-
+        
         protected float attackCD;
 
         private void Awake()
@@ -39,6 +39,7 @@ namespace Platformer.Enemy
             if (data.HP <= 0 && data.state != EnemyState.Die) 
             {
                 behaviorExecutor.enabled = false;
+                PlayerHealth.realHealth = PlayerHealth.realHealth + 10;
                 data.state = EnemyState.Die;
                 Destroy(gameObject, data.diedTime);
             }

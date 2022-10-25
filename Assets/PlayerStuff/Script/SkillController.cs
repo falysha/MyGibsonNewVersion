@@ -12,10 +12,10 @@ public class SkillController : MonoBehaviour
     public float hackCD = 20f;
     public float shotGunCD = 10f;
     public float rocketCD = 15f;
-    private float countedHackCD = 20f;
-    private float countedShotGunCD = 10f;
-    private float countedRocketCD = 15f;
-    public float Fury = 0;
+    public float countedHackCD = 20f;
+    public float countedShotGunCD = 10f;
+    public float countedRocketCD = 15f;
+    public static float Fury = 0;
     private PlayerController _playerController;
     private PlayerHealth _playerHealth;
     private SpeedState _speedState = SpeedState.Empty;
@@ -32,7 +32,6 @@ public class SkillController : MonoBehaviour
         countedShotGunCD = 10f;
         countedRocketCD = 15f;
         _playerController = FindObjectOfType<PlayerController>();
-        _playerHealth = FindObjectOfType<PlayerHealth>();
         _volume = GameObject.Find("Global Volume").GetComponent<Volume>();
         speedUpVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedUp");
         speedDownVolume = Resources.Load<VolumeProfile>("CameraStuff/SpeedDown");
@@ -99,9 +98,9 @@ public class SkillController : MonoBehaviour
         {
             if (Fury < 20)
             {
-                if (_playerHealth.realHealth > 20)
+                if (PlayerHealth.realHealth > 20)
                 {
-                    _playerHealth.realHealth = _playerHealth.realHealth - (20 - Fury);
+                    PlayerHealth.realHealth = PlayerHealth.realHealth - (20 - Fury);
                     Fury = 0;
                     StartCoroutine(speedUp());
                 }
@@ -120,9 +119,9 @@ public class SkillController : MonoBehaviour
         {
             if (Fury < 20)
             {
-                if (_playerHealth.realHealth > 20)
+                if (PlayerHealth.realHealth > 20)
                 {
-                    _playerHealth.realHealth = _playerHealth.realHealth - (20 - Fury);
+                    PlayerHealth.realHealth = PlayerHealth.realHealth - (20 - Fury);
                     Fury = 0;
                     StartCoroutine(speedDown());
                 }

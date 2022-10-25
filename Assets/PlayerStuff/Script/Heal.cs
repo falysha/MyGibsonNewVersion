@@ -10,13 +10,10 @@ namespace Platformer.Gameplay
     /// <typeparam name="PlayerJumped"></typeparam>
     public class PlayerHeal : Simulation.Event<PlayerHeal>
     {
-        private PlayerHealth _playerHealth=GameObject.Find("Player").GetComponent<PlayerHealth>();
-        private SkillController _skillController = GameObject.Find("Player").GetComponent<SkillController>();
-        
         public override void Execute()
         {
-            _playerHealth.realHealth = 100;
-            _skillController.Fury = 100;
+            PlayerHealth.realHealth = 100;
+            SkillController.Fury = 100;
         } 
     }
 }

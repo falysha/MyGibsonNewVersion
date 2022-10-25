@@ -17,6 +17,7 @@ namespace Platformer.Gameplay
             enemyData.isHitted = true;
             var injury = (int)(playerDamage*ratio);
             enemyData.HP -= injury * (1 - enemyData.injuryFreeRatio);
+            SkillController.Fury = SkillController.Fury + 2;
         }
     }
 }
