@@ -75,7 +75,7 @@ public class SoundManager : MonoBehaviour
     public void TopMusic()//ÃÏÃ®≥°æ∞“Ù¿÷
     {
         instance.backaudio.Stop();
-        backaudio.clip = skyAudio;
+        backaudio.clip = topAudio;
         StartCoroutine(FadeIn());
     }
     public void BarMusic()//æ∆∞…≥°æ∞“Ù¿÷
