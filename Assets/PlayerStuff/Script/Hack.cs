@@ -24,7 +24,7 @@ public class Hack : MonoBehaviour
         
         hackSound  = Resources.Load<AudioClip>("Sounds/Hacker");
         
-        _audioSource=gameObject.GetComponent<AudioSource>();
+        _audioSource=GameObject.Find("Player").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -47,10 +47,13 @@ public class Hack : MonoBehaviour
 
     IEnumerator attackLast()
     {
+        _audioSource.pitch = 1f;
         _audioSource.PlayOneShot(hackSound);
         gameObject.GetComponent<Collider2D>().enabled = true;
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<Collider2D>().enabled = false;
+        yield return new WaitForSeconds(0.7f);
+        _audioSource.pitch = 0.8f;
     }
 
     IEnumerator volumeSwitch()
