@@ -22,6 +22,7 @@ public class Flash : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _playerController.canControl = false;
+        _playerController.Stoic = true;
         _playerHealth.locked = true;
         Direction.x = Player.transform.localScale.x;
         Direction.y = 0;
@@ -33,6 +34,7 @@ public class Flash : StateMachineBehaviour
         _playerHealth.locked = false;
         _playerController.flashing = false;
         _playerController.canControl = true;
+        _playerController.Stoic = false;
     }
 
 }

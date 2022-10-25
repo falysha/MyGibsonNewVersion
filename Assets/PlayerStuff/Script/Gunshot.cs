@@ -26,7 +26,7 @@ public class Gunshot : MonoBehaviour
     {
         Direction.x = player.transform.localScale.x;
         startPoint = gameObject.transform.position;
-        RaycastHit2D obj = Physics2D.Raycast(startPoint, Direction, 10);
+        RaycastHit2D obj = Physics2D.Raycast(startPoint, Direction, 10,LayerMask.GetMask("Enemy"));
         if (obj.collider)
         {
             GameObject enemy = obj.collider.gameObject;
