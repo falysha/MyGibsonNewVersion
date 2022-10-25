@@ -135,6 +135,9 @@ namespace Platformer.Enemy
         [NonSerialized]
         public bool isAttacking = false;
 
+        [NonSerialized]
+        public bool isReleasingSkill = false;
+
         /// <summary>
         /// If enemy can doge, the value should be true.
         /// </summary>

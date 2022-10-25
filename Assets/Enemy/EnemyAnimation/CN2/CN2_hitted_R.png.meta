@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CN2_hitted_R_4
+      name: CN2_hitted_R_0
       rect:
         serializedVersion: 2
         x: 0
@@ -125,7 +125,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CN2_hitted_R_3
+      name: CN2_hitted_R_1
       rect:
         serializedVersion: 2
         x: 100
@@ -167,7 +167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CN2_hitted_R_1
+      name: CN2_hitted_R_3
       rect:
         serializedVersion: 2
         x: 300
@@ -188,7 +188,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CN2_hitted_R_0
+      name: CN2_hitted_R_4
       rect:
         serializedVersion: 2
         x: 400
@@ -219,11 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CN2_hitted_R_0: -1322060710
-      CN2_hitted_R_1: -111096143
+      CN2_hitted_R_0: 262357968
+      CN2_hitted_R_1: 1218540311
       CN2_hitted_R_2: 1013615535
-      CN2_hitted_R_3: 1218540311
-      CN2_hitted_R_4: 262357968
+      CN2_hitted_R_3: -111096143
+      CN2_hitted_R_4: -1322060710
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

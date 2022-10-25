@@ -485,8 +485,6 @@ MonoBehaviour:
   damage: 10
   injuryFreeRatio: 0
   moveSpeed: 3
-  leftPos: 0
-  rightPos: 0
   attackAniTime: 0
   attackCD: 0
   dogeCD: 0

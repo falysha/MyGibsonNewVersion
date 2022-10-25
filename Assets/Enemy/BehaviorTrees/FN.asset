@@ -109,7 +109,7 @@ MonoBehaviour:
     />\r\n      <localParams />\r\n    </PrioritySelectorNode>\r\n    <ConditionEvalNode
     id=\"91\" policy=\"ATOMIC_CHECK\" name=\"Perception/IsAttackPrepared\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
-    <ActionNode id=\"81\" action=\"Navigation/HitPlayer\">\r\n      <inputParams
+    <ActionNode id=\"81\" action=\"Navigation/AttackPlayer\">\r\n      <inputParams
     />\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
     <ConditionEvalNode id=\"92\" policy=\"ATOMIC_CHECK\" name=\"AlwaysTrue\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
@@ -240,8 +240,8 @@ MonoBehaviour:
     id=\"0\" />\r\n          <ConditionEvalNode id=\"91\" />\r\n          <PrioritySelectorNode
     id=\"89\" />\r\n        </data>\r\n      </_data>\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"81\">\r\n      <_data>\r\n        <data breakpoint=\"0\" selected=\"False\"
-    position=\"508 689.3334\" name=\"Navigation/HitPlayer\" description=\"Hit Player
-    and make some damage to player.\" cardinality=\"0\" hasParent=\"False\">\r\n         
+    position=\"508 689.3334\" name=\"Navigation/AttackPlayer\" description=\"Hit
+    Player and make some damage to player.\" cardinality=\"0\" hasParent=\"False\">\r\n         
     <BehaviorTree id=\"0\" />\r\n          <ActionNode id=\"81\" />\r\n        </data>\r\n     
     </_data>\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"92\">\r\n      <_data>\r\n       
     <data breakpoint=\"0\" selected=\"False\" position=\"1648 1378.667\" name=\"AlwaysTrue\"

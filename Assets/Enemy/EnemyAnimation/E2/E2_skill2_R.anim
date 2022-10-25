@@ -95,4 +95,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: FireSkillEvent
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: b211554c484b4a6408565399251c8cea, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.9166667
+    functionName: RuturnPreviousPos
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 4d9a9357eac8f3d429db853054b018d0, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

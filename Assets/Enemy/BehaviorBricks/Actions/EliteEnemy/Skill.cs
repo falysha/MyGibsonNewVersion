@@ -28,11 +28,8 @@ namespace BBUnity.Actions
         /// <summary>Initialization Method of Skill.</summary>
         public override void OnStart()
         {
-            Debug.Log("Skill");
             enemyData = gameObject.GetComponent<EnemyData>();
-            enemy = gameObject.GetComponent<Enemy>();
-            skillAniCD = enemyData.skillTime;
-            skillBeforeCD = skillBefore;
+            enemyData.isReleasingSkill = true;
             enemyData.state = EnemyState.Skill_1;
         }
 
@@ -40,22 +37,9 @@ namespace BBUnity.Actions
         /// <remarks>Enemy will hit player at once.</remarks>
         public override TaskStatus OnUpdate()
         {
-            skillAniCD -= Time.deltaTime;
-            // a Timer that record when to fire attack event
-            if (skillBeforeCD != -1)
+            if (!enemyData.isReleasingSkill)
             {
-                skillBeforeCD -= Time.deltaTime;
-                if (skillBeforeCD <= 0) 
-                {
-                    // Fire skill event
-                    enemy.ExecuteSkill();
-                    skillBeforeCD = -1;
-                }
-            }
-            if (skillAniCD <= 0)
-            {
-                 Debug.Log("技能结束");
-                enemyData.ifSkillPrepared = false;
+                return TaskStatus.COMPLETED;
             }
             return TaskStatus.RUNNING;
         }

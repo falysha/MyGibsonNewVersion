@@ -74,4 +74,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.33333334
+    functionName: EndupHittedState
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: b211554c484b4a6408565399251c8cea, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

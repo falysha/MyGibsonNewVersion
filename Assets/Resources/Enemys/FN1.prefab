@@ -216,11 +216,12 @@ GameObject:
   - component: {fileID: 3684880860872127623}
   - component: {fileID: 3684880860872127640}
   - component: {fileID: 3684880860872127642}
-  - component: {fileID: 3684880860872127643}
   - component: {fileID: 3684880860872127644}
   - component: {fileID: 3684880860872127645}
   - component: {fileID: 3684880860872127646}
   - component: {fileID: 3684880860872127622}
+  - component: {fileID: -5362270419259373775}
+  - component: {fileID: 661647883607818688}
   m_Layer: 7
   m_Name: FN1
   m_TagString: Enemy
@@ -322,7 +323,7 @@ MonoBehaviour:
     floatParams:
     - 3
     - 1.5
-    - 0.5
+    - 0.6
     - -10
     - 20
     floatParamsNames:
@@ -370,27 +371,6 @@ MonoBehaviour:
     quaternionParams: []
     quaternionParamsNames: []
     quaternionParamsLostDefaultValue: 
---- !u!50 &3684880860872127643
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3684880860872127647}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!114 &3684880860872127644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,10 +387,8 @@ MonoBehaviour:
   maxHP: 100
   damage: 10
   injuryFreeRatio: 0
-  moveSpeed: 2.5
-  leftPos: 0
-  rightPos: 0
-  attackAniTime: 0.6
+  moveSpeed: 1.5
+  attackAniTime: 0.8
   attackCD: 2
   dogeCD: 5
   skillCD: 0
@@ -474,6 +452,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c29561e13c277924d8b4ad66fb405f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &-5362270419259373775
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3684880860872127647}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.007719651, y: -0.039441958}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.25, y: 0.5}
+    oldSize: {x: 0.94, y: 0.63}
+    newSize: {x: 0.74, y: 0.7}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.21184096, y: 0.5511161}
+  m_EdgeRadius: 0
+--- !u!114 &661647883607818688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3684880860872127647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b211554c484b4a6408565399251c8cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3684880861186403113
