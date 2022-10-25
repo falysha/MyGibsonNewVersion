@@ -33,14 +33,12 @@ namespace Platformer.Enemy
 
         public override bool IfPlayerHitted()
         {
-            Ray ray = new Ray(transform.position, data.ifFaceRight ? transform.right : -transform.right);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, data.maxHitDistance))
+            //Debug.Log("Begin hit test");
+            Ray2D ray = new Ray2D(transform.position, data.ifFaceRight ? Vector2.right : -Vector2.right);
+            RaycastHit2D info = Physics2D.Raycast(ray.origin, ray.direction, data.maxHitDistance, 1 << 8);
+            if (info.collider != null && info.collider.tag == "Player") 
             {
-                if (hit.collider.tag == "Player")
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }

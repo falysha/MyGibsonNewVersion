@@ -46,11 +46,13 @@ namespace Platformer.Enemy
         /// <summary>
         /// left idle position
         /// </summary>
+        [NonSerialized]
         public float leftPos;
 
         /// <summary>
         /// Right idle position
         /// </summary>
+        [NonSerialized]
         public float rightPos;
 
         /// <summary>
@@ -129,6 +131,9 @@ namespace Platformer.Enemy
         /// </summary>
         /// [NonSerialized]
         public bool ifCanAttack = true;
+
+        [NonSerialized]
+        public bool isAttacking = false;
 
         /// <summary>
         /// If enemy can doge, the value should be true.

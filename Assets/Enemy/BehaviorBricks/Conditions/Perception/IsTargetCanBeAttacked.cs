@@ -23,7 +23,7 @@ namespace BBUnity.Conditions
 		{
             //Debug.Log("CheckIsTargetCanBeAttacked");
             enemyData = gameObject.GetComponent<EnemyData>();
-            return enemyData.ifPlayerCanBeAttacked;
+            return enemyData.isAttacking || enemyData.ifPlayerCanBeAttacked;
 		}
     }
 }
