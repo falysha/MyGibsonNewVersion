@@ -44,6 +44,16 @@ namespace Platformer.Enemy
         public float moveSpeed;
 
         /// <summary>
+        /// left idle position
+        /// </summary>
+        public float leftPos;
+
+        /// <summary>
+        /// Right idle position
+        /// </summary>
+        public float rightPos;
+
+        /// <summary>
         /// Attack animation time
         /// </summary>
         public float attackAniTime;
@@ -61,6 +71,12 @@ namespace Platformer.Enemy
         public float dogeCD;
 
         /// <summary>
+        /// Interval between skills
+        /// </summary>
+        [Tooltip("Interval between two skills")]
+        public float skillCD;
+
+        /// <summary>
         /// The length of hitted animation
         /// </summary>
         [Tooltip("The length of hitted animation")]
@@ -71,6 +87,12 @@ namespace Platformer.Enemy
         /// </summary>
         [Tooltip("The length of died animation")]
         public float diedTime;
+
+        /// <summary>
+        /// The length of skill animation
+        /// </summary>
+        [Tooltip("The length of skill animation")]
+        public float skillTime;
 
         /// <summary>
         /// The max distance enemy can hit player.
@@ -109,10 +131,22 @@ namespace Platformer.Enemy
         public bool ifCanAttack = true;
 
         /// <summary>
-        /// If enemy can attack player, the value should be true.
+        /// If enemy can doge, the value should be true.
         /// </summary>
         /// [NonSerialized]
         public bool ifCanDoge = true;
+
+        /// <summary>
+        /// If enemy can release skill, the value should be true.
+        /// </summary>
+        /// [NonSerialized]
+        public bool SkillAllowed = false;
+
+        /// <summary>
+        /// If enemy's skill is prepared, the value should be true.
+        /// </summary>
+        /// [NonSerialized]
+        public bool ifSkillPrepared = true;
 
         /// <summary>
         /// The debuff stack in the enemy
@@ -140,7 +174,7 @@ namespace Platformer.Enemy
         /// </summary>
         public bool ifPlayerCanBeAttacked
         {
-            get { return (transform.position - player.transform.position).sqrMagnitude <= maxHitDistance; }
+            get { return (Mathf.Abs(transform.position.x - player.transform.position.x)) <= maxHitDistance; }
         }
 
         /// <summary>
@@ -148,7 +182,12 @@ namespace Platformer.Enemy
         /// </summary>
         public bool ifPlayerTooClose
         {
-            get { return (transform.position - player.transform.position).sqrMagnitude <= maxUnsafeDistance; }
+            get { return (Mathf.Abs(transform.position.x - player.transform.position.x)) <= maxUnsafeDistance; }
+        }
+
+        private void Start()
+        {
+            player = GameObject.Find("Player");
         }
     }
 
@@ -158,6 +197,9 @@ namespace Platformer.Enemy
         Walk,
         Hitted,
         Attack,
-        Die
+        Die,
+        Skill_1,
+        Skill_2,
+        Skill_3
     }
 }

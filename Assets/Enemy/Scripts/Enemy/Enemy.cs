@@ -13,25 +13,39 @@ namespace Platformer.Enemy
         /// </summary>
         protected EnemyData data;
         protected BehaviorExecutor behaviorExecutor;
-        
+
         protected float attackCD;
+        protected float skillCD;
+
+
+        /// <summary>
+        /// Animator attached to the enemy.
+        /// </summary>
+        private Animator animator;
 
         private void Awake()
         {
             data = GetComponent<EnemyData>();
+            animator = GetComponent<Animator>();
             behaviorExecutor = GetComponent<BehaviorExecutor>();
             attackCD = data.attackCD;
+            skillCD = data.skillCD;
         }
 
         private void FixedUpdate()
         {
+            animator.SetInteger("state", (int)data.state);
+            animator.SetBool("IfFaceRight", data.ifFaceRight);
             //CheckAttack();
             CheckAlive();
             RefreshState();
             CheckAttack();
+            CheckSkill();
         }
 
         public virtual void RefreshState() { }
+
+        public virtual void ExecuteSkill() { }
 
         // Check if enemy still alive
         private void CheckAlive()
@@ -39,7 +53,6 @@ namespace Platformer.Enemy
             if (data.HP <= 0 && data.state != EnemyState.Die) 
             {
                 behaviorExecutor.enabled = false;
-                PlayerHealth.realHealth = PlayerHealth.realHealth + 10;
                 data.state = EnemyState.Die;
                 Destroy(gameObject, data.diedTime);
             }
@@ -55,6 +68,20 @@ namespace Platformer.Enemy
                 {
                     attackCD = data.attackCD;
                     data.ifCanAttack = true;
+                }
+            }
+        }
+
+        // Check if enemy can release skill
+        private void CheckSkill()
+        {
+            if (data.ifSkillPrepared == false)
+            {
+                skillCD -= Time.deltaTime;
+                if (skillCD <= 0)
+                {
+                    skillCD = data.skillCD;
+                    data.ifSkillPrepared = true;
                 }
             }
         }

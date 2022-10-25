@@ -11,13 +11,12 @@ namespace Platformer.Gameplay
     {
         public int playerDamage;
         public EnemyData enemyData;
-        public static float ratio=1;
+        public static float ratio = 1;
         public override void Execute()
         {
             enemyData.isHitted = true;
-            var injury = (int)(playerDamage*ratio);
+            var injury = (int)(playerDamage * ratio);
             enemyData.HP -= injury * (1 - enemyData.injuryFreeRatio);
-            SkillController.Fury = SkillController.Fury + 2;
         }
     }
 }

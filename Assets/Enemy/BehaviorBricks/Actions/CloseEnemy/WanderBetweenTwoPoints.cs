@@ -17,16 +17,13 @@ namespace BBUnity.Actions
     [Help("Idel between two points for some second")]
     public partial class WanderBetweenTwoPoints : GOAction
     {
-        [InParam("Left Position")]
-        public float leftPos;
-        [InParam("Right Position")]
-        public float rightPos;
-
         [InParam("Idle Time")]
         public float idleTime;
 
         private EnemyData enemyData;
         private float moveSpeed;
+        private float leftPos;
+        private float rightPos;
         private UnityEngine.Transform transform;
 
         /// <summary>Initialization Method of WanderBetweenTwoPoints.</summary>
@@ -37,6 +34,8 @@ namespace BBUnity.Actions
             transform = gameObject.GetComponent<UnityEngine.Transform>();
             enemyData = gameObject.GetComponent<EnemyData>();
             moveSpeed = enemyData.moveSpeed;
+            leftPos = enemyData.leftPos;
+            rightPos = enemyData.rightPos;
             enemyData.state = EnemyState.Walk;
         }
 
@@ -57,7 +56,6 @@ namespace BBUnity.Actions
                 // Calculate The end position of enemy
                 var endPoint = enemyData.ifFaceRight ? rightPos : leftPos;
                 var direction = new Vector2(endPoint, transform.position.y);
-                Debug.Log(rightPos);
                 transform.position = Vector2.MoveTowards(transform.position, direction, moveSpeed * Time.deltaTime);
             }
             return TaskStatus.RUNNING;
