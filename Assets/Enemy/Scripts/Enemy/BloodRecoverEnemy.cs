@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Platformer.Gameplay;
 
 namespace Platformer.Enemy
 {
@@ -32,6 +33,18 @@ namespace Platformer.Enemy
         {
             Debug.Log("回血");
             data.HP += recoverValue;
+        }
+
+        public override bool IfPlayerHitted()
+        {
+            //Debug.Log("Begin hit test");
+            Ray2D ray = new Ray2D(transform.position, data.ifFaceRight ? Vector2.right : -Vector2.right);
+            RaycastHit2D info = Physics2D.Raycast(ray.origin, ray.direction, data.maxHitDistance, 1 << 8);
+            if (info.collider != null && info.collider.tag == "Player")
+            {
+                return true;
+            }
+            return false;
         }
     } 
 }

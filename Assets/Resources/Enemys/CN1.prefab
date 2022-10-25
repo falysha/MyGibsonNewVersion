@@ -16,9 +16,9 @@ GameObject:
   - component: {fileID: 2809201867667726977}
   - component: {fileID: 8816805334410906015}
   - component: {fileID: 7814698995762667027}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CN1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
     floatParams:
     - 3
     - 1.5
-    - 0.5
+    - 0.4
     - -10
     - 20
     floatParamsNames:
@@ -215,9 +215,7 @@ MonoBehaviour:
   damage: 10
   injuryFreeRatio: 0
   moveSpeed: 5
-  leftPos: 0
-  rightPos: 0
-  attackAniTime: 0.3
+  attackAniTime: 0.5
   attackCD: 3
   dogeCD: 0
   skillCD: 0

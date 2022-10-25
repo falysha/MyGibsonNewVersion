@@ -14,7 +14,8 @@ namespace BBUnity.Conditions
         public override bool Check()
         {
             //Debug.Log("IsTargetInAttackField");
-            return gameObject.GetComponent<EnemyData>().isPlayerInAttackField;
+            var data = gameObject.GetComponent<EnemyData>();
+            return data.isAttacking || data.isPlayerInAttackField;
         }
     }
 }

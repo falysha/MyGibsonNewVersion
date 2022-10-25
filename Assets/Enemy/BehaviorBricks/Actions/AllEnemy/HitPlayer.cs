@@ -31,6 +31,7 @@ namespace BBUnity.Actions
             enemy = gameObject.GetComponent<Enemy>();
             attackAniTime = enemyData.attackAniTime;
             enemyData.ifFaceRight = enemyData.player.transform.position.x - gameObject.transform.position.x > 0 ? true : false;
+            enemyData.isAttacking = true;
             enemyData.state = EnemyState.Attack;
         }
 
@@ -41,20 +42,23 @@ namespace BBUnity.Actions
             attackAniTime -= Time.deltaTime;
             // a Timer that record when to fire attack event
             if (hitBefore != -1)
-                hitBefore -= Time.deltaTime;
-            if (hitBefore <= 0) 
             {
-                // Fire attack event
-                if (enemy.IfPlayerHitted())
+                hitBefore -= Time.deltaTime;
+                if (hitBefore <= 0)
                 {
-                    var ev = Schedule<PlayerHitted>();
-                    ev.enemyTransform = gameObject.transform;
-                    ev.damage = enemyData.damage;
+                    // Fire attack event
+                    if (enemy.IfPlayerHitted())
+                    {
+                        var ev = Schedule<PlayerHitted>();
+                        ev.enemyTransform = gameObject.transform;
+                        ev.damage = enemyData.damage;
+                    }
+                    hitBefore = -1;
                 }
-                hitBefore = -1;
             }
             if (attackAniTime <= 0)
             {
+                enemyData.isAttacking = false;
                 enemyData.ifCanAttack = false;
                 return TaskStatus.COMPLETED;
             }
