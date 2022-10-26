@@ -155,7 +155,7 @@ public class SkillController : MonoBehaviour
         _shadow.startShadow();
         _volume.profile = speedUpVolume;
         _speedState = SpeedState.SpeedUp;
-        _playerController.horizontalMoveSpeed = 20f;
+        _playerController.horizontalMoveSpeed = 15f;
         _playerController.Strength = 15f;
         EnemyHitted.ratio = 1.5f;
         //攻击提升代码
@@ -165,7 +165,7 @@ public class SkillController : MonoBehaviour
         _volume.profile = defaultVolumeProfile;
         _speedState = SpeedState.Empty;
         _playerController.Strength = 10f;
-        _playerController.horizontalMoveSpeed = 10f;
+        _playerController.horizontalMoveSpeed = 8f;
     }
 
     IEnumerator speedDown()

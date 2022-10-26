@@ -24,10 +24,9 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         backaudio = gameObject.AddComponent<AudioSource>();
-        instance.backaudio.volume = 0.5f;//音量大小
+        instance.backaudio.volume = 0.4f;//音量大小
         instance.backaudio.loop = true;
         instance.backaudio.playOnAwake = true;
-        
     }
     public void Start()
     {
@@ -41,6 +40,7 @@ public class SoundManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            GameManager.instance.havespeed = true;
             SkyMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
@@ -105,7 +105,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PauseLevelAudio()//暂停音乐
     {
-        StartCoroutine(FadeOut());
+        StartCoroutine(FadePauseOut());
     }
     public void StartLevelAudio()//开始音乐
     {
@@ -118,7 +118,7 @@ public class SoundManager : MonoBehaviour
         float timeElapsed = 0;
         while(timeElapsed< timeToFade)
         {
-            instance.backaudio.volume = Mathf.Lerp(0, 0.5f, timeElapsed / timeToFade);
+            instance.backaudio.volume = Mathf.Lerp(0, 0.4f, timeElapsed / timeToFade);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -129,10 +129,22 @@ public class SoundManager : MonoBehaviour
         float timeElapsed = 0;
         while (timeElapsed < timeToFade)
         {
-            instance.backaudio.volume = Mathf.Lerp(0.5f, 0, timeElapsed / timeToFade);
+            instance.backaudio.volume = Mathf.Lerp(0.4f, 0, timeElapsed / timeToFade);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
         instance.backaudio.Stop();
+    }
+    public IEnumerator FadePauseOut()//淡出暂停音乐
+    {
+        float timeToFade = 2f;
+        float timeElapsed = 0;
+        while (timeElapsed < timeToFade)
+        {
+            instance.backaudio.volume = Mathf.Lerp(0.4f, 0, timeElapsed / timeToFade);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        instance.backaudio.Pause();
     }
 }

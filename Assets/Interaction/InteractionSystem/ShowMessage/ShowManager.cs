@@ -53,6 +53,13 @@ public class ShowManager : MonoBehaviour
         {
             return;
         }
+        else
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                ClosePanel();
+            }
+        }
     }
     public void EnterDialogueMode(TextAsset inkJson)//进入对话模式
     {

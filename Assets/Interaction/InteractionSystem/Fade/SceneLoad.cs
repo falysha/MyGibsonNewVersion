@@ -55,8 +55,10 @@ public class SceneLoad : MonoBehaviour
     }
     public IEnumerator RELoadScene(int index)//重新加载当前场景
     {
+        //animator.gameObject.SetActive(true);
         instance.Textdia.text = " ";
         BlackPanel.SetActive(true);
+        SoundManager.instance.PauseLevelAudio();
         animator.SetBool("FadeIn", true);
         animator.SetBool("FadeOut", false);
         yield return new WaitForSeconds(2f);
@@ -75,6 +77,42 @@ public class SceneLoad : MonoBehaviour
             vec.z = PlayerPrefs.GetFloat("PlayerPosZ", GameManager.instance.m_player.transform.position.z);
             GameManager.instance.m_player.transform.position = vec;
         }
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SoundManager.instance.StartLevelAudio();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            SoundManager.instance.StartLevelAudio();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            GameManager.instance.havespeed = true;
+            SoundManager.instance.StartLevelAudio();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
+            SoundManager.instance.StartLevelAudio();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
+            SoundManager.instance.StartLevelAudio();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
+            SoundManager.instance.StartLevelAudio();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            DialogManager.instance.diagoueobj = dialogueobj;
+            DialogManager.GetInstance().EnterDialogueMode(bar);
+        }
         animator.SetBool("FadeIn", false);
         animator.SetBool("FadeOut", true);
 
@@ -82,7 +120,7 @@ public class SceneLoad : MonoBehaviour
     public void OnloadedScene(AsyncOperation obj)//回调下一场景并更改音乐
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
+        { 
             SoundManager.instance.Menumusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -109,6 +147,7 @@ public class SceneLoad : MonoBehaviour
         {
             DialogManager.instance.diagoueobj = dialogueobj;
             DialogManager.GetInstance().EnterDialogueMode(bar);
+            SoundManager.instance.BarMusic();
         }
         animator.SetBool("FadeIn", false);
         animator.SetBool("FadeOut", true);

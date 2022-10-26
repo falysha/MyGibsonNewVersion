@@ -17,6 +17,7 @@ namespace Platformer.Gameplay
         public override void Execute()
         {
             // Debug.Log("enemy hitted");
+            SkillController.Fury = SkillController.Fury+3;
             if (enemyData.state == EnemyState.Idle || enemyData.state == EnemyState.Walk)
             {
                 enemyData.isHitted = true;
