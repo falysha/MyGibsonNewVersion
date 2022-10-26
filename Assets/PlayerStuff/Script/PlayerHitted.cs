@@ -16,7 +16,7 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
-            Debug.Log(damage);
+            // Debug.Log(damage);
             if (!player.GetComponent<PlayerHealth>().locked)
             {
                 PlayerHealth.realHealth = PlayerHealth.realHealth - damage;
