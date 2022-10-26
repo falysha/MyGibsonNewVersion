@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9016506177016654273}
   - component: {fileID: 5022367032783715823}
   - component: {fileID: 2154081478557092013}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gunfire0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 715813962180609329}
   - component: {fileID: 3355694418893672640}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gunfireback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
