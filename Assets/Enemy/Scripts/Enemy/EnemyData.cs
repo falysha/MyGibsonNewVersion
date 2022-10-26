@@ -165,6 +165,8 @@ namespace Platformer.Enemy
         {
             player = GameObject.Find("Player");
             enemy = gameObject;
+            moveSpeed = moveSpeed + UnityEngine.Random.Range(-0.5f, 0.5f);
+            attackCD = attackCD + UnityEngine.Random.Range(-0.5f, 0.5f);
         }
     }
 

@@ -56419,10 +56419,6 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 3491014896829520785, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
-      propertyPath: horizontalMoveSpeed
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 740666077948404876, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -56450,6 +56446,10 @@ PrefabInstance:
     - target: {fileID: 2721437132205642204, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491014896829520785, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
+      propertyPath: horizontalMoveSpeed
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3491014896829520786, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Size.x
@@ -67571,7 +67571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1503806892574154974
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,6 +1,4 @@
 using Platformer.Gameplay;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static Platformer.Core.Simulation;
 
@@ -10,7 +8,7 @@ namespace Platformer.Enemy
     {
         private Enemy enemy;
         private EnemyData enemyData;
-        private Rigidbody2D rigidbody2D;
+        private new Rigidbody2D rigidbody2D;
 
         private void Start()
         {
@@ -23,7 +21,7 @@ namespace Platformer.Enemy
         {
             if (enemy.IfPlayerHitted())
             {
-                Debug.Log("FireHitEvent");
+                // Debug.Log("FireHitEvent");
                 var ev = Schedule<PlayerHitted>();
                 ev.enemyTransform = gameObject.transform;
                 ev.damage = enemyData.damage;
