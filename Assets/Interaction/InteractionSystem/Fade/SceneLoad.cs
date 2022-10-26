@@ -55,6 +55,7 @@ public class SceneLoad : MonoBehaviour
     }
     public IEnumerator RELoadScene(int index)//重新加载当前场景
     {
+        animator.gameObject.SetActive(true);
         instance.Textdia.text = " ";
         BlackPanel.SetActive(true);
         animator.SetBool("FadeIn", true);

@@ -165,7 +165,7 @@ public class SkillController : MonoBehaviour
         _volume.profile = defaultVolumeProfile;
         _speedState = SpeedState.Empty;
         _playerController.Strength = 10f;
-        _playerController.horizontalMoveSpeed = 10f;
+        _playerController.horizontalMoveSpeed = 12f;
     }
 
     IEnumerator speedDown()
