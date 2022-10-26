@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 527670428092953216}
   - component: {fileID: 527670428092953217}
   - component: {fileID: 3828986170642295400}
+  - component: {fileID: 8255086829304963348}
   m_Layer: 0
   m_Name: Smash
   m_TagString: Untagged
@@ -42,7 +43,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527670428092953223}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -60,11 +61,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.6654587, y: 0.37528312}
-      - {x: 0.040343225, y: 0.42445377}
-      - {x: 0.5733724, y: -0.91766346}
-      - {x: 1.3211495, y: -0.85654974}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 2.2552948, y: 0.28756893}
+      - {x: 0.42409414, y: -0.13472745}
+      - {x: 0.101910174, y: -1.016343}
+      - {x: 2.1873298, y: -1.1087279}
 --- !u!114 &527670428092953217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +91,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5501f45bb62bb4e835a9dded2fa73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &8255086829304963348
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527670428092953223}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 2}
+  m_EdgeRadius: 0
 --- !u!1001 &2967062117684793534
 PrefabInstance:
   m_ObjectHideFlags: 0
