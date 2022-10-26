@@ -976,6 +976,10 @@ PrefabInstance:
       value: Leg0
       objectReference: {fileID: 0}
     - target: {fileID: 527670428092953223, guid: e5a7e44529c304644a6970a8fa0d3fed, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 527670428092953223, guid: e5a7e44529c304644a6970a8fa0d3fed, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
