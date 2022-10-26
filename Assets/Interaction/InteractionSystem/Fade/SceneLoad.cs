@@ -58,6 +58,7 @@ public class SceneLoad : MonoBehaviour
         animator.gameObject.SetActive(true);
         instance.Textdia.text = " ";
         BlackPanel.SetActive(true);
+        SoundManager.instance.PauseLevelAudio();
         animator.SetBool("FadeIn", true);
         animator.SetBool("FadeOut", false);
         yield return new WaitForSeconds(2f);
@@ -78,34 +79,34 @@ public class SceneLoad : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            SoundManager.instance.Menumusic();
+            SoundManager.instance.StartLevelAudio();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            SoundManager.instance.Undermusic();
+            SoundManager.instance.StartLevelAudio();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             GameManager.instance.havespeed = true;
-            SoundManager.instance.SkyMusic();
+            SoundManager.instance.StartLevelAudio();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             GameManager.instance.haveskill = true;
             GameManager.instance.havespeed = true;
-            SoundManager.instance.BarMusic();
+            SoundManager.instance.StartLevelAudio();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
             GameManager.instance.haveskill = true;
             GameManager.instance.havespeed = true;
-            SoundManager.instance.CompanyMusic();
+            SoundManager.instance.StartLevelAudio();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 5)
         {
             GameManager.instance.haveskill = true;
             GameManager.instance.havespeed = true;
-            SoundManager.instance.TopMusic();
+            SoundManager.instance.StartLevelAudio();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 6)
         {
