@@ -24,10 +24,9 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         backaudio = gameObject.AddComponent<AudioSource>();
-        instance.backaudio.volume = 0.5f;//音量大小
+        instance.backaudio.volume = 0.4f;//音量大小
         instance.backaudio.loop = true;
         instance.backaudio.playOnAwake = true;
-        
     }
     public void Start()
     {
