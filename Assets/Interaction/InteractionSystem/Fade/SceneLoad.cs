@@ -75,6 +75,35 @@ public class SceneLoad : MonoBehaviour
             vec.z = PlayerPrefs.GetFloat("PlayerPosZ", GameManager.instance.m_player.transform.position.z);
             GameManager.instance.m_player.transform.position = vec;
         }
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SoundManager.instance.Menumusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            SoundManager.instance.Undermusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SoundManager.instance.SkyMusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            SoundManager.instance.BarMusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            SoundManager.instance.CompanyMusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            SoundManager.instance.TopMusic();
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 6)
+        {
+            DialogManager.instance.diagoueobj = dialogueobj;
+            DialogManager.GetInstance().EnterDialogueMode(bar);
+        }
         animator.SetBool("FadeIn", false);
         animator.SetBool("FadeOut", true);
 

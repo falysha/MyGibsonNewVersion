@@ -6296,7 +6296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &442795971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18222,7 +18222,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "<b>Q</b> \u53D1\u52A8\u52A0\u901F\uFF0C\u589E\u52A0\u4F24\u5BB3\n<b>E</b>
-    \u53D1\u52A8\u51CF\u901F\uFF0C\u50A8\u5B58\u4F24\u5BB3"
+    \u53D1\u52A8\u51CF\u901F\uFF0C\u514D\u75AB\u4F24\u5BB3"
 --- !u!222 &1137951713
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54703,7 +54703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1505284879
 Transform:
   m_ObjectHideFlags: 0
@@ -56215,7 +56215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 199515459854037696, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3491014896829520786, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Size.x
@@ -58904,6 +58904,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7847631447196919840, guid: 313469e1255e2394aa0c4dd2b8722de4, type: 3}
+      propertyPath: m_Size.x
+      value: 10.961891
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847631447196919840, guid: 313469e1255e2394aa0c4dd2b8722de4, type: 3}
+      propertyPath: m_Size.y
+      value: 8.277958
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847631447196919840, guid: 313469e1255e2394aa0c4dd2b8722de4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.10165024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847631447196919840, guid: 313469e1255e2394aa0c4dd2b8722de4, type: 3}
+      propertyPath: m_Offset.y
+      value: 7.9083595
+      objectReference: {fileID: 0}
     - target: {fileID: 7847631447196919841, guid: 313469e1255e2394aa0c4dd2b8722de4, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -67246,7 +67262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1503806892574154974
 SpriteRenderer:
   m_ObjectHideFlags: 0

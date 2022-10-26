@@ -43,6 +43,14 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        if(Input.GetButtonDown("return"))
+        {
+            GameOver();
+        }
+    }
+
     public void UpdatePosition()
     {
         m_player = GameObject.Find("Player");
@@ -70,7 +78,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()//游戏结束
     {
         instance.State = GameState.GameOver;
-        ReLoadScene();
+        SoundManager.instance.PauseLevelAudio();
     }
     public void ispause()//正在暂停
     {
@@ -79,11 +87,11 @@ public class GameManager : MonoBehaviour
     }
     public void isPlaying()//正在游戏
     {
+        instance.State = GameState.IsPlaying;
         if(!SoundManager.instance.backaudio.isPlaying)
         {
-            SoundManager.instance.StartLevelAudio();
+            SoundManager.instance.backaudio.Play();
         }
-        instance.State = GameState.IsPlaying;
     }
     public void isTalking()//正在说话
     {

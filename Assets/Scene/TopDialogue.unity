@@ -292,19 +292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: 089107d9db58a1946ba9e16d1171548e, type: 2}
-    - {fileID: 11400000, guid: aa6ba5ff0d113484a9895fbb7be97a8f, type: 2}
-    - {fileID: 11400000, guid: 0d19a78d0728a6d41a1f319143e1277b, type: 2}
     - {fileID: 11400000, guid: 1e230d63ecbcb794fba522e2552507c9, type: 2}
     - {fileID: 11400000, guid: 569505dcafbf26e4fbcf1143dc4b8c28, type: 2}
     - {fileID: 11400000, guid: d5df82f2a7f3f4741806843dc95de69c, type: 2}
     m_Events:
-    - m_PersistentCalls:
-        m_Calls: []
-    - m_PersistentCalls:
-        m_Calls: []
-    - m_PersistentCalls:
-        m_Calls: []
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 955788844}
@@ -457,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199515459854037696, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 740666077948404876, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Layer
@@ -758,7 +749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &210372050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,11 +1491,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2704316253236909242, guid: 76442c4d75d4aa2499b6e20d148e4019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -31.883718
+      value: -7.361059
       objectReference: {fileID: 0}
     - target: {fileID: 2704316253236909242, guid: 76442c4d75d4aa2499b6e20d148e4019, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.0000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 2704316253236909242, guid: 76442c4d75d4aa2499b6e20d148e4019, type: 3}
       propertyPath: m_LocalRotation.w

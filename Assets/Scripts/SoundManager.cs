@@ -40,6 +40,7 @@ public class SoundManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            GameManager.instance.havespeed = true;
             SkyMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
@@ -104,7 +105,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PauseLevelAudio()//‘›Õ£“Ù¿÷
     {
-        StartCoroutine(FadeOut());
+        StartCoroutine(FadePauseOut());
     }
     public void StartLevelAudio()//ø™ º“Ù¿÷
     {
@@ -117,7 +118,7 @@ public class SoundManager : MonoBehaviour
         float timeElapsed = 0;
         while(timeElapsed< timeToFade)
         {
-            instance.backaudio.volume = Mathf.Lerp(0, 0.5f, timeElapsed / timeToFade);
+            instance.backaudio.volume = Mathf.Lerp(0, 0.4f, timeElapsed / timeToFade);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -128,10 +129,22 @@ public class SoundManager : MonoBehaviour
         float timeElapsed = 0;
         while (timeElapsed < timeToFade)
         {
-            instance.backaudio.volume = Mathf.Lerp(0.5f, 0, timeElapsed / timeToFade);
+            instance.backaudio.volume = Mathf.Lerp(0.4f, 0, timeElapsed / timeToFade);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
         instance.backaudio.Stop();
+    }
+    public IEnumerator FadePauseOut()//µ≠≥ˆ‘›Õ£“Ù¿÷
+    {
+        float timeToFade = 2f;
+        float timeElapsed = 0;
+        while (timeElapsed < timeToFade)
+        {
+            instance.backaudio.volume = Mathf.Lerp(0.4f, 0, timeElapsed / timeToFade);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        instance.backaudio.Pause();
     }
 }

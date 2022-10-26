@@ -10,7 +10,7 @@ using Object = UnityEngine.Object;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float horizontalMoveSpeed = 10;
+    public float horizontalMoveSpeed = 12;
     public float Strength = 10;
     public JumpState jumpState = JumpState.Grounded;
     public bool canControl = true;
