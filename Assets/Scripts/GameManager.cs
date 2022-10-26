@@ -74,11 +74,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SceneLoad.instance.RELoadScene(SceneManager.GetActiveScene().buildIndex));
         instance.State = GameState.IsPlaying;
     }
-
     public void GameOver()//游戏结束
     {
         instance.State = GameState.GameOver;
         SoundManager.instance.PauseLevelAudio();
+        ReLoadScene();
     }
     public void ispause()//正在暂停
     {
