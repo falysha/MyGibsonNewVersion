@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         if (fakeHealth<=0&&!oneShotKey)
         {
             oneShotKey = true;
-            _gameManager.ReLoadScene();
+            _gameManager.GameOver();
             
         }
 

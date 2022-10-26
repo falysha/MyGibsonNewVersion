@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     public void ReLoadScene()//重载当前场景
     {
         StartCoroutine(SceneLoad.instance.RELoadScene(SceneManager.GetActiveScene().buildIndex));
+        PlayerHealth.realHealth = 100;
         instance.State = GameState.IsPlaying;
     }
     public void GameOver()//游戏结束
