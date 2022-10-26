@@ -23,17 +23,15 @@ namespace BBUnity.Conditions
             // Debug.Log("IfCanReleaseSkill");
             enemyData = gameObject.GetComponent<EnemyData>();
             // Skill is releasing
-            if(enemyData.ifSkillPrepared&&(enemyData.state== EnemyState.Skill_1|| 
-                enemyData.state == EnemyState.Skill_2|| enemyData.state == EnemyState.Skill_3))
+            if(enemyData.isReleasingSkill)
             {
                 return true;
             }
-            if (enemyData.state != EnemyState.Hitted && enemyData.state != EnemyState.Attack && enemyData.state != EnemyState.Die) 
+            if (enemyData.state==EnemyState.Idle|| enemyData.state == EnemyState.Walk) 
             {
-                if(enemyData.SkillAllowed == true&& enemyData.ifSkillPrepared == true)
+                if (enemyData.SkillAllowed == true && enemyData.ifSkillPrepared == true) 
                 {
                     //Debug.Log(enemyData.ifCanReleaseSkill);
-                    //Debug.Log("出错啦！");
                     return true;
                 }
             }

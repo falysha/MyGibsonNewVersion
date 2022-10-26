@@ -172,6 +172,7 @@ MonoBehaviour:
   _animator: {fileID: 0}
   _knifeState: 0
   flashing: 0
+  Stoic: 0
 --- !u!95 &3491014896829520784
 Animator:
   serializedVersion: 4
@@ -204,9 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0527812ebc2604d83c44bb0f018df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realHealth: 100
   locked: 0
-  fakeHealth: 100
 --- !u!114 &3491014896829514862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,13 +218,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa862aa89bf1a0c49a846129d57a9bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlashReady: 1
   isHackReady: 1
   isShotGunReady: 1
   isRocketReady: 1
   hackCD: 20
   shotGunCD: 10
   rocketCD: 15
-  Fury: 0
+  flashCD: 5
+  countedHackCD: 20
+  countedShotGunCD: 10
+  countedRocketCD: 15
+  countedFlashCD: 5
 --- !u!114 &4406363407012922217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +319,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.4
   m_Pitch: 0.8
   Loop: 0
   Mute: 0

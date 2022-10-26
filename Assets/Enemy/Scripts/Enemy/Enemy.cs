@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Platformer.Enemy
 {
-    [RequireComponent(typeof(Rigidbody2D))]
     /// <summary>
     /// the base class of enemy
     /// </summary>
@@ -54,7 +53,6 @@ namespace Platformer.Enemy
             {
                 behaviorExecutor.enabled = false;
                 data.state = EnemyState.Die;
-                Destroy(gameObject, data.diedTime);
             }
         }
 

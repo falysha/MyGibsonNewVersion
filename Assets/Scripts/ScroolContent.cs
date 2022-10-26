@@ -29,4 +29,14 @@ public class ScroolContent : MonoBehaviour
     {
         StartCoroutine(autoScroll());
     }
+
+    public void nextscene()
+    {
+        GameManager.instance.LoadScenenext();
+    }
+
+    public void istalk()
+    {
+        GameManager.instance.isTalking();
+    }
 }

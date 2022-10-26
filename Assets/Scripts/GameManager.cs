@@ -40,6 +40,15 @@ public class GameManager : MonoBehaviour
             vec.z = PlayerPrefs.GetFloat("PlayerPosZ", m_player.transform.position.z);
             m_player.transform.position = vec;
         }
+
+    }
+
+    public void Update()
+    {
+        if(Input.GetButtonDown("return"))
+        {
+            GameOver();
+        }
     }
 
     public void UpdatePosition()
@@ -69,7 +78,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()//游戏结束
     {
         instance.State = GameState.GameOver;
-        ReLoadScene();
+        SoundManager.instance.PauseLevelAudio();
     }
     public void ispause()//正在暂停
     {
@@ -78,11 +87,11 @@ public class GameManager : MonoBehaviour
     }
     public void isPlaying()//正在游戏
     {
+        instance.State = GameState.IsPlaying;
         if(!SoundManager.instance.backaudio.isPlaying)
         {
-            SoundManager.instance.StartLevelAudio();
+            SoundManager.instance.backaudio.Play();
         }
-        instance.State = GameState.IsPlaying;
     }
     public void isTalking()//正在说话
     {

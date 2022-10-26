@@ -27,17 +27,6 @@ namespace Platformer.Enemy
 
         public override void ExecuteSkill()
         {
-            // Debug.Log("释放技能");
-            previousPos = transform.position;
-            transform.position = new Vector3(data.player.transform.position.x-1/2, transform.position.y, transform.position.z);
-            data.state = EnemyState.Skill_2;
-            StartCoroutine("MakeHarm");
-            StartCoroutine("GoRandomPosition");
-        }
-
-        IEnumerator MakeHarm()
-        {
-            yield return new WaitForSecondsRealtime(damageDelay);
             var ifPlayerInAttackDistance = ((data.player.transform.position - transform.position).magnitude <= data.maxHitDistance);
             if (ifPlayerInAttackDistance == true)
             {
@@ -45,14 +34,17 @@ namespace Platformer.Enemy
                 ev.enemyTransform = transform;
                 ev.damage = skillDamage;
             }
-            // Debug.Log("MakeHarm");
-            // fire damage event
         }
 
-        IEnumerator GoRandomPosition()
+        public void RushToPlayer()
         {
-            yield return new WaitForSecondsRealtime(damageAniLength);
-            // Debug.Log("GoRandomPosition");
+            previousPos = transform.position;
+            transform.position = new Vector3(data.player.transform.position.x - 1 / 2, transform.position.y, transform.position.z);
+            data.state = EnemyState.Skill_2;
+        }
+
+        public void RuturnPreviousPos()
+        {
             transform.position = previousPos;
             data.state = EnemyState.Skill_3;
         }

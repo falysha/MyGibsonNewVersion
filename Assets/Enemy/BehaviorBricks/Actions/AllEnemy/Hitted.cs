@@ -1,7 +1,6 @@
 ﻿using Pada1.BBCore.Tasks;
 using Pada1.BBCore;
 using System;
-using UnityEngine;
 using Platformer.Enemy;
 
 namespace BBUnity.Actions
@@ -14,15 +13,12 @@ namespace BBUnity.Actions
     public partial class Hitted : GOAction
     {
         private EnemyData enemyData;
-        // The time enemy needed to play the hit animation
-        private float hittedTime;
 
         /// <summary>Initialization Method of HitPlayer.</summary>
         public override void OnStart()
         {
             //Debug.Log("Hitted");
             enemyData = gameObject.GetComponent<EnemyData>();
-            hittedTime = enemyData.hittedTime;
             enemyData.state = EnemyState.Hitted;
         }
 
@@ -30,10 +26,8 @@ namespace BBUnity.Actions
         /// <remarks>Enemy will hit player at once.</remarks>
         public override TaskStatus OnUpdate()
         {
-            hittedTime -= Time.deltaTime;
-            if (hittedTime < 0)
+            if (!enemyData.isHitted)
             {
-                enemyData.isHitted = false;
                 return TaskStatus.COMPLETED;
             }
             return TaskStatus.RUNNING;

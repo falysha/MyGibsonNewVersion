@@ -13,19 +13,29 @@ public class GetSpeed : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            GameManager.instance.havespeed = true;
+            if(!GameManager.instance.havespeed)
+            {
+                GameManager.instance.havespeed = true;
+            }
             current.SetActive(true);
             current.GetComponent<Animator>().SetBool("FadeInText",true);
-            current.GetComponent<Animator>().SetBool("FadeOutText",false);
+            current.GetComponent<Animator>().SetBool("FadeOutText", false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            current.GetComponent<Animator>().SetBool("FadeInText", false);
+            current.GetComponent<Animator>().SetBool("FadeOutText", true);
             StartCoroutine(fadeout());
-            Destroy(gameObject,5f);
         }
     }
 
     public IEnumerator fadeout()
     {
-        yield return new WaitForSeconds(2f);
-        current.GetComponent<Animator>().SetBool("FadeInText", false);
-        current.GetComponent<Animator>().SetBool("FadeOutText", true);
+        yield return new WaitForSeconds(1f);
+        current.SetActive(false);
     }
 }

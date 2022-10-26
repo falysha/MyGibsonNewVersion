@@ -24,9 +24,12 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         backaudio = gameObject.AddComponent<AudioSource>();
-        instance.backaudio.volume = 0.5f;//“Ù¡ø¥Û–°
+        instance.backaudio.volume = 0.4f;//“Ù¡ø¥Û–°
         instance.backaudio.loop = true;
         instance.backaudio.playOnAwake = true;
+    }
+    public void Start()
+    {
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Menumusic();
@@ -37,9 +40,10 @@ public class SoundManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            GameManager.instance.havespeed = true;
             SkyMusic();
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 3 )
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             GameManager.instance.haveskill = true;
             GameManager.instance.havespeed = true;
@@ -71,7 +75,7 @@ public class SoundManager : MonoBehaviour
     public void TopMusic()//ÃÏÃ®≥°æ∞“Ù¿÷
     {
         instance.backaudio.Stop();
-        backaudio.clip = skyAudio;
+        backaudio.clip = topAudio;
         StartCoroutine(FadeIn());
     }
     public void BarMusic()//æ∆∞…≥°æ∞“Ù¿÷
@@ -101,7 +105,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PauseLevelAudio()//‘›Õ£“Ù¿÷
     {
-        StartCoroutine(FadeOut());
+        StartCoroutine(FadePauseOut());
     }
     public void StartLevelAudio()//ø™ º“Ù¿÷
     {
@@ -114,7 +118,7 @@ public class SoundManager : MonoBehaviour
         float timeElapsed = 0;
         while(timeElapsed< timeToFade)
         {
-            instance.backaudio.volume = Mathf.Lerp(0, 0.5f, timeElapsed / timeToFade);
+            instance.backaudio.volume = Mathf.Lerp(0, 0.4f, timeElapsed / timeToFade);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
@@ -125,10 +129,22 @@ public class SoundManager : MonoBehaviour
         float timeElapsed = 0;
         while (timeElapsed < timeToFade)
         {
-            instance.backaudio.volume = Mathf.Lerp(0.5f, 0, timeElapsed / timeToFade);
+            instance.backaudio.volume = Mathf.Lerp(0.4f, 0, timeElapsed / timeToFade);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
         instance.backaudio.Stop();
+    }
+    public IEnumerator FadePauseOut()//µ≠≥ˆ‘›Õ£“Ù¿÷
+    {
+        float timeToFade = 2f;
+        float timeElapsed = 0;
+        while (timeElapsed < timeToFade)
+        {
+            instance.backaudio.volume = Mathf.Lerp(0.4f, 0, timeElapsed / timeToFade);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        instance.backaudio.Pause();
     }
 }
