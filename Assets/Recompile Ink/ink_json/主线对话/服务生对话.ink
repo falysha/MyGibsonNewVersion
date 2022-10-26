@@ -39,7 +39,8 @@ VAR if_talked = false
 
 
 =drunk
--呃......头要晕了，居然喝了这么多吗？要清醒一些的好，Mayer，Masha还在等你......#c
+-呃......头要晕了，居然喝了这么多吗？要清醒一些的好，Mayer，Masha还在等你......#Mayer
+-> waiter
 ->DONE
 VAR if_consulted = false
 =consult
