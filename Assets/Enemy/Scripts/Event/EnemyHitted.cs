@@ -20,6 +20,8 @@ namespace Platformer.Gameplay
             if (enemyData.state == EnemyState.Idle || enemyData.state == EnemyState.Walk)
             {
                 enemyData.isHitted = true;
+                var ifplayerinLeft = enemyData.player.transform.position.x - enemyData.enemy.transform.position.x > 0 ? -100 : 100;
+                enemyData.enemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(ifplayerinLeft, 0));
             }
             var injury = (int)(playerDamage * ratio);
             enemyData.HP -= injury * (1 - enemyData.injuryFreeRatio);

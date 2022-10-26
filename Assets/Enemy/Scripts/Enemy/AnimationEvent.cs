@@ -10,11 +10,13 @@ namespace Platformer.Enemy
     {
         private Enemy enemy;
         private EnemyData enemyData;
+        private Rigidbody2D rigidbody2D;
 
         private void Start()
         {
             enemy = GetComponent<Enemy>();
             enemyData = GetComponent<EnemyData>();
+            rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
         public void FireHitEvent()
@@ -55,6 +57,11 @@ namespace Platformer.Enemy
         public void FireDiedEvent()
         {
             Destroy(gameObject);
+        }
+
+        public void ClearVelocity()
+        {
+            rigidbody2D.velocity = new Vector2(0, 0);
         }
     }
 }

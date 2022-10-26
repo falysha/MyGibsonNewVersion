@@ -13,16 +13,6 @@ namespace Platformer.Enemy
         /// </summary>
         public int skillDamage;
 
-        /// <summary>
-        /// The interval between skill begin and damage begin.
-        /// </summary>
-        public float damageDelay;
-
-        /// <summary>
-        /// The length of damage animation.
-        /// </summary>
-        public float damageAniLength;
-
         private Vector3 previousPos;
 
         public override void ExecuteSkill()
