@@ -9,9 +9,11 @@ namespace Platformer.Enemy
         private Enemy enemy;
         private EnemyData enemyData;
         private new Rigidbody2D rigidbody2D;
+        private GameObject Player;
 
         private void Start()
         {
+            Player = GameObject.Find("Player");
             enemy = GetComponent<Enemy>();
             enemyData = GetComponent<EnemyData>();
             rigidbody2D = GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ namespace Platformer.Enemy
             {
                 // Debug.Log("FireHitEvent");
                 var ev = Schedule<PlayerHitted>();
+                ev.player = Player;
                 ev.enemyTransform = gameObject.transform;
                 ev.damage = enemyData.damage;
             }

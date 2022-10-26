@@ -10,7 +10,7 @@ namespace Platformer.Gameplay
     /// <typeparam name="PlayerJumped"></typeparam>
     public class PlayerHitted : Simulation.Event<PlayerHitted>
     {
-        public GameObject player = GameObject.Find("Player");
+        public GameObject player ;
         public Transform enemyTransform;
         public int damage = 0;
 
