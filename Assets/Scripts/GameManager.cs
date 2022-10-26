@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetButtonDown("return"))
         {
-            GameOver();
+            ReLoadScene();
         }
     }
 

@@ -86,18 +86,25 @@ public class SceneLoad : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().buildIndex == 2)
         {
+            GameManager.instance.havespeed = true;
             SoundManager.instance.SkyMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
             SoundManager.instance.BarMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 4)
         {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
             SoundManager.instance.CompanyMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 5)
         {
+            GameManager.instance.haveskill = true;
+            GameManager.instance.havespeed = true;
             SoundManager.instance.TopMusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 6)
@@ -112,7 +119,7 @@ public class SceneLoad : MonoBehaviour
     public void OnloadedScene(AsyncOperation obj)//回调下一场景并更改音乐
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
+        { 
             SoundManager.instance.Menumusic();
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -139,6 +146,7 @@ public class SceneLoad : MonoBehaviour
         {
             DialogManager.instance.diagoueobj = dialogueobj;
             DialogManager.GetInstance().EnterDialogueMode(bar);
+            SoundManager.instance.BarMusic();
         }
         animator.SetBool("FadeIn", false);
         animator.SetBool("FadeOut", true);
