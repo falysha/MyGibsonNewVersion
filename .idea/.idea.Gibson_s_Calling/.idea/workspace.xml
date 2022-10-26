@@ -11,12 +11,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Gibson_s_Calling/Assets/Enemy/Scripts/Event/EnemyHitted.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/Script/TimeCounter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PlayerStuff/StateScript/KnifeAttackRefresh.cs" root0="FORCE_HIGHLIGHTING" />
@@ -128,6 +122,7 @@
       <workItem from="1666684588009" duration="875000" />
       <workItem from="1666691709435" duration="908000" />
       <workItem from="1666702983980" duration="4556000" />
+      <workItem from="1666709107584" duration="1470000" />
     </task>
     <servers />
   </component>
