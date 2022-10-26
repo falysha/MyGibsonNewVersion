@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
 
     void groundCheck()
     {
-        if (/*_rigidbody2D.velocity.y==0&&*/_collider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if ((_rigidbody2D.velocity.y<0.01f&&_rigidbody2D.velocity.y>=-0.01f)&&_collider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             isGrounded = true;
             jumpState = JumpState.Grounded;
