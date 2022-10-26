@@ -56449,7 +56449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3491014896829520785, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: horizontalMoveSpeed
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3491014896829520786, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Size.x

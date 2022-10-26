@@ -482,6 +482,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3491014896829520785, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
+      propertyPath: horizontalMoveSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3491014896829520786, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: m_Size.x
       value: 0.7945404
@@ -749,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &210372050
 MonoBehaviour:
   m_ObjectHideFlags: 0
