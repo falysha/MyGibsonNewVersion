@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7980354168099812547}
   - component: {fileID: 7980354168099812544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb7c85cedd6e414ebbb74a7c3068097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: {x: 0, y: 0}
-  startPoint: {x: 0, y: 0}
-  player: {fileID: 0}
+  damage0: 10
+  damage1: 20
