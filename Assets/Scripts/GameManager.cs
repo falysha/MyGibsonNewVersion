@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(SceneLoad.instance.RELoadScene(SceneManager.GetActiveScene().buildIndex));
         PlayerHealth.realHealth = 100;
+        SkillController.Fury = 100;
         instance.State = GameState.IsPlaying;
     }
     public void GameOver()//ÓÎÏ·½áÊø

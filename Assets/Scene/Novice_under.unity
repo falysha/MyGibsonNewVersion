@@ -56536,6 +56536,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3491014896829514862, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
+      propertyPath: flashCD
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3491014896829520785, guid: 75f9244c74bd3424a8a0e836736731c2, type: 3}
       propertyPath: horizontalMoveSpeed
       value: 8
