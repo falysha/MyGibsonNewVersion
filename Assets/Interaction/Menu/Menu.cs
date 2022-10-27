@@ -34,6 +34,16 @@ public class Menu : MonoBehaviour
             selectStart = (selectStart + 1) % 2;
             counter = 0;
         }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            selectStart = (selectStart + 1) % 2;
+            counter = 0;
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            selectStart = (selectStart + 1) % 2;
+            counter = 0;
+        }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             selectStart = (selectStart + 1) % 2;
@@ -45,7 +55,7 @@ public class Menu : MonoBehaviour
             counter = 0;
         }
         
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (selectStart==0)
             {
