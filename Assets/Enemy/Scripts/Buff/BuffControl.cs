@@ -14,10 +14,7 @@ namespace Platformer.Buff
         public EnemyData EnemyData;
 
         [Header("CodeChaosBuff")]
-        public float moveSpeed;
-        public float attackCD;
-        public float dogeCD;
-        public int damage;
+        public float reduceRatio;
 
         private void Start()
         {

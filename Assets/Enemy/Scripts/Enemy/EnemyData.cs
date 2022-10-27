@@ -81,6 +81,12 @@ namespace Platformer.Enemy
         public float maxUnsafeDistance;
 
         /// <summary>
+        /// The max unsafe distance that enemy feel threaten by player.
+        /// </summary>
+        [Tooltip("multiplier of animator")]
+        public float multiplier = 1;
+
+        /// <summary>
         /// If enemy's direction is right, this value is true
         /// </summary>
         [NonSerialized]

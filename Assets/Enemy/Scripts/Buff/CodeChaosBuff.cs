@@ -10,8 +10,6 @@ namespace Platformer.Buff
     {
         // 存储施加buff前的信息
         private float moveSpeed;
-        private float attackCD;
-        private float dogeCD;
         private int damage;
 
         public CodeChaosBuff(BuffControl buffControl, BuffKind buffKind, float length) : base(buffControl, buffKind,
@@ -22,16 +20,12 @@ namespace Platformer.Buff
         public override void OnAdd()
         {
             moveSpeed = m_buffControl.EnemyData.moveSpeed;
-            m_buffControl.EnemyData.moveSpeed = m_buffControl.moveSpeed;
-
-            attackCD = m_buffControl.EnemyData.attackCD;
-            m_buffControl.EnemyData.attackCD = m_buffControl.attackCD;
-
-            dogeCD = m_buffControl.EnemyData.dogeCD;
-            m_buffControl.EnemyData.dogeCD = m_buffControl.dogeCD;
+            m_buffControl.EnemyData.moveSpeed *= m_buffControl.reduceRatio;
 
             damage = m_buffControl.EnemyData.damage;
-            m_buffControl.EnemyData.damage = m_buffControl.damage;
+            m_buffControl.EnemyData.damage = (int)m_buffControl.reduceRatio * m_buffControl.EnemyData.damage;
+
+            m_buffControl.EnemyData.multiplier = 0.5f;
         }
 
 
@@ -48,9 +42,8 @@ namespace Platformer.Buff
         public override void OnRemove()
         {
             m_buffControl.EnemyData.moveSpeed = moveSpeed;
-            m_buffControl.EnemyData.attackCD = attackCD;
-            m_buffControl.EnemyData.dogeCD = dogeCD;
             m_buffControl.EnemyData.damage = damage;
+            m_buffControl.EnemyData.multiplier = 1f;
         }
     }
 }
