@@ -29,18 +29,22 @@ namespace Platformer.Enemy
             behaviorExecutor = GetComponent<BehaviorExecutor>();
             attackCD = data.attackCD;
             skillCD = data.skillCD;
+            OnStart();
         }
 
         private void FixedUpdate()
         {
             animator.SetInteger("state", (int)data.state);
             animator.SetBool("IfFaceRight", data.ifFaceRight);
+            animator.SetFloat("multiplier", data.multiplier);
             //CheckAttack();
             CheckAlive();
             RefreshState();
             CheckAttack();
             CheckSkill();
         }
+
+        public virtual void OnStart() { }
 
         public virtual void RefreshState() { }
 
@@ -61,7 +65,7 @@ namespace Platformer.Enemy
         {
             if (data.ifCanAttack == false)
             {
-                attackCD -= Time.deltaTime;
+                attackCD -= Time.deltaTime * data.multiplier;
                 if (attackCD <= 0)
                 {
                     attackCD = data.attackCD;
@@ -75,7 +79,7 @@ namespace Platformer.Enemy
         {
             if (data.ifSkillPrepared == false)
             {
-                skillCD -= Time.deltaTime;
+                skillCD -= Time.deltaTime * data.multiplier;
                 if (skillCD <= 0)
                 {
                     skillCD = data.skillCD;

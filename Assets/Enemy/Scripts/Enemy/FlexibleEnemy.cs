@@ -12,8 +12,12 @@ namespace Platformer.Enemy
         /// The damage this skill can make to player.
         /// </summary>
         public int skillDamage;
-        private GameObject Player = GameObject.Find("Player");
         private Vector3 previousPos;
+
+        public override void OnStart()
+        {
+            data.SkillAllowed = true;
+        }
 
         public override void ExecuteSkill()
         {
@@ -21,7 +25,7 @@ namespace Platformer.Enemy
             if (ifPlayerInAttackDistance == true)
             {
                 var ev = Schedule<PlayerHitted>();
-                ev.player = Player;
+                ev.player = data.player;
                 ev.enemyTransform = transform;
                 ev.damage = skillDamage;
             }

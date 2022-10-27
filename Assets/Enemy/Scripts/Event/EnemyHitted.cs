@@ -17,14 +17,16 @@ namespace Platformer.Gameplay
         public override void Execute()
         {
             // Debug.Log("enemy hitted");
-            if(PlayerHealth.realHealth<100)
+            if(PlayerHealth.realHealth<=100)
             {
-                PlayerHealth.realHealth += 2;
+                PlayerHealth.realHealth += 1;
             }
             else
             {
+                if(SkillController.Fury <= 100)
                 SkillController.Fury = SkillController.Fury + 2;
             }
+
             if (enemyData.state == EnemyState.Idle || enemyData.state == EnemyState.Walk)
             {
                 enemyData.isHitted = true;
