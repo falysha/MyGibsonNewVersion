@@ -1731,12 +1731,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  \u7B56\u5212\uFF1A\n   \u4E3B\u7B56\u5212\uFF1AGenster\n\n\n\n\n\n\n\n                          
-    \u7F8E\u672F\uFF1A\n                            \u573A\u666F\uFF1ADDLIND\n                           
-    \u52A8\u753B\uFF1A\u6A58\u732B\u5C41\u5C41\u63A7\n\t\t\t\t\t\t\t\t YNA\n                           
-    \u7ACB\u7ED8\uFF1A\u51AF\u6811\u68EE\n\n\n\n\n\n\n\n\n  \u7A0B\u5E8F\uFF1A\n  
-    \u4E3B\u7A0B\u5E8F\uFF1A\u5728\u4E16\n   \u526F\u7A0B\u5E8F\uFF1A\u65B9\u4EEA\n        
-    Genster\n\n\n\n\n\n\n\n\n\n                           \u7F16\u5267\uFF1A\n\t\t\t\t\t\t\t\u5267\u60C5\u6D41\u7A0B\uFF1A\u53D1\u5927\u6C34\n\t\t\t\t\t\t\t\u5BF9\u8BDD\u8F85\u52A9\uFF1AYNA\n\n\n"
+  m_Text: "  \u7B56\u5212\uFF1A\n   \u4E3B\u7B56\u5212\uFF1A\u674E\u4E0A\u5982\n\n\n\n\n\n\n\n                          
+    \u7F8E\u672F\uFF1A\n                            \u573A\u666F\uFF1A\u65B9\u4EEA\n                           
+    \u52A8\u753B\uFF1A\u65B9\u4EEA\n\t\t\t\t\t\t\n                            \u7ACB\u7ED8\uFF1A\u7530\u963F\u6DA6\u5947\n\n\n\n\n\n\n\n\n 
+    \u7A0B\u5E8F\uFF1A\n   \u674E\u4E0A\u5982 \u7530\u963F\u6DA6\u5947 \u65B9\u4EEA\n\n\n\n\n\n\n\n\n\n                          
+    \u7F16\u5267\uFF1A\u65B9\u4EEA\n\t\t\t\t\t\t\t\u5267\u60C5\u6D41\u7A0B\uFF1A\u674E\u4E0A\u5982\n\t\t\t\t\t\t\t\u5BF9\u8BDD\u8F85\u52A9\uFF1A\u674E\u4E0A\u5982\n\n\n"
 --- !u!222 &955788841
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -6391,8 +6391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>A/D</b> \u79FB\u52A8 <b>L</b> \u95EA\u907F<b> \nJ</b> \u653B\u51FB
-    <b>W</b> \u8DF3\u8DC3 <b>F</b> \u4E92\u52A8\n"
+  m_Text: 
 --- !u!222 &428071824
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18437,8 +18436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>Q</b> \u4FE1\u5FF5\u91CD\u6784\uFF0C\u589E\u52A0\u79FB\u901F\u4F24\u5BB3\n<b>E</b>
-    \u4FE1\u5FF5\u6CE2\u52A8\uFF0C\u7A33\u56FA\u81EA\u8EAB\u8840\u91CF"
+  m_Text: 
 --- !u!222 &1137951713
 CanvasRenderer:
   m_ObjectHideFlags: 0
